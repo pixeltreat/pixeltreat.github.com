@@ -27,7 +27,7 @@
 </head>
 <body>
 <noscript><h1>This page requires JavaScript. Please enable JavaScript in your browser and reload this page.</h1></noscript>
-<div id="pagewrap" class="home-page"> 
+<div id="pagewrap" class="home-page">
   <!-- page header and navigations comes here -->
   <header>
     <h1><a class="pt-logo" href="index.shtml"><img src="images/pt-logo.gif" alt="Pixel Treat Logo">Pixel Treat - a way to creative world</a></h1>
@@ -37,10 +37,10 @@
         <li><a href="portfolio.shtml" class="portfolio"><span>Portfolio</span></a></li>
         <li><a href="http://pixeltreat.blogspot.in" class="blog"><span>Blog</span></a></li>
         <li><a href="about.shtml" class="about"><span>About</span></a></li>
-        <li class="lastright"><a href="contact.php" class="contact"><span>Contact</span></a></li>
+        <!-- <li class="lastright"><a href="contact.php" class="contact"><span>Contact</span></a></li> -->
       </ul>
       <div class="clear"></div>
-    </nav>    
+    </nav>
   </header>
   <!-- main page elements comes here -->
   <section>
@@ -54,7 +54,7 @@
           <li><a href="portfolio.shtml"><img alt="Thelims Design" src="images/slider-images/03-slide.jpg"/></a></li>
           <li><a href="portfolio.shtml"><img alt="Laatsaab's Elegance" src="images/slider-images/04-slide.jpg"/></a></li>
           <li><a href="portfolio.shtml"><img alt="Science-Scientists Visuals" src="images/slider-images/02-slide.jpg"/></a></li>
-          <li><a href="portfolio.shtml"><img alt="Sri Shanmukha Caterers" src="images/slider-images/05-slide.jpg"/></a></li>          
+          <li><a href="portfolio.shtml"><img alt="Sri Shanmukha Caterers" src="images/slider-images/05-slide.jpg"/></a></li>
           <li><a href="portfolio.shtml"><img alt="Smart Brush" src="images/slider-images/07-slide.jpg"/></a></li>
           <li><a href="portfolio.shtml"><img alt="Charts Plus" src="images/slider-images/08-slide.jpg"/></a></li>
         </ul>
@@ -75,9 +75,9 @@
             <li>
                 <label>Web Design &amp; Development</label>
                 <label>Mobile Apps GUI Designing</label>
-                <label>Graphic Designing</label> 
+                <label>Graphic Designing</label>
                 <label>Print &amp; Media Designing</label>
-                <label>Photo Manipulations</label>                               
+                <label>Photo Manipulations</label>
                 <p class="moreLink"><a href="portfolio.shtml">more info...</a></p>
             </li>
             <li class="lastright">
@@ -85,7 +85,7 @@
                 	<div class="col">
                     	<a class="gtalk-icon" href="mailto:thepixeltreat@gmail.com">Gtalk</a>
                         <a class="yahoo-icon" href="mailto:pixeltreat@yahoo.com">Yahoo!</a>
-                    	<a class="email-icon" href="mailto:prasad@pixeltreat.com">Email</a>                        
+                    	<a class="email-icon" href="mailto:prasad@pixeltreat.com">Email</a>
                     </div>
                     <div class="col">
                     	<a class="linked-icon" href="http://www.linkedin.com/in/dsadhanala" target="_blank">Linked in</a>
@@ -93,8 +93,8 @@
                         <a class="twit-icon" href="http://twitter.com/mrUIdesigner" target="_blank">Twitter</a>
                     </div>
                     <div class="clear"></div>
-                </div>            	
-                <p class="moreLink"><a href="contact.php">more info...</a></p>          
+                </div>
+                <p class="moreLink"><a href="contact.php">more info...</a></p>
             </li>
         </ul>
         <div class="clear"></div>
@@ -116,18 +116,17 @@
           <div class="clear"></div>
         </nav>
     </div>
-  </footer>  
+  </footer>
 </div>
 <!-- IE6 msg -->
   <div id="ie6msg"><p>Our website has detected that you are using an outdated browser. Using your current browser will prevent you from accessing features on our website. <br> An upgrade is not required, but is strongly recommend to improve your browsing experience on our website.</p></div>
-<!-- page content end here jcript files embed starts --> 
+<!-- page content end here jcript files embed starts -->
 <script type="text/javascript">QueryLoader.selectorPreload = "body"; QueryLoader.init(); </script>
 <script type="text/javascript">
 	Cufon.replace('#cufon-font li'); // Works without a selector engine
 	Cufon.now();
 </script>
-<script type="text/javascript" src="js/anythingslider.js"></script> 
+<script type="text/javascript" src="js/anythingslider.js"></script>
 <script type="text/javascript" src="js/generalScripts.js"></script>
-<!--#include file="ga/ga.html"-->
 </body>
 </html>
