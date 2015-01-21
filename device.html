@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Device Dimensions</title>
+<style type="text/css">
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:100%}html,button,input,select,textarea{font-family:'Arial',Helvetica,sans-serif}body{margin:0;padding:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.75em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}blockquote{margin:1em 40px}dfn{font-style:italic}mark{background:#ff0;color:#000}p,pre{margin:1em 0}code,kbd,pre,samp{_font-family:'courier new',monospace;font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:none}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}nav ul,menu ul,nav ol{list-style:none;list-style-image:none}menu,ol,ul,dd{padding:0}svg:not(:root){overflow:hidden}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;margin-left:-7px;padding:0;white-space:normal}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline}.ie7 button,.ie7 input,.ie7 select,.ie7 textarea{vertical-align:middle}button,input{line-height:normal}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}.ie7 button,html.ie7 input[type=button],.ie7 input[type=reset],.ie7 input[type=submit]{overflow:visible}button[disabled],input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;height:13px;padding:0;width:13px}input[type=search]{-moz-box-sizing:border-box;-webkit-appearance:textfield;-webkit-box-sizing:border-box;box-sizing:border-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}dl,menu,ol,ul,figure,form{margin:0}
+.wrap{
+	width:68em;
+	margin:2em auto;
+}
+.wrap div{
+	margin-bottom:2em;
+}
+.wrap div span{
+	font-weight:bold;
+	padding:0.5em 1em;
+	background:#036;
+	color:#fff;
+	display:inline-block;
+}
+.wrap div label{
+	display:inline-block;
+	width:15em;
+	text-align:right;
+	margin-right:1em;
+}
+
+.wrap div span.device-port, .wrap div span.device-land{
+	display:none;
+	font-weight:bold;
+	padding:0.5em 1em;
+	background:#036;
+	color:#fff;
+}
+@media screen and (max-device-width: 48em){
+	.wrap{ 
+		width:90%;
+		margin:2em auto;
+	}
+	.wrap div{
+		font-size:2em;
+	}
+}
+/* Portrait */
+@media screen and (orientation: portrait) {
+   .wrap div span.device-port{
+		display:inline-block;
+	}
+}
+
+/* Landscape */
+@media screen and (orientation: landscape) {
+    .wrap div span.device-land{
+		display:inline-block;
+	}
+}
+</style>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var dp = window.devicePixelRatio,
+			pw = window.screen.availWidth,
+			ph = window.screen.availHeight;
+			dpw = pw*dp;
+			dph = ph*dp;
+			
+		$('#dpi span').text(dp);
+		$('#device span').text(pw+" x "+ ph);
+		$('#pixel-dimension span').text(dpw +" x "+ dph);
+	});
+</script>
+</head>
+
+<body>
+<div class="wrap">
+	<div id="device"><label>Device Physical Pixel Dimension:</label> <span></span></div>
+    
+    <div id="pixel-dimension"><label>CSS Pixel Dimension:</label> <span></span></div>
+    
+    <div id="dpi"><label>Device Pixel Ratio:</label> <span></span></div>
+    
+    <div id="ori">
+    	<label>Device Orientation:</label> 
+        <span class="device-port">Portraite</span>
+        <span class="device-land">Landscape</span>    
+    </div>
+</div>
+</body>
+</html>

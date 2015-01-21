@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Portfoilo of Durga Prasad Sadhanala - User Interface Designer, Hyderabad, India</title>
+<meta http-equiv="expires" content="0">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<link href="css/layout.css" type="text/css" rel="stylesheet">
+<link href="css/top-up.css" type="text/css" rel="stylesheet">
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lt IE 7]><script src="js/ie_png.js"></script><![endif]-->
+<script type="text/javascript" src="js/filter/jquery-portfolio.js"></script>
+<script type="text/javascript" src="js/filter/quick-filter-main.js"></script>
+<script type="text/javascript" src="js/top_up-min.js"></script>
+<script type="text/javascript" src="js/cufon.js"></script>
+</head>
+<body>
+<noscript><h1>This page requires JavaScript. Please enable JavaScript in your browser and reload this page.</h1></noscript>
+<div id="pagewrap" class="portfolio-page"> 
+  <!-- page header and navigations comes here -->
+  <header>
+    <h1 class="pt-logo-small"><a href="index.shtml"><img src="images/pt-logo-small.gif" alt="Pixel Treat Logo">Pixel Treat - a way to creative world</a></h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.shtml" class="home"><span>Home</span></a></li>
+        <li><a href="portfolio.shtml" class="port-active"><span>Portfolio</span></a></li>
+        <li><a href="http://pixeltreat.blogspot.in" class="blog"><span>Blog</span></a></li>
+        <li><a href="about.shtml" class="about"><span>About</span></a></li>
+        <li class="lastright"><a href="contact.php" class="contact"><span>Contact</span></a></li>
+      </ul>
+      <div class="clear"></div>
+    </nav>
+  </header>
+  <!-- main page elements comes here -->
+  <section> 
+    <!-- about, what i do, Get in touch section -->
+    <ul class="tab-headings" id="cufon-font">
+      <li>Showcase <span>of my work</span></li>
+    </ul>
+    <div class="my-work">
+      <ul class="splitter">
+        <li class="segment-0 selected-0"><a href="javascript:void(0);" data-value="all">Everything</a></li>
+        <li class="segment-1"><a href="javascript:void(0);" data-value="web">Web Design</a></li>
+        <li class="segment-2"><a href="javascript:void(0);" data-value="logo">Logo Design</a></li>
+        <li class="segment-3"><a href="javascript:void(0);" data-value="print">Print</a></li>
+        <li class="segment-4"><a href="javascript:void(0);" data-value="greet">Greetings</a></li>
+      </ul>
+      <div class="clear"></div>
+      <!-- gallery images -->
+      <ul id="list" class="port-thumbs">
+      	<li data-id="id-65" class="greet"><a href="images/portfolio/greet/12-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/12-greet-thumb.jpg" alt="Ugadi Greeting"></a></li>
+        <li data-id="id-1" class="web"><a href="images/portfolio/web/01-web-thelims.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/01-web-thelims-thumb.jpg" alt="Thelims Design"></a></li>
+        <li data-id="id-2" class="logo"><a href="images/portfolio/logo/07-logo-xtremebikers.jpg" class="top_up"><img src="images/portfolio/zthumbs/logo/07-logo-xtremebikers-thumb.jpg" alt="Xtreme bikers Zone Logo"></a></li>
+        <li data-id="id-3" class="print"><a href="images/portfolio/print/07-print-devalutions-ad.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/07-print-devalutions-ad-thumb.jpg" alt="Digital Evalution Advertisement"></a></li>
+        <li data-id="id-4" class="greet"><a href="images/portfolio/greet/05-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/05-greet-thumb.jpg" alt="Birthday Greeting"></a></li>
+        <li data-id="id-5" class="logo"><a href="images/portfolio/vcard/03-vcard-crazy.jpg" class="top_up"><img src="images/portfolio/zthumbs/vcard/03-vcard-crazy-thumb.jpg" alt="Crazy Bikers Zone Business Card"></a></li>
+        <li data-id="id-6" class="web"><a href="images/portfolio/web/02-web-elegance.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/02-web-elegance-thumb.jpg" alt="Laatsaab's ELEGANCE - revolutionizing fashion"></a></li>
+        <li data-id="id-7" class="logo"><a href="images/portfolio/logo/01-logo-megaastudio.jpg" class="top_up"><img src="images/portfolio/zthumbs/logo/01-logo-megaastudio-thumb.jpg" alt="Megaa Studio Logo"></a></li>
+        <li data-id="id-8" class="logo"><a href="images/portfolio/vcard/05-vcard-shobithi.jpg" class="top_up"><img src="images/portfolio/zthumbs/vcard/05-vcard-shobithi-thumb.jpg" alt="Shobith Info Com Business Card"></a></li>
+        <li data-id="id-9" class="print"><a href="images/portfolio/print/01-print-dhitis-ad.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/01-print-dhitis-ad-thumb.jpg" alt="Dhiti's Advertisement"></a></li>
+        <li data-id="id-10" class="greet"><a href="images/portfolio/greet/01-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/01-greet-thumb.jpg" alt="Dussehra Greeting"></a></li>
+        <li data-id="id-11" class="logo"><a href="images/portfolio/vcard/01-vcard-datacode.jpg" class="top_up"><img src="images/portfolio/zthumbs/vcard/01-vcard-datacode-thumb.jpg" alt="Data Code Business Card"></a></li>
+        <li data-id="id-12" class="web"><a href="images/portfolio/web/03-web-indienese.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/03-web-indienese-thumb.jpg" alt="Indienese - Bio Technologies"></a></li>
+        <li data-id="id-13" class="logo"><a href="images/portfolio/vcard/02-vcard-tanmai.jpg" class="top_up"><img src="images/portfolio/zthumbs/vcard/02-vcard-tanmai-thumb.jpg" alt="Tanmai Jewellers Business Card"></a></li>
+        <li data-id="id-14" class="print"><a href="images/portfolio/print/02-print-dhitis-ad.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/02-print-dhitis-ad-thumb.jpg" alt="Dhiti's Advertisement"></a></li>
+        <li data-id="id-15" class="logo"><a href="images/portfolio/logo/02-logo-sribharathi.jpg" class="top_up"><img src="images/portfolio/zthumbs/logo/02-logo-sribharathi-thumb.jpg" alt="Sri Bharathi ITIS Logo"></a></li>
+        <li data-id="id-16" class="greet"><a href="images/portfolio/greet/02-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/02-greet-thumb.jpg" alt="Friendshipday Greeting"></a></li>
+        <li data-id="id-17" class="web"><a href="images/portfolio/web/04-web-shanmukha.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/04-web-shanmukha-thumb.jpg" alt="Sri Shanmukha Caterers"></a></li>
+        <li data-id="id-18" class="print"><a href="images/portfolio/print/03-print-dhitis-ad.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/03-print-dhitis-ad-thumb.jpg" alt="Dhiti's Advertisement"></a></li>
+        <li data-id="id-19" class="greet"><a href="images/portfolio/greet/03-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/03-greet-thumb.jpg" alt="New Year Greeting"></a></li>
+        <li data-id="id-20" class="logo"><a href="images/portfolio/vcard/04-vcard-ranklin.jpg" class="top_up"><img src="images/portfolio/zthumbs/vcard/04-vcard-ranklin-thumb.jpg" alt="Ranklin Solutions Business Card"></a></li>
+        <li data-id="id-21" class="web"><a href="images/portfolio/web/05-web-sribharathi.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/05-web-sribharathi-thumb.jpg" alt="Sri Bharathi"></a></li>
+        <li data-id="id-22" class="print"><a href="images/portfolio/print/04-print-duke-ad.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/04-print-duke-ad-thumb.jpg" alt="Duke Advertisement"></a></li>
+        <li data-id="id-23" class="logo"><a href="images/portfolio/logo/03-logo-haranth.jpg" class="top_up"><img src="images/portfolio/zthumbs/logo/03-logo-haranth-thumb.jpg" alt="Haranth Technologies Logo"></a></li>
+        <li data-id="id-24" class="greet"><a href="images/portfolio/greet/04-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/04-greet-thumb.jpg" alt="New Year Greeting"></a></li>
+        <li data-id="id-25" class="logo"><a href="images/portfolio/vcard/06-vcard-devalutions.jpg" class="top_up"><img src="images/portfolio/zthumbs/vcard/06-vcard-devalution-thumb.jpg" alt="Digital Evalution Business Card"></a></li>
+        <li data-id="id-26" class="web"><a href="images/portfolio/web/06-web-ranklin1.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/06-web-ranklin1-thumb.jpg" alt="Ranklin Solutions Design1"></a></li>
+        <li data-id="id-27" class="print"><a href="images/portfolio/print/05-print-konark-ad.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/05-print-konark-ad-thumb.jpg" alt="konark Advertisement"></a></li>
+        <li data-id="id-28" class="logo"><a href="images/portfolio/logo/04-logo-ranklin.jpg" class="top_up"><img src="images/portfolio/zthumbs/logo/04-logo-ranklin-thumb.jpg" alt="Ranklin Solutions Logo"></a></li>
+        <li data-id="id-29" class="greet"><a href="images/portfolio/greet/06-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/06-greet-thumb.jpg" alt="New Year Greeting"></a></li>
+        <li data-id="id-30" class="web"><a href="images/portfolio/web/07-web-mediglobal.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/07-web-mediglobal-thumb.jpg" alt="Medi Global Sports"></a></li>
+        <li data-id="id-31" class="print"><a href="images/portfolio/print/06-print-dhitis-ad.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/06-print-dhitis-ad-thumb.jpg" alt="Dhiti's Advertisement"></a></li>
+        <li data-id="id-32" class="greet"><a href="images/portfolio/greet/07-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/07-greet-thumb.jpg" alt="New Year Greeting"></a></li>
+        <li data-id="id-33" class="logo"><a href="images/portfolio/logo/05-logo-rentingsource.jpg" class="top_up"><img src="images/portfolio/zthumbs/logo/05-logo-rentingsource-thumb.jpg" alt="Ranklin Solutions Logo"></a></li>
+        <li data-id="id-34" class="web"><a href="images/portfolio/web/08-web-ranklin2.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/08-web-ranklin2-thumb.jpg" alt="Ranklin Solutions Design2"></a></li>
+        <li data-id="id-35" class="print"><a href="images/portfolio/print/08-print-shobith-ad.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/08-print-shobith-ad-thumb.jpg" alt="Shobit Info Com Advertisement"></a></li>
+        <li data-id="id-36" class="web"><a href="images/portfolio/banners/01-banner-chill.jpg" class="top_up"><img src="images/portfolio/zthumbs/banners/01-banner-chill-thumb.jpg" alt="Chilling Cafe Banner"></a></li>
+        <li data-id="id-37" class="greet"><a href="images/portfolio/greet/08-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/08-greet-thumb.jpg" alt="Holi Greeting"></a></li>
+        <li data-id="id-38" class="logo"><a href="images/portfolio/logo/06-logo-tanmai.jpg" class="top_up"><img src="images/portfolio/zthumbs/logo/06-logo-tanmai-thumb.jpg" alt="Tanmai Jewellers Logo"></a></li>
+        <li data-id="id-39" class="web"><a href="images/portfolio/web/09-web-chartsplus.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/09-web-chartsplus-thumb.jpg" alt="Charts Plus Pvt. Ltd."></a></li>
+        <li data-id="id-40" class="print"><a href="images/portfolio/print/09-print-devalution-stationary.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/09-print-devalution-stationary-thumb.jpg" alt="Digital Evalution Stationary"></a></li>
+        <li data-id="id-41" class="greet"><a href="images/portfolio/greet/09-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/09-greet-thumb.jpg" alt="Friendshipday Greeting"></a></li>
+        <li data-id="id-42" class="web"><a href="images/portfolio/web/10-web-thanmai.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/10-web-thanmai-thumb.jpg" alt="Tanmai Jewellers"></a></li>
+        <li data-id="id-43" class="print"><a href="images/portfolio/print/10-print-lb-ad.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/10-print-lb-ad-thumb.jpg" alt="Logic Bytes Advertisement"></a></li>
+        <li data-id="id-44" class="greet"><a href="images/portfolio/greet/10-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/10-greet-thumb.jpg" alt="Independenceday Greeting"></a></li>
+        <li data-id="id-45" class="web"><a href="images/portfolio/web/11-web-ranklin3.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/11-web-ranklin3-thumb.jpg" alt="Ranklin Solutions Design3"></a></li>
+        <li data-id="id-46" class="print"><a href="images/portfolio/print/11-print-ravi-sweetpacket2.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/11-print-ravi-sweetpacket2-thumb.jpg" alt="Ravi Sweets Package Design"></a></li>
+        <li data-id="id-47" class="greet"><a href="images/portfolio/greet/11-greet.jpg" class="top_up"><img src="images/portfolio/zthumbs/greet/11-greet-thumb.jpg" alt="Vande Mataram Greeting"></a></li>
+        <li data-id="id-48" class="web"><a href="images/portfolio/web/12-web-ssvisuals.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/12-web-ssvisuals-thumb.jpg" alt="SS Visuals"></a></li>
+        <li data-id="id-49" class="print"><a href="images/portfolio/print/12-print-ravi-sweetpacket1.jpg" class="top_up"><img src="images/portfolio/zthumbs/print/12-print-ravi-sweetpacket1-thumb.jpg" alt="Ravi Sweets Package Design"></a></li>
+        <li data-id="id-50" class="web"><a href="images/portfolio/banners/02-banners-markthe.jpg" class="top_up"><img src="images/portfolio/zthumbs/banners/02-banner-markthe-thumb.jpg" alt="Marktheday Banners"></a></li>
+        <li data-id="id-51" class="web"><a href="images/portfolio/web/13-web-janimaz1.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/13-web-janimaz1-thumb.jpg" alt="Janimaz - Prayer Corpets Design1"></a></li>
+        <li data-id="id-52" class="web"><a href="images/portfolio/web/14-web-intelhunts.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/14-web-intelhunts-thumb.jpg" alt="Intel Hunts"></a></li>
+        <li data-id="id-53" class="web"><a href="images/portfolio/web/15-web-vigneswara.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/15-web-vigneswara-thumb.jpg" alt="Sri Vigneswara"></a></li>
+        <li data-id="id-54" class="web"><a href="images/portfolio/web/16-web-janimaz2.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/16-web-janimaz2-thumb.jpg" alt="Janimaz - Prayer Corpets Design2"></a></li>
+        <li data-id="id-55" class="web"><a href="images/portfolio/web/17-web-konark.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/17-web-konark-thumb.jpg" alt="Konark Digital Signs"></a></li>
+        <li data-id="id-56" class="web"><a href="images/portfolio/web/18-web-aditya.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/18-web-aditya-thumb.jpg" alt="Aditya Guest House"></a></li>
+        <li data-id="id-57" class="web"><a href="images/portfolio/web/19-web-elearn1.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/19-web-elearn1-thumb.jpg" alt="Islamic e-Learning Design1"></a></li>
+        <li data-id="id-58" class="web"><a href="images/portfolio/web/20-web-getawayrental1.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/20-web-getawayrental1-thumb.jpg" alt="Getaway Rental Design1"></a></li>
+        <li data-id="id-59" class="web"><a href="images/portfolio/web/21-web-elearn2.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/21-web-elearn2-thumb.jpg" alt="Islamic e-Learning Design2"></a></li>
+        <li data-id="id-60" class="web"><a href="images/portfolio/web/22-web-pixeltreat.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/22-web-pixeltreat-thumb.jpg" alt="The Pixel Ideas"></a></li>
+        <li data-id="id-61" class="web"><a href="images/portfolio/web/23-web-getawayrental2.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/23-web-getawayrental2-thumb.jpg" alt="Getaway Rental Design2"></a></li>
+        <li data-id="id-62" class="web"><a href="images/portfolio/web/24-web-elearn3.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/24-web-elearn3-thumb.jpg" alt="Islamic e-Learning Design2"></a></li>
+        <li data-id="id-63" class="web"><a href="images/portfolio/web/25-web-yours.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/25-web-yours-thumb.jpg" alt="Yours webdesigner"></a></li>        
+        <li data-id="id-64" class="web"><a href="images/portfolio/web/27-web-bvcec.jpg" class="top_up"><img src="images/portfolio/zthumbs/web/27-web-bvcec-thumb.jpg" alt="BVC Engineering College"></a></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+  </section>
+  <!-- page footer comes here -->
+  <footer>
+    <div class="ftr">
+      <div class="copyright">&copy; 2011 pixeltreat.com - all rights reserved</div>
+      <!--<div class="mobile-link"><a href="#">Visit Mobile Web Site</a></div> -->
+      <nav class="ftr-nav">
+        <ul>
+          <li><a href="index.shtml">Home</a></li>
+          <li><a href="portfolio.shtml">Portfolio</a></li>
+          <li><a href="http://pixeltreat.blogspot.in">Blog</a></li>
+          <li><a href="about.shtml">About</a></li>
+          <li class="lastright"><a href="contact.php">Contact</a></li>
+        </ul>
+        <div class="clear"></div>
+      </nav>
+    </div>
+  </footer>
+</div>
+<!-- IE6 msg -->
+<div id="ie6msg">
+  <p>Our website has detected that you are using an outdated browser. Using your current browser will prevent you from accessing features on our website. <br>
+    An upgrade is not required, but is strongly recommend to improve your browsing experience on our website.</p>
+</div>
+<!-- page content end here jcript files embed starts --> 
+<script type="text/javascript" src="js/generalScripts.js"></script> 
+<script type="text/javascript">
+TopUp.addPresets({
+	".port-thumbs a": {
+	  title: "{alt}", //({current} of {total})
+	  group: "Everything",
+	  readAltText: 1,
+	  shaded: 1,
+	  overlayClose: 1
+	}		
+});
+
+Cufon.replace('#cufon-font li'); // Works without a selector engine
+Cufon.now();
+
+$('.port-thumbs li img').animate({opacity : 0.4}).live('hover',function (ev) {
+	if (ev.type == 'mouseover') { $(this).animate({opacity : 1}); }
+	if (ev.type == 'mouseout') { $(this).animate({opacity : 0.4}); }
+});
+</script>
+<!--#include file="ga/ga.html"-->
+</body>
+</html>
