@@ -48,7 +48,7 @@ header, section, footer { width:990px; margin: 0 auto; clear:both !important; }
 h1.pt-logo-small { float:left; width:300px; text-align:center; }
 h1.pt-logo-small a { display:block; background:url(../images/pt-logo-small.gif) bottom center no-repeat; height:72px; width:285px; text-indent:-9999px; margin:0 auto; text-align:left; margin:20px 0px; }
 /*----  navigation selectors  -----*/
-.main-nav { width:670px; float:right; margin:30px 10px 20px 0px; }
+.main-nav { width:540px; float:right; margin:30px 10px 20px 0px; }
 .home-page .main-nav { float:none; margin:10px auto 25px; }
 .main-nav li { display:inline; float:left; }
 .main-nav li a { display:block; background:url(../images/nav.jpg) no-repeat; overflow:hidden; width:131px; height:44px; margin-right:3px; }
