@@ -85,7 +85,7 @@ div#blog-pager .home-link { background:url(http://pixeltreat.com/blog/images/hom
 
 /*----  navigation selectors  -----*/
 .main-nav { width:auto; float:none; background:#000; padding-bottom:10px; border-bottom:1px #333 solid;}
-.main-nav ul{margin:0px auto; width:675px;}
+.main-nav ul{margin:0px auto; width:540px;}
 .main-nav li { display:inline; float:left; margin:0px; padding:0px; }
 .main-nav li a { display:block; background:url(http://pixeltreat.com/images/nav.jpg) no-repeat; overflow:hidden; width:131px; height:44px; margin-right:3px; }
 .ie6 .main-nav li a span { visibility:hidden;}
