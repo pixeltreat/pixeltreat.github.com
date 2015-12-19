@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Responsive web design</title>
+    <meta name="description" content="Learn about Responsive web design">
+    <meta name="author" content="Durga Prasad Sadhanala">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../assets/css/dd-theme.css" media="all">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-------------------------- title slide ------------------------>
+            <section data-state="intro">
+                <h1>Front-end Fundamentals</h1>
+                <h3>Responsive web design</h3>
+            </section>
+
+            <!-------------------------- topic slide ------------------------>
+            <section data-state="topic-slide">
+                <h1><strong>01 </strong>Pixels</h1>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>CSS Pixels</h2>
+                <p class="text-align-left">CSS pixels are the ones we use in declations such as width, height, padding etc. They are an abstract construct. Their size increases or decreases when the user zooms.</p>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Device Pixels</h2>
+                <p class="text-align-left">Device pixels are the physical pixels on the device, these are fixed but vary depends on the device.</p>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>CSS vs Device Pixels<br> on Retina devices</h2>
+                <img src="img/css-device-pixels.jpg">
+            </section>
+
+            <!-------------------------- topic slide ------------------------>
+            <section data-state="topic-slide">
+                <h1><strong>02 </strong>Resolution</h1>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Units</h2>
+                <p>The resolution CSS data types, used in media queries, denotes the density of pixels of an output device, its resolution. It is a number immediately followed by a unit of resolution</p>
+
+                <ul class="no-list-styles small-font">
+                    <li class="fragment roll-in">
+                        <a>dpi</a>
+                        <span>This unit represents the number of dots per inch. A screen typically contains 72 or 96 dpi;</span>
+                    </li>
+                    <li class="fragment roll-in">
+                        <a>dpcm</a>
+                        <span>This unit represents the number of dots per centimeter. As 1 inch is 2.54 cm, 1dpcm ≈ 2.54dpi.</span>
+                    </li>
+                    <li class="fragment roll-in">
+                        <a>dppx</a>
+                        <span>This unit represents the number of dots per px unit.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-------------------------- topic slide ------------------------>
+            <section data-state="topic-slide">
+                <h1><strong>03 </strong>Viewport</h1>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Viewport</h2>
+                <p class="text-align-left">The <a href="#">&lt;html&gt;</a> element's width is calculated relative to the viewport, also called as initial containing block. on desktop it's equal to the browser window width.</p>
+                <p class="text-align-left">By default, the viewport is 768 -1024px wide(depening on the browser), with 980px the most common size. we call this "layout viewport".</p>
+                <blockquote class="bq drop-shadow lifted ">Responsive design is the art of overriding default width of the layout viewport.</blockquote>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Viewport</h2>
+                <p class="text-align-left">But the "layout viewport" is much wider than the mobile screen, thus we need a separate viewport for the actual window width, which we call "Visual Viewport".</p>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Visual Representation</h2>
+                <img src="img/visual-layout-viewport.png">
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>How browsers render</h2>
+                <img src="img/mobile-rendering-sample.png">
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Meta Viewport</h2>
+                <p>In order to create a RWD page we must set the layout viewport dimensions to the visual viewport dimentions</p>
+                <pre><code data-trim>
+                &lt;meta name="viewport" content="width=device-width"&gt;
+                </code></pre>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Meta Viewport Properties</h2>
+                <p>The recognized properties in the viewport <a href="">META</a> element are:</p>
+                <ul class="small-font half-center">
+                    <li class="fragment roll-in">width</li>
+                    <li class="fragment roll-in">height</li>
+                    <li class="fragment roll-in">initial-scale</li>
+                    <li class="fragment roll-in">minimum-scale</li>
+                    <li class="fragment roll-in">maximum-scale</li>
+                    <li class="fragment roll-in">user-scalable</li>
+                </ul>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Meta Viewport Syntax</h2>
+                <p>In order to create a RWD page we must set the layout viewport dimensions to the visual viewport dimentions</p>
+                <pre><code data-trim>
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;
+                </code></pre>
+            </section>
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Set Viewport using CSS</h2>
+                <p>The meta viewport element is non-normative, that is, it isn't actually a standard. It was first implemented by Apple for the iPhone and quickly adopted by other platforms. The @viewport rule, however, is in the process of being standardized by the W3C. </p>
+                <div class="half-center">
+                    <pre><code data-trim>
+@viewport {
+    width: device-width;
+    zoom: 1;
+    min-zoom: 0.25;
+    max-zoom: 5;
+    user-zoom: zoom;
+    orientation: landscape;
+}
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-------------------------- topic slide ------------------------>
+            <section data-state="topic-slide">
+                <h1><strong>04 </strong>What is AWD?</h1>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Adaptive Web Design</h2>
+                <p class="text-align-left">AWD is a high level design philosophy that can be achieved through a variety of execution tactics including server side user agent detection, or client side responsive web design. Using a predefined set of layout sizes based on device screen size along with CSS and JavaScript, the AWD approach adapts to the detected device. Since we're targeting multiple common viewport resolutions, going from one to the other when resizing the window may cause the layout to jump.</p>
+                <a target="_blank" href="http://adaptivewebdesign.info/">Aaron Gustafson</a>
+            </section>
+            <!-------------------------- topic slide ------------------------>
+            <section data-state="topic-slide">
+                <h1><strong>05 </strong>What is RWD?</h1>
+            </section>
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Responsive Web Design</h2>
+                <p class="text-align-left">Responsive Web design is the approach that suggests that design and development should respond to the user's behavior and environment based on screen size, platform and orientation.</p>
+                <a target="_blank" href="http://alistapart.com/article/responsive-web-design">Ethan Marcotte</a>
+            </section>
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Why it is important?</h2>
+                <p class="text-align-left">"Day by day, the number of devices, platforms, and browsers that need to work with your site grows. Responsive web design represents a fundamental shift in how we'll build websites for the decade to come."</p>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>RWD components</h2>
+                <p>Responsive web design is broken down into three main components</p>
+                <ul class="small-font half-center no-list-styles">
+                    <li class="fragment roll-in"><a>Flexible layouts</a></li>
+                    <li class="fragment roll-in"><a>Media queries</a></li>
+                    <li class="fragment roll-in"><a>Flexible media</a></li>
+                </ul>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Flexible layouts</h2>
+                <p>It is the practice of building the layout of a website with a flexible grid, capable of dynamically resizing to any width. Flexible grids are built using relative length units, most commonly percentages. These relative lengths are then used to declare common grid property values such as width, margin, or padding.</p>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Formula for creating grids</h2>
+                <p>The formula is based around taking the target width of an element and dividing it by the width of it's parent element. The result is the relative width of the target element.</p>
+                <div class="half-center"><pre><code data-trim>
+target ÷ context x 100 = result %
+          </code></pre>
+                </div>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Media queries</h2>
+                <p>Media queries were built as an extension to media types commonly found when targeting and including styles. Media queries provide the ability to specify different styles for individual browser and device circumstances, the width of the viewport or device orientation for example. Being able to apply uniquely targeted styles opens up a world of opportunity and leverage to responsive web design.</p>
+            </section>
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Initializing Media Queries</h2>
+                <p>There are a couple different ways to use media queries, using the @media rule inside of an existing style sheet, importing a new style sheet using the @import rule, or by linking to a separate style sheet from within the HTML document. Generally speaking it is recommend to use the @media rule inside of an existing style sheet to avoid any additional HTTP requests.</p>
+            </section>
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Using HTML Media Attribute</h2>
+                <pre><code data-trim>
+&lt;link href="mobile.css" rel="stylesheet" media="all and (max-width: 640px)"&gt;
+&lt;link href="tablet.css" rel="stylesheet" media="all and (min-width: 641px) and (max-width: 1024px)"&gt;
+&lt;link href="desktop.css" rel="stylesheet" media="all and (min-width: 1025px)"&gt;
+          </code></pre>
+            </section>
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Using CSS @media</h2>
+                <pre><code data-trim>
+@media screen and (min-width: 320px)  {...};
+@media screen and (min-width: 640px)  {...};
+@media screen and (min-width: 1020px) {...};
+          </code></pre>
+            </section>
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>min-width vs min-device-width</h2>
+                <p class="text-align-left">It is also possible to create queries based on *-device-width; though this practice is strongly discouraged. The difference is subtle but very important: min-width is based on the size of the browser window, whereas min-device-width is based on the size of the screen. Unfortunately some browsers, including the legacy Android browser may not report the device width properly and instead report the screen size in device pixels instead of the expected viewport width.</p>
+                <p class="text-align-left">In addition, using *-device-width can prevent content from adapting on desktops or other devices that allow windows to be resized because the query is based on the actual device size, not the size of the browser window.</p>
+            </section>
+
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Some more Examples</h2>
+                <pre><code data-trim>
+@media only screen and (max-width : 320px) {...};
+@media only screen and (min-device-width : 768px){...};
+@media only screen and (orientation : landscape){...};
+@media only screen and (orientation : portrait){...};
+          </code></pre>
+          <div class="reference-link">
+                <a class="image" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries">Reference</a>
+            </div>
+            </section>
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Target retina devices</h2>
+                <pre><code data-trim>
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+  /* Retina-specific stuff here */
+
+}
+          </code></pre>
+            </section>
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Flexible Media</h2>
+                <p class="text-align-left">The final, equally important aspect to responsive web design involves flexible media. As viewports begin to change size media doesn’t always follow suit. Images, videos, and other media types need to be scalable, changing their size as the size of the viewport changes.</p>
+            </section>
+            <!-------------------------- slide ------------------------>
+            <section>
+                <h2>Flexible Media</h2>
+                <p class="text-align-left">One quick way to make media scalable is by using the max-width property with a value of 100%. Doing so ensures that as the viewport gets smaller any media will scale down according to its containers width.</p>
+                <div class="half-center"><pre><code data-trim>
+img, video, canvas {
+  max-width: 100%;
+}
+          </code></pre>
+                </div>
+            </section>
+            <!-------------------------- topic slide ------------------------>
+            <section data-state="topic-slide">
+                <h1><strong>06 </strong>Mobile First</h1>
+            </section>
+            <!-------------------------- topic slide ------------------------>
+            <section>
+                <h2>Approach</h2>
+                <p class="text-align-left">One popular technique with using media queries is called mobile first. This includes using styles targeted at smaller viewports as the default styles for a website, then use media queries to add styles as the viewport grows.</p>
+            </section>
+            <!-------------------------- topic slide ------------------------>
+            <section>
+                <h2>The operating belief</h2>
+                <p class="text-align-left">A user on a mobile device, commonly using a smaller viewport, should’t have to load the styles for a desktop computer only to have them over written with mobile styles later. Doing so is a waste of bandwidth. Bandwidth that is precious to any users looking for a snappy website.</p>
+            </section>
+            <!-------------------------- topic slide ------------------------>
+            <section data-state="topic-slide">
+                <h1><strong>07 </strong>GRACEFUL DEGRADATION</h1>
+            </section>
+            <!-------------------------- topic slide ------------------------>
+            <section>
+                <h2>Approach</h2>
+                <p class="text-align-left">Graceful degradation focuses on building the website for the most advanced/capable browsers. Under this paradigm, older browsers are expected to have a poor, but passable experience.
+                </p>
+                <p class="text-align-left"> Small fixes may be made to accommodate a particular browser. Because they are not the focus, little attention is paid beyond fixing the most egregious errors.</p>
+            </section>
+            <!-------------------------- topic slide ------------------------>
+            <section data-state="topic-slide">
+                <h1><strong>07 </strong>PROGRESSIVE ENHANCEMENT</h1>
+            </section>
+            <!-------------------------- topic slide ------------------------>
+            <section>
+                <h2>Approach</h2>
+                <p class="text-align-left">Progressive enhancement focuses on the content, irrespective of what browser it is.</p>
+                <p class="text-align-left">Content is the reason we create websites to begin with. Some sites disseminate it, some collect it, some request it, some manipulate it, and some even do all of the above, but they all require it. That's what makes progressive enhancement a more appropriate paradigm.</p>
+            </section>
+            <!-------------------------- topic slide ------------------------>
+            <section>
+                <h2>How does it work?</h2>
+                <p class="text-align-left">Getting into the progressive enhancement mindset is quite simple: just think from the content out. The content forms the solid base on which you layer your style and interactivity.</p>
+            </section>
+            <!-------------------------- topic slide ------------------------>
+            <section>
+                <h2>M&amp;M analogy</h2>
+                <img src="img/m-m.jpg">
+                <p class="text-align-left">Start with your content (peanut), marked up in semantic HTML(structure). Coat that content with a layer of rich, creamy CSS(presentation). Finally, add JavaScript(behavior) as the hard candy shell to make a wonderfully tasty treat.</p>
+            </section>
+            <!-------------------------- topic slide ------------------------>
+            <section data-state="topic-slide">
+                <h1>Q&amp;A</h1>
+            </section>
+             <!-------------------------- Thank you ------------------------>
+            <section data-state="intro">
+                <h1>Thank you</h1>
+                <audio src="../assets/media/intro.mp3" data-autoplay loop></audio>
+            </section>
+
+        </div>
+        <!--/ slides -->
+    </div>
+    <!--/ reveal -->
+    <p class="presenter">
+        <small>by <a href="mailto:dsadhanala@deloitte.com">Durga Prasad Sadhanala</a> / <a href="https://www.yammer.com/deloitte.com/users/dsadhanala">@dsadhanala</a></small>
+    </p>
+    <div class="logo-btm"></div>
+    <!-- external styles -->
+    <script src="../assets/js/libs/head.min.js"></script>
+    <script src="../assets/js/libs/reveal.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

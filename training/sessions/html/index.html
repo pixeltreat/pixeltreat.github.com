@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Fundamentals</title>
+        <meta content="Learn HTML Fundamentals" name="description">
+		<meta name="author" content="Durga Prasad Sadhanala">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="../assets/css/dd-theme.css" media="all">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <!--<script type="text/javascript">
+								document.write( '<link rel="stylesheet" href="../css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+				</script>-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-------------------------- title slide ------------------------>
+                <section data-state="intro">
+                    <h1>Front-end Fundamentals</h1>
+                    <h3>HTML</h3>
+                    <div class="icons-block">
+                        <span class="html-icon active">HTML</span>
+                        <span class="css-icon">CSS</span>
+                        <span class="js-icon">JS</span>
+                    </div>
+                </section>
+
+                <!-------------------------- topic slide 1 - Intro ------------------------>
+                <section data-state="topic-slide">
+                    <h1>
+                        <strong>01
+                        </strong>Introduction</h1>
+                </section>
+
+                <!-------------------------- content slide 1 ------------------------>
+                <section>
+                    <h2>User Interface</h2>
+                    <ul class="ui-info">
+                        <li class="fragment roll-in">
+                            <a>Structure
+                            </a>
+                            <span>- HTML</span>
+                        </li>
+                        <li class="fragment roll-in">
+                            <a>Presentation
+                            </a>
+                            <span>- CSS</span>
+                        </li>
+                        <li class="fragment roll-in">
+                            <a>Behavior
+                            </a>
+                            <span>- Java Script</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-------------------------- content slide 2 ------------------------>
+                <section>
+                    <h2>HTML versions</h2>
+                    <h3></h3>
+                    <ul class="green">
+                        <li>HTML 4.0</li>
+                        <li>XHTML 1.1</li>
+                        <li>HTML 5</li>
+                    </ul>
+                    <pre><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;
+&quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</code></pre>
+                </section>
+
+                <!-------------------------- content slide 3 ------------------------>
+                <section>
+                    <h2>DTD?</h2>
+                    <p>A DTD defines the document structure with
+                        <br>a list of legal elements and attributes.</p>
+                    <ul class="green">
+                        <li>Strict</li>
+                        <li>Transitional</li>
+                        <li>Frameset</li>
+                        <li>HTML5 version</li>
+                    </ul>
+                </section>
+
+                <!-------------------------- topic slide 4 ------------------------>
+                <section>
+                    <h2>Basic Structure</h2>
+                    <ul class="small-font green">
+                        <li>Doctype</li>
+                        <li>Head
+                            <ul>
+                                <li>title</li>
+                                <li>metadata</li>
+                                <li>external style sheets reference</li>
+                            </ul>
+                        </li>
+                        <li>body
+                            <ul>
+                                <li>page content</li>
+                                <li>footer</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-------------------------- content slide 5 ------------------------>
+                <section>
+                    <h2>Basic Structure</h2>
+                    <pre> <code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+		&lt;head&gt;
+				&lt;meta charset=&quot;utf-8&quot;&gt;
+				&lt;title&gt;Page Title&lt;/title&gt;
+				&lt;link rel="stylesheet" href="style.css"&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+				&lt;h1&gt;Site Heading&lt;/h1&gt;
+				&lt;p&gt;This is a paragraph.&lt;/p&gt;
+				&lt;footer&gt;
+						&lt;h4&gt;Footer content&lt;/h4&gt;
+				&lt;/footer&gt;
+		&lt;/body&gt;
+&lt;/html&gt;</code> </pre>
+                </section>
+
+                <!-------------------------- topic slide 2 - Intro ------------------------>
+                <section data-state="topic-slide">
+                    <h1>
+                        <strong>02
+                        </strong>Building Blocks</h1>
+                </section>
+
+                <!-------------------------- content slide 6 ------------------------>
+                <section>
+                    <h2>HTML element</h2>
+                    <p class="tag-text">Container elements:
+                        <a>start tag + content + end tag</a>
+                    </p>
+                    <pre><code>&lt;tag&nbsp;attribute=&quot;value&quot;&gt;
+				text or other elements go here
+&lt;/tag&gt;
+
+Empty elements
+
+&lt;tag /&gt;&lt;!-- technically not-valid in HTML5--&gt;
+</code> </pre>
+                </section>
+
+                <!-------------------------- content slide 7 ------------------------>
+                <section>
+                    <h2>HTML head elements</h2>
+                    <p class="text-align-left">The
+                        <a>&lt;head&gt;</a>
+                        is a container for all the head section elements. Elements inside
+                        <a>&lt;head&gt;</a>
+                        can include scripts, instruct the browser where to find style sheets, provide meta information, and more.
+                        <br>
+                    </p>
+                    <p class="text-align-left">The following tags can be added to the head section:
+                        <a>&lt;title&gt;</a>
+                        <a>&lt;style&gt;</a>
+                        <a>&lt;meta&gt;</a>
+                        <a>&lt;link&gt;</a>
+                        <a>&lt;script&gt;</a>
+                        <a>&lt;noscript&gt;</a>
+                        and
+                        <a>&lt;base&gt;</a>
+                    </p>
+                </section>
+
+                <!-------------------------- content slide 8 ------------------------>
+                <section>
+                    <h2>Headings</h2>
+                    <div class="g-row">
+                        <div class="two-col">
+                            <pre> <code>&lt;h1&gt; Heading 1 &lt;/h1&gt;
+&lt;h2&gt; Heading 2 &lt;/h2&gt;
+&lt;h3&gt; Heading 3 &lt;/h3&gt;
+&lt;h4&gt; Heading 4 &lt;/h4&gt;
+&lt;h5&gt; Heading 5 &lt;/h5&gt;
+&lt;h6&gt; Heading 6 &lt;/h6&gt;</code> </pre>
+                        </div>
+                        <div class="two-col headings">
+                            <h1>
+                                Heading 1
+                            </h1>
+                            <h2>
+                                Heading 2
+                            </h2>
+                            <h3>
+                                Heading 3
+                            </h3>
+                            <h4>
+                                Heading 4
+                            </h4>
+                            <h5>
+                                Heading 5
+                            </h5>
+                            <h6>
+                                Heading 6
+                            </h6>
+                        </div>
+                    </div>
+                </section>
+
+                <!-------------------------- content slide 9 ------------------------>
+                <section>
+                    <h2>Unordered Lists</h2>
+                    <div class="g-row">
+                        <div class="two-col">
+                            <pre><code>&lt;ul&gt;
+		&lt;li&gt;Blue&lt;/li&gt;
+		&lt;li&gt;Red&lt;/li&gt;
+		&lt;li&gt;Orange&lt;/li&gt;
+		&lt;li&gt;Green&lt;/li&gt;
+&lt;/ul&gt;</code> </pre>
+                        </div>
+                        <div class="two-col">
+                            <ul>
+                                <li>Blue</li>
+                                <li>Red</li>
+                                <li>Orange</li>
+                                <li>Green</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-------------------------- content slide 10 ------------------------>
+                <section>
+                    <h2>Ordered Lists</h2>
+                    <div class="g-row">
+                        <div class="two-col">
+                            <pre> <code>&lt;ol&gt;
+				&lt;li&gt;Twilight&lt;/li&gt;
+				&lt;li&gt;12 Angry Men&lt;/li&gt;
+				&lt;li&gt;The Notebook&lt;/li&gt;
+				&lt;li&gt;Titanic&lt;/li&gt;
+&lt;/ol&gt;</code> </pre>
+                        </div>
+                        <div class="two-col">
+                            <ol>
+                                <li>Twilight</li>
+                                <li>12 Angry Men</li>
+                                <li>The Notebook</li>
+                                <li>Titanic</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <!-------------------------- content slide 11 ------------------------>
+                <section>
+                    <h2>Definition Lists</h2>
+                    <div class="g-row">
+                        <div class="two-col">
+                            <pre> <code>&lt;dl&gt;
+		&lt;dt&gt;HTML&lt;/dt&gt;
+		&lt;dd&gt;These lists consist of one or more term and description pairs where a direct relationship exists between those items. We don't use this type of list very often.&lt;/dd&gt;
+&lt;/dl&gt;</code> </pre>
+										</div>
+										<div class="two-col no-padding">
+												<dl class="text-align-left">
+														<dt><strong>Description/Definition Lists</strong>
+														</dt>
+														<dd>These lists consist of one or more term and description pairs where a direct relationship exists between those items. We don't use this type of list very often.</dd>
+												</dl>
+										</div>
+								</div>
+						</section>
+
+						<!-------------------------- content slide 12 ------------------------>
+						<section>
+								<h2>Text formatting</h2>
+								<div class="g-row">
+										<div class="two-col">
+												<pre> <code> &lt;p&gt;Within a larger body of text, a piece in
+&lt;em&gt;italics&lt;/em&gt; does not stand out much; instead, it
+signifies a context difference only &lt;em&gt;while&lt;/em&gt; the
+text is being read. &lt;/p&gt;
+
+&lt;p&gt;By contrast, &lt;strong&gt;bold face&lt;/strong&gt; makes text
+darker than surrounding text. With this technique, the
+emphasized text strongly stands out from the rest.&lt;/p&gt;</code> </pre>
+                        </div>
+                        <div class="two-col text-align-left">
+                            <p>Within a larger body of text, a piece in
+                                <em>
+                                    <a>italics</a>
+                                </em>
+                                does not stand out much; instead, it signifies a context difference only
+                                <em>
+                                    <a>while</a>
+                                </em>
+                                the text is being read.
+                            </p>
+                            <p>By contrast,
+                                <strong>
+                                    <a>bold face</a>
+                                </strong>
+                                makes text darker than surrounding text. With this technique, the emphasized text strongly stands out from the rest.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-------------------------- content slide 13 ------------------------>
+                <section>
+                    <h2>Hyper links</h2>
+                    <p>A hyperlink (or link) is a word, group of words, or image
+                        <br>
+                        that you can click on to jump to another document.</p>
+                    <pre> <code>&lt;a href=&quot;http://www.deloittedigital.com&quot; target=&quot;_blank&quot;&gt;
+				Visit Deloitte Digital!
+&lt;/a&gt;
+
+&lt;a href=&quot;#offerings&quot;&gt;Visit the offerings Section&lt;/a&gt;
+
+&lt;a href=&quot;http://www.deloittedigital.com/offerings#offerings&quot;&gt;
+				Visit the offerings Section
+&lt;/a&gt;
+</code> </pre>
+                </section>
+
+                <!-------------------------- content slide 14 ------------------------>
+                <section>
+                    <h2>Image and Media</h2>
+                    <div class="g-row">
+                        <div class="two-col">
+                            <pre> <code>&lt;img src=&quot;../assets/img/external-images/sachin.jpg&quot; alt=&quot;Sachin Tendulkar&quot; height=&quot;490&quot; width=&quot;636&quot;&gt;</code> </pre>
+                        </div>
+                        <div class="two-col no-padding">
+                            <img alt="Sachin Tendulkar" class="img-polaroid" height="245" src="../assets/img/external-images/sachin.jpg">
+                        </div>
+                    </div>
+                </section>
+
+                <!-------------------------- content slide 15 ------------------------>
+                <section>
+                    <h2>Tables</h2>
+                    <div class="g-row">
+                        <div class="two-col">
+                            <pre> <code>&lt;table width=&quot;100%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tr&gt;
+		&lt;th scope=&quot;col&quot;&gt;Column1&lt;/th&gt;
+		&lt;th scope=&quot;col&quot;&gt;Column2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+		&lt;td&gt;Row1 - Column1&lt;/td&gt;
+		&lt;td&gt;Row1 - Column2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+		&lt;td&gt;Row2 - Column1&lt;/td&gt;
+		&lt;td&gt;Row2 - Column2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</code> </pre>
+                        </div>
+                        <div class="two-col">
+                            <table border="0" cellpadding="0" cellspacing="0" class="table" width="100%">
+                                <tr>
+                                    <th scope="col">Column1</th>
+                                    <th scope="col">Column2</th>
+                                </tr>
+                                <tr>
+                                    <td>Row1 - Column1</td>
+                                    <td>Row1 - Column2</td>
+                                </tr>
+                                <tr>
+                                    <td>Row2 - Column1</td>
+                                    <td>Row2 - Column2</td>
+                                </tr>
+                            </table>
+                            <blockquote class="bq drop-shadow lifted ">Even though it is possible to create nice layouts with HTML tables, tables were designed for presenting tabular data - NOT as a layout tool!</blockquote>
+                        </div>
+                    </div>
+                </section>
+
+                <!-------------------------- content slide 16 ------------------------>
+                <section>
+                    <h2>Block Elements</h2>
+                    <p class="text-align-left">Block level elements normally start (and end) with a new line when displayed in a browser. Ex:
+                        <a>&lt;h1&gt;</a>
+                        <a>&lt;p&gt;</a>
+                        <a>&lt;ul&gt;</a>
+                        <a>&lt;table&gt;</a>
+                    </p>
+                    <br>
+                    <p class="text-align-left">Common use of the
+                        <a>&lt;div&gt;</a>
+                        element, is for document layout. It replaces the "old way" of defining layout using tables.</p>
+                </section>
+
+                <!-------------------------- content slide 17 ------------------------>
+                <section>
+                    <h2>Inline Elements</h2>
+                    <p class="text-align-left">Inline elements are normally displayed without starting a new line. Ex:
+                        <a>&lt;b&gt;</a>
+                        <a>&lt;span&gt;</a>
+                        <a>&lt;a&gt;</a>
+                        <a>&lt;img&gt;</a>
+                    </p>
+                    <p class="text-align-left">The HTML
+                        <a>&lt;span&gt;</a>
+                        element is an inline element that can be used as a container for text.</p>
+                </section>
+                <!-------------------------- content slide 18 ------------------------>
+                <section>
+                    <h2>HTML Forms</h2>
+                    <p class="text-align-left">HTML forms are used to pass data to a server. An HTML form can contain input elements like
+                        <a>text fields</a>
+                        <a>checkboxes</a>
+                        <a>radio-buttons</a>
+                        <a>submit buttons</a>
+                        and more. A form can also contain
+                        <a>select lists</a>
+                        <a>textarea</a>
+                        <a>fieldset</a>
+                        <a>legend</a>
+                        and
+                        <a>label</a>
+                        elements.</p>
+                </section>
+
+                <!-------------------------- content slide 19 ------------------------>
+                <section>
+                    <h2>Form Markup</h2>
+                    <pre><code>&lt;form action=&quot;#&quot; method=&quot;get&quot; enctype=&quot;application/x-www-form-urlencoded&quot; name=&quot;form&quot; class=&quot;form&quot;&gt;
+&lt;fieldset&gt;
+				&lt;legend&gt;Form elements:&lt;/legend&gt;
+				&lt;p&gt;
+								&lt;label class=&quot;lbl-inp flot-left&quot;&gt;Name: &lt;input type=&quot;text&quot; name=&quot;firstname&quot;&gt;&lt;/label&gt;
+								&lt;label class=&quot;lbl-inp flot-right&quot;&gt;Password: &lt;input type=&quot;password&quot; name=&quot;lastname&quot;&gt;&lt;/label&gt;
+				&lt;/p&gt;
+				&lt;p&gt;
+								&lt;label class=&quot;lbl-inp&quot;&gt;&lt;input type=&quot;checkbox&quot;&gt; Check box&lt;/label&gt;
+								&lt;label class=&quot;lbl-inp&quot;&gt;&lt;input type=&quot;radio&quot;&gt; Check box&lt;/label&gt;
+				&lt;/p&gt;
+				&lt;p class=&quot;cfx&quot;&gt;
+								&lt;label class=&quot;lbl-inp flot-left&quot;&gt;
+												&lt;select class=&quot;select&quot;&gt;
+																&lt;option&gt;Select&lt;/option&gt;
+																&lt;option&gt;Select&lt;/option&gt;
+																&lt;option&gt;Select&lt;/option&gt;
+												&lt;/select&gt;
+								&lt;/label&gt;
+								&lt;label class=&quot;lbl-inp flot-right&quot;&gt;
+												&lt;select class=&quot;select&quot;&gt;
+														&lt;option&gt;Select from Group&lt;/option&gt;
+														&lt;optgroup label=&quot;Swedish Cars&quot;&gt;
+																&lt;option value=&quot;volvo&quot;&gt;Volvo&lt;/option&gt;
+																&lt;option value=&quot;saab&quot;&gt;Saab&lt;/option&gt;
+														&lt;/optgroup&gt;
+														&lt;optgroup label=&quot;German Cars&quot;&gt;
+																&lt;option value=&quot;mercedes&quot;&gt;Mercedes&lt;/option&gt;
+																&lt;option value=&quot;audi&quot;&gt;Audi&lt;/option&gt;
+														&lt;/optgroup&gt;
+												&lt;/select&gt;
+								&lt;/label&gt;
+				&lt;/p&gt;
+				&lt;p class=&quot;g-row&quot;&gt;
+								&lt;textarea class=&quot;full-col&quot; rows=&quot;4&quot; cols=&quot;50&quot; placeholder=&quot;Please add your message...&quot;&gt;&lt;/textarea&gt;
+				&lt;/p&gt;
+				&lt;p class=&quot;g-row&quot;&gt;
+								&lt;button class=&quot;one-col btn&quot;&gt;Button text&lt;/button&gt;
+								&lt;input type=&quot;button&quot; class=&quot;one-col btn&quot; value=&quot;Input Button&quot;&gt;
+								&lt;button class=&quot;one-col btn&quot; type=&quot;reset&quot;&gt;Reset Button&lt;/button&gt;
+								&lt;button class=&quot;one-col btn&quot; type=&quot;submit&quot;&gt;Submit Button&lt;/button&gt;
+				&lt;/p&gt;
+&lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+                </section>
+
+                <!-------------------------- content slide 20 ------------------------>
+                <section>
+                    <h2>Form View</h2>
+                    <form action="#" class="form" enctype="application/x-www-form-urlencoded" method="get" name="form">
+                        <fieldset>
+                            <legend>Form elements:</legend>
+                            <p>
+                                <label class="lbl-inp flot-left">Name:
+                                    <input name="firstname" type="text">
+                                </label>
+                                <label class="lbl-inp flot-right">Password:
+                                    <input name="lastname" type="password">
+                                </label>
+                            </p>
+                            <p>
+                                <label class="lbl-inp">
+                                    <input type="checkbox">
+                                    Check box</label>
+                                <label class="lbl-inp">
+                                    <input type="radio">
+                                    Check box</label>
+                            </p>
+                            <p class="cfx">
+                                <label class="lbl-inp flot-left">
+                                    <select class="select">
+                                        <option>Select</option>
+                                        <option>Select</option>
+                                        <option>Select</option>
+                                    </select>
+                                </label>
+                                <label class="lbl-inp flot-right">
+                                    <select class="select">
+                                        <option>Select from Group</option>
+                                        <optgroup label="Swedish Cars">
+                                            <option value="volvo">Volvo</option>
+                                            <option value="saab">Saab</option>
+                                        </optgroup>
+                                        <optgroup label="German Cars">
+                                            <option value="mercedes">Mercedes</option>
+                                            <option value="audi">Audi</option>
+                                        </optgroup>
+                                    </select>
+                                </label>
+                            </p>
+                            <p class="g-row">
+                                <textarea class="full-col" cols="50" placeholder="Please add your message..." rows="4"></textarea>
+                            </p>
+                            <p class="g-row">
+                                <button class="one-col btn">Button text</button>
+                                <input class="one-col btn" type="button" value="Input Button">
+                                <button class="one-col btn" type="reset">Reset Button</button>
+                                <button class="one-col btn" type="submit">Submit Button</button>
+                            </p>
+                        </fieldset>
+                    </form>
+                </section>
+
+                <!-------------------------- topic slide 3 - HTML/HTML5 ------------------------>
+                <section data-state="topic-slide">
+                    <h1>
+                        <strong>03
+                        </strong>HTML 5</h1>
+                </section>
+                <!-------------------------- content slide 21 ------------------------>
+                <section>
+                    <h2>Overview</h2>
+                    <p class="text-align-left">
+                        - Of course, we utilize a new DTD,
+                        <code>&lt;!DOCTYPE html&gt;</code>
+                    </p>
+                    <p class="text-align-left">
+                        - Other larger features of the spec include
+                        <a>canvas</a>,
+                        <a>video capabilities</a>,
+                        <a>geolocation</a>,
+                        <a>local storage</a>,
+                        <a>advanced forms</a>,and more.
+                    </p>
+                    <blockquote class="bq drop-shadow lifted">Older browsers without HTML5 support will usually simply ignore these features with no errors. A handy website to reference is
+                        <a href="http://caniuse.com" target="_blank">http://caniuse.com</a>, where you can search for HTML5 features and find which browsers support them.</blockquote>
+                </section>
+
+                <!-------------------------- content slide 22 ------------------------>
+                <section>
+                    <h2>HTML5 Form Source Code</h2>
+                    <div class="g-row">
+                        <div class="full-col">
+                            <pre> <code>&lt;form action="#" class="form"&gt;
+	&lt;input type="text" placeholder="Name..." autofocus&gt;
+	&lt;input type="email" placeholder="Email Address"&gt;
+	&lt;input type="url" placeholder="url"&gt;&lt;br&gt;
+	&lt;input type="number" min="0" max="10" step="2" value="6"&gt;
+	&lt;input type="range" min="0" max="10" step="2" value="6"&gt;
+	&lt;input type="date"&gt;
+	&lt;input type="color"&gt;
+&lt;/form&gt;</code> </pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-------------------------- content slide 23 ------------------------>
+                <section>
+                    <h2>HTML5 Form Output</h2>
+                    <div class="g-row">
+                        <form action="#" class="form full-col">
+                            <fieldset>
+                                <legend>Output:</legend>
+                                <!-- <input type="text" placeholder="Name" autofocus /> -->
+                                <!--"autofocus" breaks slideshow-->
+                                <input placeholder="Email Address" type="email"/>
+                                <input placeholder="url" type="url"/>
+                                <br/>
+                                <input max="10" min="0" step="2" type="number" value="6"/>
+                                <br/>
+                                <input max="10" min="0" step="2" type="range" value="6"/>
+                                <br/>
+                                <input type="date"/>
+                                <br/>
+                                <input type="color"/>
+                            </fieldset>
+                        </form>
+                    </div>
+                </section>
+
+                <!-------------------------- content slide 24 ------------------------>
+                <section>
+                    <h2>More Examples...</h2>
+                    <a href="http://html5demos.com/" target="_blank">html4demos.com</a>
+                </section>
+
+                <!-------------------------- content slide 25 ------------------------>
+                <section>
+                    <h3>Sources</h3>
+                    <p>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">https://developer.mozilla.org/en-US/docs/Web/HTML/Element</a>
+                        <a href="http://www.w3schools.com/htmL/html5_new_elements.asp">http://www.w3schools.com/htmL/html5_new_elements.asp</a>
+                        <a href="http://www.html5rocks.com/en/tutorials/speed/quick/">http://www.html5rocks.com/en/tutorials/speed/quick/</a>
+                        <a href="http://diveintohtml5.info/forms.html">http://diveintohtml5.info/forms.html</a>
+                        <a href=" http://www.williammalone.com/articles/html5-canvas-example/">
+                            http://www.williammalone.com/articles/html5-canvas-example/</a>
+                        <a href="http://html5doctor.com/avoiding-common-html5-mistakes/">http://html5doctor.com/avoiding-common-html5-mistakes/</a>
+                    </p>
+                </section>
+
+                <!-------------------------- Thank you ------------------------>
+                <section data-state="intro">
+                    <h1>Thank you</h1>
+                    <br>
+                    <br>
+                    <!-- <audio src="../assets/media/intro.mp3" data-autoplay loop></audio> -->
+                </section>
+
+            </div>
+            <!--/ slides -->
+        </div>
+		<!--/ reveal -->
+		<p class="presenter">
+			<small>by <a href="mailto:prasad@pixeltreat.com">Durga Prasad Sadhanala</a> / <a href="https://twitter.com/dsadhanala">@dsadhanala</a></small>
+		</p>
+		
+        <!-- external styles -->
+        <script src="../assets/js/libs/head.min.js"></script>
+        <script src="../assets/js/libs/reveal.js"></script>
+        <script src="../assets/js/main.js"></script>
+    </body>
+
+</html>
