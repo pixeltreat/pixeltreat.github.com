@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Basics</title>
+        <meta name="author" content="Durga Prasad Sadhanala">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="../assets/css/dd-theme.css" media="all">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-- title slide -->
+                <section data-state="intro">
+                    <h1>Front-end Fundamentals</h1>
+                    <h3>jQuery Basics</h3>
+                    <div class="icons-block">
+                        <span class="html-icon">HTML</span><span class="css-icon">CSS</span><span class="js-icon active">JS</span>
+                    </div>
+                </section>
+                <!-- topic slide -->
+                <section data-state="topic-slide">
+                    <h1><strong>01 </strong>jQuery</h1>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>Intro to jQuery</h2>
+                    <ul class="small-font">
+                        <li class="fragment roll-in">jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript. - From <a href="http://jquery.com/">http://jquery.com/</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Outline</h2>
+                    <ul class="small-font">
+                        <li class="fragment roll-in">Using jQuery</li>
+                        <li class="fragment roll-in">Selectors</li>
+                        <li class="fragment roll-in">Event Handling</li>
+                        <li class="fragment roll-in">Effects</li>
+                        <li class="fragment roll-in">Ajax</a></li>
+                        <li class="fragment roll-in">Code Integration</a></li>
+                        <li class="fragment roll-in">Plugins</a></li>
+                    </ul>
+                </section>
+                <!-- topic slide -->
+                <section data-state="topic-slide">
+                    <h1><strong>02 </strong>Using jQuery</h1>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>Using jQuery</h2>
+                    <ul class="small-font">
+                        <li class="fragment roll-in">Download jQuery from <a href="http://www.jquery.com">http://jquery.com/</a></li>
+                        <li class="fragment roll-in">Visit <a href="https://code.jquery.com/">https://code.jquery.com/</a> and leverage the CDN.</li>
+                        <li class="fragment roll-in">
+                                Include a reference to jQuery:<br>
+                        		<code data-trim="" class="css">
+			                        <span class="rule"><</span><span class="rule">script type="text/javascript" language="javascript" src="../path/to/jquery-1.11.2.min.js"</span><span class="rule">></span>
+								</code>
+						</li>
+                    </ul>
+                </section>
+                <section data-state="topic-slide">
+                    <h1><strong>03 </strong>Selectors</h1>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>Selector Basics</h2>
+                    <ul class="bold-highlight">
+                        <li class="fragment roll-in">jQuery selectors allow you to select and manipulate HTML element(s). jQuery selectors are used to "find" (or select) HTML elements based on their id, classes, types, attributes, values of attributes and much more. It's based on the existing CSS Selectors, and in addition, it has some own custom selectors. -From <a href="http://www.w3schools.com/jquery/jquery_selectors.asp">w3schools.com</a></li>
+                    </ul>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>Examples</h2>
+                    <ul class="small-font">
+                        <li class="fragment roll-in">
+                            <b>The ID Selector</b><br>
+                            <code data-trim="" class="css">
+                                <span class="rule">$(document).ready(function(){ <br>
+                                    &nbsp;&nbsp;$("button").click(function(){<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;$("<b>#test</b>").hide();<br>
+                                    &nbsp;&nbsp;});<br>
+                                });</span>
+                            </code>
+                        </li>
+                        <li class="fragment roll-in">
+                            <b>The Class Selector</b><br>
+                            <code data-trim="" class="css">
+                                <span class="rule">$(document).ready(function(){ <br>
+                                    &nbsp;&nbsp;$("button").click(function(){<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;$("<b>.test</b>").hide();<br>
+                                    &nbsp;&nbsp;});<br>
+                                });</span>
+                            </code>
+                        </li>
+                    </ul>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>More Selectors</h2>
+                    <ul class="small-font">
+                        <li class="fragment roll-in">:first - $("p:first") - The first p element</li>
+                        <li class="fragment roll-in">:last - $("p:last") - The last p element</li>
+                        <li class="fragment roll-in">:even - $("tr:even") - All even tr elements</li>
+                        <li class="fragment roll-in">:odd - $("p:odd") - All odd tr elements</li>
+                        <li class="fragment roll-in"><a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp">See them all</a></li>
+                    </ul>
+                </section>
+                <!-- topic slide -->
+                <section data-state="topic-slide">
+                    <h1><strong>04 </strong>Events</h1>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>Event Basics</h2>
+                    <ul class="bold-highlight">
+                        <li class="fragment roll-in">jQuery makes it straightforward to set up event-driven responses on page elements. These events are often triggered by the end user's interaction with the page, such as when text is entered into a form element or the mouse pointer is moved. In some cases, such as the page load and unload events, the browser itself will trigger the event.</li>
+                        <li class="fragment roll-in">jQuery offers convenience methods for most native browser events. These methods — including .click(), .focus(), .blur(), .change(), etc. — are shorthand for jQuery's .on() method.</li>
+                    </ul>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>Example</h2>
+                    <ul class="bold-highlight">
+                        <li class="fragment roll-in">
+                            <b>Using the .click() convenience method</b><br>
+                            <code data-trim="" class="css">
+                                <span class="rule">$( "p" ).click(function() { <br>
+                                    &nbsp;&nbsp;console.log( "You clicked a paragraph!" );<br>
+                                    &nbsp;&nbsp;});<br>
+                                });</span>
+                            </code>
+                        </li>
+                    </ul>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>Handling Events</h2>
+                    <ul class="bold-highlight">
+                        <li class="fragment roll-in">
+                           jQuery provides a method .on() to respond to any event on the selected elements. This is called an event binding.
+                        </li>
+                        <li class="fragment roll-in">The .on() method provides several useful features:<br>
+                            <ul>
+                            <li class="fragment roll-in">Use details about the event in the event handler</li>
+                            <li class="fragment roll-in">Pass data to the event handler for custom events</li>
+                            <li class="fragment roll-in">Bind events to elements that will be rendered in the future</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- topic slide -->
+                <section data-state="topic-slide">
+                    <h1><strong>05 </strong>Effects</h1>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>Effects Basics</h2>
+                    <ul class="bold-highlight">
+                        <li class="fragment roll-in">
+                        jQuery makes it trivial to add simple effects to your page. Effects can use the built-in settings, or provide a customized duration. You can also create custom animations of arbitrary CSS properties.
+                        </li>
+                        <li class="fragment roll-in">Showing and Hiding Content with <a href="" class="roll">show()</a> and <a href="" class="roll">hide()</a></li>
+                        <li class="fragment roll-in">Fade and Slide Animations with <a href="" class="roll">fadeIn()</a>, <a href="" class="roll">fadeOut()</a>, <a href="" class="roll">slideIn()</a>, and <a href="" class="roll">slideOut()</a></li>
+                        <li class="fragment roll-in">Changing Display Based on Current Visibility State with <a href="" class="roll">toggle()</a></li>
+                    </ul>
+                </section>
+
+                <!-- topic slide -->
+                <section data-state="topic-slide">
+                    <h1><strong>06 </strong>AJAX</h1>
+                </section>
+
+                <!-- slide -->
+                <section>
+                    <h2>jQuery Ajax Basics</h2>
+                    <ul class="bold-highlight">
+                        <li class="fragment roll-in">
+                            jQuery’s core $.ajax() method is a powerful and straightforward way of creating Ajax requests. It takes a configuration object that contains all the instructions jQuery requires to complete the request. The $.ajax() method is particularly valuable because it offers the ability to specify both success and failure callbacks. Also, its ability to take a configuration object that can be defined separately makes it easier to write reusable code. For complete documentation of the configuration options, visit <a href="http://api.jquery.com/jQuery.ajax/">http://api.jquery.com/jQuery.ajax/</a>.
+                        </li>
+                        <li class="fragment roll-in">
+                            <a href="http://www.sitepoint.com/use-jquerys-ajax-function/">http://www.sitepoint.com/use-jquerys-ajax-function/</a>
+                        </li>
+                    </ul>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>Ajax Convenience Methods</h2>
+                    <ul class="bold-highlight">
+                        <li class="fragment roll-in">$.get - Perform a GET request to the provided URL.</li>
+                        <li class="fragment roll-in">$.post - Perform a POST request to the provided URL.</li>
+                        <li class="fragment roll-in">$.getScript - Add a script to the page.</li>
+                        <li class="fragment roll-in">$.getJSON - Perform a GET request, and expect JSON to be returned.</li>
+                    </ul>
+                </section>
+
+                <!-- topic slide -->
+                <section data-state="topic-slide">
+                    <h1><strong>07 </strong>Code Organization</h1>
+                </section>
+
+                <!-- slide -->
+                <section>
+                    <h2>jQuery Code Organization Basics</h2>
+                    <ul class="bold-highlight">
+                        <li class="fragment roll-in">Encapsulation - Your code should be divided into units of functionality — modules, services, etc. Avoid the temptation to have all of your code in one huge $( document ).ready() block.
+                        </li>
+                        <li class="fragment roll-in">DRY Principle - Don't repeat yourself. Identify similarities among pieces of functionality, and use inheritance techniques to avoid repetitive code.</li>
+                        <li class="fragment roll-in">Loose Coupling - Units of functionality should be loosely coupled</li>
+                        <li class="fragment roll-in">For more, visit <a href="http://learn.jquery.com/code-organization/concepts/">http://learn.jquery.com/code-organization/concepts/</a></li>
+                    </ul>
+                </section>
+
+                <!-- topic slide -->
+                <section data-state="topic-slide">
+                    <h1><strong>08 </strong>Plugins</h1>
+                </section>
+
+                <!-- slide -->
+                <section>
+                    <h2>jQuery Plugins</h2>
+                    <ul class="bold-highlight">
+                        <li class="fragment roll-in">A jQuery plugin is simply a new method that we use to extend jQuery's prototype object. By extending the prototype object you enable all jQuery objects to inherit any methods that you add. As established, whenever you call jQuery() you're creating a new jQuery object, with all of jQuery's methods inherited.
+                        </li>
+                        <li class="fragment roll-in">The idea of a plugin is to do something with a collection of elements. You could consider each method that comes with the jQuery core a plugin, like .fadeOut() or .addClass().</li>
+                        <li class="fragment roll-in">You can make your own plugins and use them privately in your code or you can release them into the wild. There are thousands of jQuery plugins available online. The barrier to creating a plugin of your own is so low that you'll want to do it straight away!</li>
+                    </ul>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>Finding Plugins</h2>
+                    <ul class="bold-highlight">
+                        <li class="fragment roll-in">The easiest way to find plugins is to search Google or the jQuery Plugins Registry at <a href="http://plugins.jquery.com/">http://plugins.jquery.com/</a>
+                        </li>
+                    </ul>
+                </section>
+                <!-- slide -->
+                <section>
+                    <h2>Form Validation with a jQuery Plugin</h2>
+                     <ul class="bold-highlight">
+                         <li class="fragment roll-in">jQuery Form Validator is a feature rich jQuery plugin that makes it easy to validate user input while keeping your HTML markup clean from javascript code. Even though this plugin has a wide range of validation functions it's designed to require as little  jQuery bandwidth as possible. </li>
+                        <li class="fragment roll-in"><a href="http://formvalidator.net/">http://formvalidator.net/</a></li>
+                    </ul>
+                </section>
+                <!-- slide -->
+
+                <section data-state="topic-slide">
+                    <h1><strong>09 </strong>Conclusion</h1>
+                </section>
+
+                <section>
+                    <h2>jQuery Resources</h2>
+                    <ul class="no-list-styles small-font">
+                        <li class="fragment roll-in"><a href="http://jquery.com/">Visit jQuery.com</a></li>
+                        <li class="fragment roll-in"><a href="http://www.fromdev.com/2012/07/best-jquery-books.html.html">A few good books</a></li>
+                        <li class="fragment roll-in"><a target="_blank" href="http://www.bypeople.com/jquery-blogs/">Blogs to follow</a></li>
+                    </ul>
+                </section>
+
+
+                <!-- Thank you -->
+                <section data-state="intro">
+                    <h1>Thank you</h1>
+                </section>
+            </div>
+            <!--/ slides -->
+        </div>
+        <!--/ reveal -->
+        <p class="presenter">
+			<small>by <a href="mailto:prasad@pixeltreat.com">Durga Prasad Sadhanala</a> / <a href="https://twitter.com/dsadhanala">@dsadhanala</a></small>
+		</p>
+        <div class="logo-btm"></div>
+        <!-- external styles -->
+        <script src="../assets/js/libs/head.min.js"></script>
+        <script src="../assets/js/libs/reveal.js"></script>
+        <script src="../assets/js/main.js"></script>
+    </body>
+</html>
