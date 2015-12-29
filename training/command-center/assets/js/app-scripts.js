@@ -57,7 +57,7 @@
 	
 	// all components
 	__webpack_require__(1);
-	__webpack_require__(3);
+	__webpack_require__(4);
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
@@ -69,6 +69,7 @@
 	
 	// global components
 	__webpack_require__(2);
+	__webpack_require__(3);
 
 
 /***/ },
@@ -118,12 +119,69 @@
 
 /***/ },
 /* 3 */
+/***/ function(module, exports) {
+
+	/* =============================================================================
+	   components/global/navigation
+	   ========================================================================== */
+	
+	'use strict';
+	
+	var ns         = baseUI;
+	var $          = baseJQ;
+	ns.navigation  = ns.navigation || {};
+	var navigation = ns.navigation;
+	var element;
+	
+	var elementStyleReference = "page-navigation";
+	var $mobileMenuBtn;
+	
+	navigation.attach = function (instance) {
+	    //console.log('navigation is attached');
+	    element = instance;
+	    initialize();
+	};
+	
+	navigation.detach = function () {
+	    dispose();
+	};
+	
+	function initialize() {
+	    $mobileMenuBtn = $(element).find('.'+ elementStyleReference +'__mobile-menu');
+	
+	    // add events
+	    addEvents();
+	}
+	
+	function addEvents() {
+	    $mobileMenuBtn.on('click', mobileMenuToggle);
+	}
+	
+	function mobileMenuToggle (e) {
+	    var rootElement = document.documentElement;
+	
+	    $(rootElement).toggleClass('has-menu-visible');
+	}
+	
+	function dispose() {
+	    element.parentNode.removeChild(element);
+	    delete ns.navigation;
+	    element = null;
+	
+	    // remove event listeners below, example commented
+	    $mobileMenuBtn.off('click', mobileMenuToggle);
+	    //console.log("navigation detached");
+	}
+
+
+/***/ },
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* =============================================================================
 	   assets/js/global/initialize-modules.js
 	   ========================================================================== */
-	var domUtils   = __webpack_require__(4);
+	var domUtils   = __webpack_require__(5);
 	var ns         = baseUI;
 	
 	function initializeModules() {
@@ -152,7 +210,7 @@
 
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/**

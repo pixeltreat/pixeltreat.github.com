@@ -48,8 +48,28 @@
                     <a href="index.html"><img class="page-header__logo__img" src="./assets/img/app-logo.png" alt=""></a>
                 </h1>
                 <div class="page-header__right-section">
-                    <button>Menu</button>
-                </div>
+                    <nav class="page-navigation" data-uimodule="navigation">
+                        <button class="page-navigation__mobile-menu">
+                            <span class="page-navigation__mobile-menu__icon" aria-hidden="true"></span>
+                            <span class="page-navigation__mobile-menu__text">Menu</span>
+                        </button>
+                        <ol class="page-navigation__ol">
+                            <li class="page-navigation__ol__li">
+                                <span class="page-navigation__ol__li__user-icon"></span>
+                                <div class="page-navigation__ol__li__user-text">
+                                    <span class="page-navigation__ol__li__greeting-text">Welcome!</span>
+                                    <span class="page-navigation__ol__li__username">Ravi Potturi</span>
+                                </div>
+                    
+                            </li>
+                            <li class="page-navigation__ol__li">
+                                <a href="#" class="page-navigation__ol__li__logout">
+                                    <span class="page-navigation__ol__li__logout__icon"></span>
+                                    <span class="page-navigation__ol__li__logout__text">Logout</span>
+                                </a>
+                            </li>
+                        </ol>
+                    </nav>        </div>
             </div>
         </header>
         <!-- main -->
@@ -165,7 +185,7 @@
               <article class="info-card">
                   <div class="info-card__header">
                       <h3 class="info-card__header__title">Medical Surgical</h3>
-                      <span class="f-icon f-icon__lock info-card__header__icon">
+                      <span class="f-icon f-icon__medical-surgical info-card__header__icon">
               
                       </span>
                   </div>
