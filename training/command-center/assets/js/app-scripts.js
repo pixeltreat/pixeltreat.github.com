@@ -57,7 +57,7 @@
 	
 	// all components
 	__webpack_require__(1);
-	__webpack_require__(4);
+	__webpack_require__(3);
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
@@ -69,56 +69,10 @@
 	
 	// global components
 	__webpack_require__(2);
-	__webpack_require__(3);
 
 
 /***/ },
 /* 2 */
-/***/ function(module, exports) {
-
-	/* =============================================================================
-	   components/global/header
-	   ========================================================================== */
-	
-	'use strict';
-	
-	var ns     = baseUI;
-	ns.header  = ns.header || {};
-	var header = ns.header;
-	var element;
-	
-	header.attach = function (instance) {
-	    element = instance;
-	    initialize();
-	};
-	
-	header.detach = function () {
-	    dispose();
-	};
-	
-	function initialize() {
-	    console.log("header attached");
-	
-	    addEvents();
-	}
-	
-	function addEvents() {
-	    //element.on('click', callback);
-	}
-	
-	function dispose() {
-	    element.parentNode.removeChild(element);
-	    delete ns.header;
-	    element = null;
-	
-	    // remove event listeners below, example commented
-	    //element.off('click', callback);
-	    console.log("header detached");
-	}
-
-
-/***/ },
-/* 3 */
 /***/ function(module, exports) {
 
 	/* =============================================================================
@@ -175,13 +129,13 @@
 
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* =============================================================================
 	   assets/js/global/initialize-modules.js
 	   ========================================================================== */
-	var domUtils   = __webpack_require__(5);
+	var domUtils   = __webpack_require__(4);
 	var ns         = baseUI;
 	
 	function initializeModules() {
@@ -210,7 +164,7 @@
 
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports) {
 
 	/**

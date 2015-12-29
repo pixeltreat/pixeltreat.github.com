@@ -555,7 +555,7 @@ th {
   margin: 0;
   padding: 0; }
 
-.page-navigation__ol__li, .page-navigation__ol__li__user-icon, .page-navigation__ol__li__user-text, .page-navigation__ol__li__logout__icon, .page-navigation__ol__li__logout__text {
+.page-navigation__ol__li__user-icon, .page-navigation__ol__li__user-text, .page-navigation__ol__li__logout__icon, .page-navigation__ol__li__logout__text {
   display: inline-block;
   vertical-align: middle; }
 
@@ -814,6 +814,10 @@ h1 {
 
 .page-navigation__ol__li {
   text-align: left; }
+  @media only screen and (min-width: 60.063em) {
+    .page-navigation__ol__li {
+      display: inline-block;
+      vertical-align: middle; } }
   .page-navigation__ol__li__user-icon {
     font-size: 3.5rem;
     color: #069; }
