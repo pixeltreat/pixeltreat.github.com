@@ -800,13 +800,28 @@ h1 {
   background-color: #f9f9f9;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   padding: 10px 15px 15px;
-  display: none;
-  z-index: 9; }
+  z-index: 9;
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  visibility: hidden; }
   .has-menu-visible .page-navigation__ol {
-    display: block; }
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+    visibility: visible; }
   @media only screen and (min-width: 60.063em) {
     .page-navigation__ol {
-      display: block;
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+      visibility: visible;
       position: static;
       box-shadow: 0 0 0;
       background-color: transparent;
