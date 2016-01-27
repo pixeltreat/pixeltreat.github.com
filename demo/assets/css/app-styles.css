@@ -5,6 +5,7 @@
 * using gulp/grunt/webpack/jspm, etc. for demo keep it simple
 */
 
+
 /* normalize for cross browses */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css');
 
@@ -16,18 +17,20 @@
 @import url('site-nav.css');
 @import url('login-modal.css');
 
-
 /****************************************
     layout
 ****************************************/
+
 :root {
-	-webkit-text-size-adjust: none;
-	    -ms-text-size-adjust: none;
-	        text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
 }
-html{
+
+html {
     box-sizing: border-box;
     font-size: 10px;
+
     text-rendering: optimizeLegibility;
 }
 
@@ -38,44 +41,52 @@ html{
 }
 
 img,
-video{
+video {
     max-width: 100%;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
 body {
-	font: normal normal 1.4rem / 1.6 "Open Sans", Helvetica, Arial, sans-serif;;
-	color: #333;
+    color: #333;
+    font: normal normal 1.4rem / 1.6 "Open Sans", Helvetica, Arial, sans-serif;
+    ;
 }
 
-.page-wrap{
-    width: 100%;
+.page-wrap {
     min-width: 320px;
+    width: 100%;
 }
 
-.wrapper{
-	padding: 0 30px;
-    max-width: 1190px;
+.wrapper {
     margin: 0 auto;
+    padding: 0 30px;
+    max-width: 1190px;
 }
+
 
 /****************************************
     page header
 ****************************************/
+
 .page-header {
-    padding: 15px 0 0;
-    background-color: #2c5694;
     position: relative;
     z-index: 10;
+    padding: 15px 0 0;
+    background-color: #2c5694;
 }
 
 .page-logo {
     -webkit-flex-basis: 20%;
-        -ms-flex-preferred-size: 20%;
-            flex-basis: 20%;
+    -ms-flex-preferred-size: 20%;
+    flex-basis: 20%;
 }
 
 .page-logo__link {
@@ -83,9 +94,11 @@ body {
     padding-bottom: 10px;
 }
 
+
 /****************************************
     page content section
 ****************************************/
+
 .hero-banner__img {
     display: inherit;
 }
@@ -97,4 +110,3 @@ body {
 .features-section {
     padding: 40px 0;
 }
-
