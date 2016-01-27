@@ -1,0 +1,79 @@
+/****************************************
+    site nav
+****************************************/
+.site-nav {
+    -webkit-flex-basis: 80%;
+        -ms-flex-preferred-size: 80%;
+            flex-basis: 80%;
+    -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
+    -webkit-box-pack: end;
+    padding-bottom: 12px;
+    position: relative;
+}
+
+.site-nav__ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.site-nav__ol__li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.site-nav__ol__li__a{
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+.site-nav__ol__li__a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    background-color: #1ba0d7;
+    height: 2px;
+    width: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -webkit-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.site-nav__ol__li__a:hover::after,
+.site-nav__ol__li__a:focus::after {
+    width: 100%;
+}
+
+.site-nav__ol__li__a:visited {
+    color: #fff;
+}
+
+.site-nav__ol__li__login-btn {
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    outline: 0;
+    padding: 8px 15px 8px;
+    -webkit-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+    position: relative;
+}
+
+.site-nav__ol__li__login-btn:hover,
+.site-nav__ol__li__login-btn.is-active {
+    background-color: #1ba0d7;
+}
+
+.site-nav__ol__li__login-btn:active,
+.site-nav__ol__li__login-btn.is-active {
+    padding-bottom: 20px;
+    margin-bottom: -12px;
+}

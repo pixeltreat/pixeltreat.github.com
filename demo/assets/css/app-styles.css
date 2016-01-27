@@ -1,0 +1,100 @@
+/*
+* css modules loded from import to keep HTML mark up clean
+* generally @import prevents parallel downloads
+* so ideally it will be concatinated in a build process
+* using gulp/grunt/webpack/jspm, etc. for demo keep it simple
+*/
+
+/* normalize for cross browses */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css');
+
+/* google open sans font*/
+@import url('https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans');
+
+/* I generally work on small modules, which will be later compiled to one file */
+@import url('flex-grid.css');
+@import url('site-nav.css');
+@import url('login-modal.css');
+
+
+/****************************************
+    layout
+****************************************/
+:root {
+	-webkit-text-size-adjust: none;
+	    -ms-text-size-adjust: none;
+	        text-size-adjust: none;
+}
+html{
+    box-sizing: border-box;
+    font-size: 10px;
+    text-rendering: optimizeLegibility;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+img,
+video{
+    max-width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+body {
+	font: normal normal 1.4rem / 1.6 "Open Sans", Helvetica, Arial, sans-serif;;
+	color: #333;
+}
+
+.page-wrap{
+    width: 100%;
+    min-width: 320px;
+}
+
+.wrapper{
+	padding: 0 30px;
+    max-width: 1190px;
+    margin: 0 auto;
+}
+
+/****************************************
+    page header
+****************************************/
+.page-header {
+    padding: 15px 0 0;
+    background-color: #2c5694;
+    position: relative;
+    z-index: 10;
+}
+
+.page-logo {
+    -webkit-flex-basis: 20%;
+        -ms-flex-preferred-size: 20%;
+            flex-basis: 20%;
+}
+
+.page-logo__link {
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/****************************************
+    page content section
+****************************************/
+.hero-banner__img {
+    display: inherit;
+}
+
+.quick-tasks-section {
+    background-color: #f0f0f0;
+}
+
+.features-section {
+    padding: 40px 0;
+}
+
