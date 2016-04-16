@@ -1,0 +1,81 @@
+/****************************************
+    site nav
+****************************************/
+
+.site-nav {
+    position: relative;
+    padding-bottom: 12px;
+
+    -webkit-flex-basis: 80%;
+    -ms-flex-preferred-size: 80%;
+    flex-basis: 80%;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    -webkit-box-pack: end;
+}
+
+.site-nav__ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: right;
+}
+
+.site-nav__ol__li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.site-nav__ol__li__a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+}
+
+.site-nav__ol__li__a::after {
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    overflow: hidden;
+    width: 0;
+    height: 2px;
+    background-color: #1ba0d7;
+    content: "";
+    -webkit-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.site-nav__ol__li__a:hover::after,
+.site-nav__ol__li__a:focus::after {
+    width: 100%;
+}
+
+.site-nav__ol__li__a:visited {
+    color: #fff;
+}
+
+.site-nav__ol__li__login-btn {
+    position: relative;
+    padding: 8px 15px 8px;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    color: #fff;
+    -webkit-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+
+.site-nav__ol__li__login-btn:hover,
+.site-nav__ol__li__login-btn.is-active {
+    background-color: #1ba0d7;
+}
+
+.site-nav__ol__li__login-btn:active,
+.site-nav__ol__li__login-btn.is-active {
+    margin-bottom: -12px;
+    padding-bottom: 20px;
+}

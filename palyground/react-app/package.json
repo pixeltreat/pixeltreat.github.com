@@ -1,0 +1,45 @@
+{
+    "name": "react-app",
+    "version": "1.0.0",
+    "description": "Learning project",
+    "author": "Durga Prasad Sadhanala",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "^6.3.4",
+        "babel-cli": "^6.6.5",
+        "babel-preset-react": "^6.5.0",
+        "browser-sync": "^2.11.2",
+        "eslint": "^2.5.1",
+        "node-sass": "^3.4.2",
+        "onchange": "^2.2.0",
+        "parallelshell": "^2.0.0",
+        "postcss-cli": "^2.5.1",
+        "rollup": "^0.25.6",
+        "uglify-js": "^2.6.2",
+        "watch": "^0.17.1"
+    },
+    "scripts": {
+        "clean": "rm -r build/*",
+        "html": "cp source/index.html build/",
+
+        "scss": "node-sass --output-style expanded --source-map-embed  -o build/assets/css source/assets/scss",
+        "autoprefixer": "postcss --use autoprefixer build/assets/css/*.css -d build/assets/css",
+
+        "reactJSX": "babel source/assets/js -d source/assets/libs --presets react",
+        "rollup": "mkdir -p build/assets/js && rollup source/assets/libs/app.js -m -o build/assets/js/app-scripts.js",
+        "lint": "eslint source/assets/js/**/*.js",
+
+        "build:css": "npm run scss && npm run autoprefixer",
+        "build:js": "npm run reactJSX && npm run rollup",
+        "reload": "browser-sync start --files 'build/assets/css/*.css, build/assets/js/*.js' --server 'build/'",
+        
+        "build:all": "npm run html && npm run build:css && npm run build:js",
+        
+        "watch:html": "onchange 'source/*.html' -- npm run html",
+        "watch:css": "watch 'npm run build:css' source/assets/scss/",
+        "watch:js": "watch 'npm run build:js' source/assets/js/",
+        "watch:all": "parallelshell 'npm run watch:js' 'npm run watch:css' 'npm run watch:html' 'npm run reload'",
+        
+        "build": "npm run html && npm run watch:all"
+    }
+}
