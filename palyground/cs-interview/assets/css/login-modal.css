@@ -1,0 +1,145 @@
+/****************************************
+    login modal section
+****************************************/
+
+.login-modal {
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    z-index: 9;
+    padding: 20px;
+    width: 360px;
+    border: 1px solid #1ba0d7;
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: top right;
+    -ms-transform-origin: top right;
+    transform-origin: top right;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.page-content::before {
+    position: fixed;
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    content: "";
+    opacity: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.has-login-modal-open .page-content::before {
+    opacity: 1;
+}
+
+.has-login-modal-open .page-content {
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.has-login-modal-open .login-modal {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.login-modal__title {
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ddd;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.1;
+}
+
+.login-modal__form {
+    padding: 10px;
+}
+
+.login-modal__form__forgot-password {
+    position: relative;
+    top: -10px;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #1ba0d7;
+    text-decoration: underline;
+}
+
+.login-modal__form__forgot-password:visited {
+    color: #1ba0d7;
+}
+
+.new-account {
+    margin: 25px 10px 0;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+
+/* form elements, this can be move to form-element.css later*/
+
+.form__label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.form__label__text {
+    display: block;
+    margin-bottom: 2px;
+    color: #036;
+}
+
+.form__label__inp {
+    padding: 8px 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: inset 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    display: inline-block;
+    margin: 0;
+    padding: 16px 25px;
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn__primary {
+    width: 100%;
+    background-color: #1ba0d7;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.btn__primary:hover {
+    background-color: #21bcff;
+}
+
+.btn__primary:active {
+    background-color: #167aa6;
+}
