@@ -25,25 +25,27 @@ class Forum extends React.Component {
         super(props);
 
         this.state = {
-           allAnswers: allAnswers
+            allAnswers: allAnswers
         };
     }
 
     render() {
-        return (
+        return(
             /*jshint ignore:start */
-            <div className="mdl-layout mdl-layout--fixed-header form">
-                <ForumHeader />
-
-                <main className="mdl-layout__content">
-                    <ForumQuestion />
-
-                    <ForumAnswers allAnswers = { this.state.allAnswers } />
-
-                    <ForumAddAnswer onAddAnswer= { this._onAddAnswer } />
-                </main>
-            </div>
+            React.createElement(
+                'div',
+                { className: 'mdl-layout mdl-layout--fixed-header form' },
+                React.createElement(ForumHeader, null),
+                React.createElement(
+                    'main',
+                    { className: 'mdl-layout__content' },
+                    React.createElement(ForumQuestion, null),
+                    React.createElement(ForumAnswers, { allAnswers: this.state.allAnswers }),
+                    React.createElement(ForumAddAnswer, { onAddAnswer: this._onAddAnswer })
+                )
+            )
             /*jshint ignore:end */
+
         );
     }
 }
