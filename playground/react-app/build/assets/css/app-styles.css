@@ -1,0 +1,94 @@
+@import url("https://www.google.com/fonts#UsePlace:use/Collection:Raleway:400,500,600,300");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://code.getmdl.io/1.1.3/material.indigo-pink.min.css");
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+}
+
+.mdl-layout__content {
+  width: 80%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.form__header {
+  background-color: #00BFFF;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.05em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form__header_title {
+  font-size: 300%;
+  font-weight: 100;
+  margin: 0;
+  color: #fff;
+}
+
+.form__header_sub-title {
+  font-size: 115%;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+  color: #333;
+}
+
+.form__question_title {
+  margin-bottom: 0;
+}
+
+.form__answers .mdl-list__item {
+  background-color: #eee;
+  margin: 8px 0;
+  border: 1px solid #d5d5d5;
+  cursor: pointer;
+}
+
+.form__answers .mdl-list__item:hover {
+  background-color: #d5d5d5;
+  border: 1px solid #bbbbbb;
+}
+
+.form__answers .mdl-list__item:active, .form__answers .mdl-list__item.active {
+  background-color: #298e05;
+  color: #fff;
+  border: 1px solid #37bf07;
+}
+
+.add-answer__textarea {
+  margin: 20px 0;
+  max-width: 600px;
+}
+
+.add-answer__textarea_label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.add-answer__textarea_input {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  min-height: 60px;
+}
+
+.add-answer__button-section {
+  margin: 20px 0;
+}
+
+.add-answer__button-section .mdl-button.mdl-button--raised {
+  background-color: #00BFFF;
+  padding: 6px  60px;
+  height: auto;
+}
+
+/*# sourceMappingURL=data:application/json;base64,ewoJInZlcnNpb24iOiAzLAoJImZpbGUiOiAiYnVpbGQvYXNzZXRzL2Nzcy9hcHAtc3R5bGVzLmNzcyIsCgkic291cmNlcyI6IFsKCQkic291cmNlL2Fzc2V0cy9zY3NzL2FwcC1zdHlsZXMuc2NzcyIKCV0sCgkibWFwcGluZ3MiOiAiQUFBQSxPQUFPLENBQUMsbUZBQUk7QUFDWixPQUFPLENBQUMsOERBQUk7QUFDWixPQUFPLENBQUMsZ0VBQUk7QUFNWixBQUFBLElBQUksQ0FBQztFQUNELFNBQVMsRUFBRSxJQUFLO0NBQ25COztBQUVELEFBQUEsSUFBSSxDQUFDO0VBQ0QsV0FBVyxFQUFFLHlEQUEwRDtFQUN2RSxTQUFTLEVBQUUsTUFBTztDQUNyQjs7QUFFRCxBQUFBLG9CQUFXLENBQ0k7RUFDUCxLQUFLLEVBQUUsR0FBSTtFQUNYLFNBQVMsRUFBRSxNQUFPO0VBQ2xCLE1BQU0sRUFBRSxNQUFPO0NBQ2xCOztBQUdMLEFBQUEsYUFBYSxDQUFBO0VBQ1QsZ0JBQWdCLEVBdEJOLE9BQU87RUF1QmpCLE1BQU0sRUFBRSxNQUFPO0VBQ2YsT0FBTyxFQUFFLEdBQUk7RUFDYixVQUFVLEVBQUUsTUFBTztFQUNuQixhQUFhLEVBQUUsR0FBRyxDQUFDLEtBQUssQ0FBQyx3QkFBSTtFQUM3QixjQUFjLEVBQUUsTUFBTztFQUN2QixVQUFVLEVBQUUsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxHQUFHLENBQUMsa0JBQUk7Q0FnQjdCOztBQXZCRCxBQUFBLG1CQUFhLENBU0Q7RUFDSixTQUFTLEVBQUUsSUFBSztFQUNoQixXQUFXLEVBQUUsR0FBSTtFQUNqQixNQUFNLEVBQUUsQ0FBRTtFQUNWLEtBQUssRUFBRSxJQUFLO0NBQ2Y7O0FBZEwsQUFBQSx1QkFBYSxDQWdCRztFQUNSLFNBQVMsRUFBRSxJQUFLO0VBQ2hCLFdBQVcsRUFBRSxHQUFJO0VBQ2pCLFdBQVcsRUFBRSxHQUFJO0VBQ2pCLE1BQU0sRUFBRSxDQUFFO0VBQ1YsS0FBSyxFQUFFLElBQUs7Q0FDZjs7QUFHTCxBQUFBLHFCQUFlLENBQ0g7RUFDSixhQUFhLEVBQUUsQ0FBRTtDQUNwQjs7QUFHTCxBQUNJLGNBRFUsQ0FDVixlQUFlLENBQUM7RUFDWixnQkFBZ0IsRUFyRFQsSUFBSTtFQXNEWCxNQUFNLEVBQUUsS0FBTTtFQUNkLE1BQU0sRUFBRSxHQUFHLENBQUMsS0FBSyxDQUFDLE9BQU07RUFDeEIsTUFBTSxFQUFFLE9BQVE7Q0FhbkI7O0FBbEJMLEFBQ0ksY0FEVSxDQUNWLGVBQWUsQUFNVixNQUFNLENBQUM7RUFDSixnQkFBZ0IsRUFBRSxPQUFNO0VBQ3hCLE1BQU0sRUFBRSxHQUFHLENBQUMsS0FBSyxDQUFDLE9BQU07Q0FDM0I7O0FBVlQsQUFDSSxjQURVLENBQ1YsZUFBZSxBQVdWLE9BQU8sRUFaaEIsQUFDSSxjQURVLENBQ1YsZUFBZSxBQVlWLE9BQU8sQ0FBQTtFQUNKLGdCQUFnQixFQWhFTixPQUFPO0VBaUVqQixLQUFLLEVBQUUsSUFBSztFQUNaLE1BQU0sRUFBRSxHQUFHLENBQUMsS0FBSyxDQUFDLE9BQU87Q0FDNUI7O0FBSVQsQUFBQSxxQkFBVyxDQUNLO0VBQ1IsTUFBTSxFQUFFLE1BQU87RUFDZixTQUFTLEVBQUUsS0FBTTtDQWNwQjs7QUFqQkwsQUFBQSwyQkFBVyxDQUtLO0VBQ0osT0FBTyxFQUFFLEtBQU07RUFDZixXQUFXLEVBQUUsR0FBSTtFQUNqQixhQUFhLEVBQUUsR0FBSTtDQUN0Qjs7QUFUVCxBQUFBLDJCQUFXLENBV0s7RUFDSixPQUFPLEVBQUUsS0FBTTtFQUNmLEtBQUssRUFBRSxJQUFLO0VBQ1osTUFBTSxFQUFFLEdBQUcsQ0FBQyxLQUFLLENBQUMsa0JBQUk7RUFDdEIsVUFBVSxFQUFFLElBQUs7Q0FDcEI7O0FBaEJULEFBQUEsMkJBQVcsQ0FtQlc7RUFDZCxNQUFNLEVBQUUsTUFBTztDQU9sQjs7QUEzQkwsQUFzQnFCLDJCQXRCVixDQXNCRCxXQUFXLEFBQUEsbUJBQW1CLENBQUM7RUFDN0IsZ0JBQWdCLEVBaEdkLE9BQU87RUFpR1QsT0FBTyxFQUFFLFNBQVU7RUFDbkIsTUFBTSxFQUFFLElBQUs7Q0FDaEIiLAoJIm5hbWVzIjogW10KfQ== */
