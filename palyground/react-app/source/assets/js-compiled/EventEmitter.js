@@ -2,9 +2,12 @@
 
 /**
  * Event Emitter with JS objects, it won't touch the DOM
+ * 
+ * @class EventEmitter
  */
 class EventEmitter {
     /**
+     * Creates an instance of EventEmitter.
      * events property to share between methods
      */
     constructor() {
