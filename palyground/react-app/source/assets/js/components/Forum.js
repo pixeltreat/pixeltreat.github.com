@@ -1,3 +1,4 @@
+/* jshint esnext:true */
 import ForumHeader from './ForumHeader.js';
 import ForumQuestion from './ForumQuestion.js';
 import ForumAnswers from './ForumAnswers.js';
@@ -16,29 +17,33 @@ const allAnswers = {
         body: "React is a synonym for 'respond'",
         correct: false
     }
-}
+};
 
 class Forum extends React.Component {
-    
+
     constructor(props) {
         super(props);
-        
+
         this.state = {
            allAnswers: allAnswers
         };
     }
-        
+
     render() {
         return (
+            /*jshint ignore:start */
             <div className="mdl-layout mdl-layout--fixed-header form">
                 <ForumHeader />
 
                 <main className="mdl-layout__content">
                     <ForumQuestion />
-                    <ForumAnswers allAnswers={ this.state.allAnswers } />
-                    <ForumAddAnswer />
+
+                    <ForumAnswers allAnswers = { this.state.allAnswers } />
+
+                    <ForumAddAnswer onAddAnswer= { this._onAddAnswer } />
                 </main>
             </div>
+            /*jshint ignore:end */
         );
     }
 }

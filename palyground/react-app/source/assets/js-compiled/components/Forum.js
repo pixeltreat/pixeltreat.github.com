@@ -1,3 +1,4 @@
+/* jshint esnext:true */
 import ForumHeader from './ForumHeader.js';
 import ForumQuestion from './ForumQuestion.js';
 import ForumAnswers from './ForumAnswers.js';
@@ -29,17 +30,22 @@ class Forum extends React.Component {
     }
 
     render() {
-        return React.createElement(
-            'div',
-            { className: 'mdl-layout mdl-layout--fixed-header form' },
-            React.createElement(ForumHeader, null),
+        return(
+            /*jshint ignore:start */
             React.createElement(
-                'main',
-                { className: 'mdl-layout__content' },
-                React.createElement(ForumQuestion, null),
-                React.createElement(ForumAnswers, { allAnswers: this.state.allAnswers }),
-                React.createElement(ForumAddAnswer, null)
+                'div',
+                { className: 'mdl-layout mdl-layout--fixed-header form' },
+                React.createElement(ForumHeader, null),
+                React.createElement(
+                    'main',
+                    { className: 'mdl-layout__content' },
+                    React.createElement(ForumQuestion, null),
+                    React.createElement(ForumAnswers, { allAnswers: this.state.allAnswers }),
+                    React.createElement(ForumAddAnswer, { onAddAnswer: this._onAddAnswer })
+                )
             )
+            /*jshint ignore:end */
+
         );
     }
 }

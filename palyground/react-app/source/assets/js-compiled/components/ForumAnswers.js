@@ -1,10 +1,11 @@
+/* jshint esnext:true */
 import ForumAnswer from './ForumAnswer.js';
 
 class ForumAnswers extends React.Component {
     render() {
         var allAnswers = this.props.allAnswers;
         var answers = [];
-
+        /*jshint ignore:start */
         for (var key in allAnswers) {
             answers.push(React.createElement(ForumAnswer, {
                 key: key,
@@ -21,7 +22,8 @@ class ForumAnswers extends React.Component {
                 answers
             )
         );
+        /*jshint ignore:end */
     }
-};
+}
 
 export default ForumAnswers;

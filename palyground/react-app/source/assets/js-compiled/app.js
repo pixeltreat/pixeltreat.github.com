@@ -4,7 +4,7 @@
 import EventEmitter from './EventEmitter';
 import Forum from './components/Forum';
 
-(function (){
+(function () {
     document.addEventListener('DOMContentLoaded', domReady, false);
 
     function domReady() {
