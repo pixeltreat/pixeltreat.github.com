@@ -1,0 +1,14 @@
+<div class="practitioners">    
+    <div class="practitioners__view-model">
+        <div class="practitioners__head">
+            <span class="practitioners__title">Role</span>
+            <!-- dates -->
+            <ul class="weekview-dates">
+                <li ng-repeat="weekDate in vm.competencyList[0].weeks" class="week-date">{{weekDate.week}}</li>
+            </ul>
+        </div>
+        <div class="practitioners__content">
+            <project-row  ng-repeat="competency in vm.competencyList" competency-details="competency" mode="competency"></project-row>
+        </div>
+    </div>
+</div>

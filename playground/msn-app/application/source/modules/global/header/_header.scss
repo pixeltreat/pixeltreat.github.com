@@ -1,0 +1,67 @@
+.app-header {
+    min-height: 80px;
+    background: #fff;
+    padding: 1.6rem 4rem 1.2rem;
+    box-shadow: 0 0 3px rgba(0,0,0, 0.3);
+
+    .wrapper {
+        @extend .flex-row;
+        @extend .flex--center;
+    }
+}
+
+.app-logo {
+    width: 100px;
+    height: 48px;
+    background: url("../img/dd-logo.png") no-repeat;
+    //@include retina-img("../img/retina/dd-logo.png", auto, 46px);
+    text-indent: -9999px;
+}
+
+.top__nav {
+    flex: 2;
+    text-align: left;
+    @extend %no-list;
+    margin: 0 3rem 0 6rem;
+}
+
+.top__user-nav {
+    flex: 2;
+    text-align: right;
+    @extend %no-list;
+}
+
+.top__nav li,
+.top__user-nav li {
+    display: inline-block;
+
+    &:not(:last-child){
+        margin-right: 1rem;
+    }
+    &:not(:first-child){
+        margin-left: 1rem;
+    }
+}
+
+.top__nav a,
+.top__user-nav a {
+    color: $base__text-color;
+    font-size: $h4;
+}
+
+.top__nav a{
+    transition: border 0.3s $transition__default;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+
+    &:hover,
+    &:active{
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #94c83d;
+        color: #555;
+    }
+
+    &:active{
+        color: #000;
+    }
+}

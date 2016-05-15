@@ -1,0 +1,23 @@
+{
+    "esnext"    : true,
+    "node"      : true,
+    "curly"     : true,
+    "eqnull"    : true,
+    "eqeqeq"    : true,
+    "undef"     : false,
+    "unused"    : true,
+    "indent"    : 4,
+    "trailing"  : true,
+    "browser"   : true,
+    "devel"     : true,
+    "strict"    : true,
+    "quotmark"  : "single",
+    "laxcomma"  : true,
+    "globals"   : {
+        "Modernizr" : false,
+        "angular"   : false,
+        "console"   : false,
+        "$"         : false
+    },
+    "validthis" : true
+}

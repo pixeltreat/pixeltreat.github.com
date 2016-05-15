@@ -1,0 +1,56 @@
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+body {
+    font-family: $base__font-family;
+    font-weight: $regular;
+    font-size: $body-copy;
+    line-height: $base__line-height;
+}
+
+.accessibility-links {
+    position: fixed;
+    z-index: 20;
+    top: 10px;
+    left: 10px;
+
+    & > a {
+        display: inline-block;
+        padding: 3px 5px;
+    }
+
+    .sr-only:active,
+    .sr-only:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+}
+
+.page-wrap{
+    position: relative;
+    @extend %practitioner-view-transition;
+    transition-property: all;
+    height: 100%;
+    overflow: auto;
+
+    .is-practitioners-visible &{
+        height: 50%;
+    }
+}
+.wrapper {
+    position: relative;
+    margin: 0;
+    width: 100%;
+}
+.app-content{
+    padding: 1.6rem 4rem 1.2rem;
+}
+.app-view{
+    @extend .wrapper;
+    overflow: hidden;
+}

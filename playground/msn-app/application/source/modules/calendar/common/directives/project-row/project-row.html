@@ -1,0 +1,25 @@
+<div class="project" ng-class="{'is-competency': (vm.mode === 'competency')}">
+    <div class="project__details">
+        <!-- project attributes rendered here -->
+        <h4 class="project__name" ng-if="vm.isCompetencyMode == false">{{vm.projectDetails.name}}</h4>
+        <h6 class="project__wbs" ng-if="vm.isCompetencyMode == false">{{vm.projectDetails.wbs}}</h6>
+        
+        <!-- comptency attributes rendered here -->
+        <h4 class="practitioner" ng-if="vm.isCompetencyMode" data-competency="{{vm.competencyDetails.label}}" />        
+        <h6 class="project__wbs" ng-if="vm.isCompetencyMode">{{vm.competencyDetails.name}}</h6>
+        
+        <ul class="project__detail-list">
+            <li ng-repeat="detail in vm.details">
+                <strong class="project__detail-name">{{detail.detailName}}</strong>
+                <span class="project__detail-value">{{detail.detailValue}}</span>
+            </li>
+        </ul>
+
+        <h6 class="project__wbs" ng-if="vm.isCompetencyMode">{{vm.competencyDetails.count}} Practitioners</h6>
+    </div>
+    
+    <div class="project__row">
+        <week-cell ng-repeat="week in vm.weeks" week-details="week" mode="{{vm.mode}}"></week-cell>
+    </div>
+    
+</div>

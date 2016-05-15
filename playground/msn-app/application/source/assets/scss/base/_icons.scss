@@ -1,0 +1,30 @@
+[class='icon-*']{
+
+}
+
+.icon-arrow{
+
+	width: 0.8em;
+	height: 0.8em;
+	border: 0.2em solid #fff;
+	border-radius: 2px;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	background:transparent;
+	transform-origin: 50% 50%;
+  	transform: rotate(45deg);
+
+	&:before{
+		content: ' ';
+		width: 0.6em;
+		height: 0.6em;
+		background: transparent;
+		z-index: -1;
+		position: absolute;			
+	}
+
+	&.down{
+		transform: rotate(225deg);
+	}
+
+}

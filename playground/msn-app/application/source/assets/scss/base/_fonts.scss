@@ -1,0 +1,72 @@
+// ****************************************
+// fonts
+// ****************************************
+
+// font path
+$fontspath: '../fonts/opensans/';
+
+// font types object to generate @font-face
+$fontTypes: (
+  (
+    "Open Sans",
+    300,
+    normal,
+    "OpenSans-Light"
+  ),
+  // (
+  //   "Open Sans",
+  //   300,
+  //   italic,
+  //   "SourceSansPro/SourceSansPro-Light-Italic"
+  // ),
+  (
+    "Open Sans",
+    400,
+    normal,
+    "OpenSans-Regular"
+  ),
+  (
+    "Open Sans",
+    400,
+    italic,
+    "OpenSans-Italic"
+  ),
+  (
+    "Open Sans",
+    600,
+    normal,
+    "OpenSans-Semibold"
+  ),
+  (
+    "Open Sans",
+    600,
+    italic,
+    "OpenSans-SemiboldItalic"
+  ),
+  (
+    "Open Sans",
+    700,
+    normal,
+    "OpenSans-Bold"
+  )
+  // ,
+  // (
+  //   "Open Sans",
+  //   700,
+  //   italic,
+  //   "SourceSansPro/SourceSansPro-Bold-Italic"
+  // )
+);
+
+// iterator will generate @font-face selector for each font type
+@each $fontfamily, $weight, $style, $type  in $fontTypes {
+    @font-face {
+        font-family: $fontfamily;
+        font-weight: $weight;
+        font-style: $style;
+        font-stretch: normal;
+        // since all the browsers currently supports woff, we are going to use only woff.
+        // add eot reference if supporting IE8
+        src: local($fontfamily), url( ($fontspath + $type +'.woff') ) format('woff');
+    }
+}

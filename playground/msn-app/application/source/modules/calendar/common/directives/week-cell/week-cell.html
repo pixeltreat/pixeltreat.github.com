@@ -1,0 +1,8 @@
+<div class="weekcell">
+    <div class="weekcell__practitioners" ng-class="{'is-competency': (vm.mode === 'competency')}">
+        <span class="weekcell__un-assigned" ng-if="vm.weekDetails.practitioners == null">
+            Practitioners <br>Not <br>Assigned
+        </span>
+        <practitioner ng-repeat="practitioner in vm.weekDetails.practitioners" practitioner-details="practitioner" mode='{{vm.mode}}'></practitioner>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+# Source Files #
+################
+node_modules
+.env
+/build
+*.psd
+
+# OS Files #
+############
+.DS_Store
+.vscode

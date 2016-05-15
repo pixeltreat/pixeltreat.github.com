@@ -1,0 +1,64 @@
+.practitioners{
+    position: fixed;
+    top: 50%;
+    left: 0;
+    overflow-y: scroll;
+    height: 50%;
+    width: 100%;
+    padding: 0 0 4rem;
+    background: #eee;
+    z-index: 99;
+    box-shadow: 0 -5px 10px rgba(0,0,0, 0.3);
+    transform: translateY(100%);
+
+    @extend %practitioner-view-transition;
+    transition-property: transform;
+
+    &__head{
+        padding: 2rem 0 1rem;
+
+        &:before{
+              content: "";
+              position: absolute;
+              right: 0;
+              left: 0;
+              height: 6rem;
+              background: #F5F5F5;
+              z-index: 1;
+              top: 0;
+        }
+
+        .weekview-dates{
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &__title{
+        position: absolute;
+        left: 4rem;
+        padding: 0.5rem 0;
+        min-width: 20rem;
+        font-size: $h4;
+        margin: 0 3px 5px;
+        white-space: normal;
+        z-index: 2;
+    }
+
+
+
+    &__content{
+
+    }
+
+    &__view-model{
+        margin-left: 24rem;
+        overflow-x: scroll;
+    }
+
+    & .project__details{
+        left: 4rem;
+    }
+}
+
+

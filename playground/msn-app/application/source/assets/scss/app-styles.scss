@@ -1,0 +1,27 @@
+// vendor
+@import "vendor/normalize";
+
+// base
+@import "base/vars";
+@import "base/fonts";
+@import "base/icons";
+
+// Libs
+@import "libs/media-queries";
+@import "libs/slient-extends";
+@import "libs/animations";
+@import "libs/mixins";
+@import "libs/flex-grid";
+
+// Layout
+@import "base/layout";
+
+// global modules
+@import "../../modules/global/header/header";
+@import "../../modules/global/footer/footer";
+
+// Calendar
+@import "../../modules/calendar/calendar";
+
+// Helpers load at the end to get high speficity
+@import "libs/helpers";

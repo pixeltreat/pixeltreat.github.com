@@ -1,0 +1,21 @@
+<header role="banner" class="app-header">
+    <div class="wrapper">
+        <!-- app logo -->
+        <a href="/" class="app-logo">MSNS</a>
+
+        <!-- navigation -->
+        <nav class="app-nav" role="navigation" id="app-nav">
+            <ol class="app-nav__main">
+                <li data-ng-repeat="navLink in vm.navLinks" data-ng-class="{'has-subnav': navLink.subnav}">
+                    <a href="{{navLink.URL}}">{{navLink.label}}</a>
+                    <ul data-ng-if="navLink.subnav" class="app-nav__sub">
+                        <li data-ng-repeat="subnavLink in navLink.subnav">
+                            <a href="{{subnavLink.URL}}">{{subnavLink.label}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </nav>
+
+    </div>
+</header>

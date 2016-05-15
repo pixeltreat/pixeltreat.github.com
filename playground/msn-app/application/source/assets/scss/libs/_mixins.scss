@@ -1,0 +1,18 @@
+/*----------------
+ Image 2x size
+--------------- */
+
+@mixin retina-img($image, $width:null, $height: null) {
+    @media (min--moz-device-pixel-ratio: 1.5),
+            (-ms-min-device-pixel-ratio: 1.5),
+            (-webkit-min-device-pixel-ratio: 1.5),
+            (min-device-pixel-ratio: 1.5),
+            (min-resolution: 1.5dppx) {
+
+        background-image: url($image);
+
+        @if ($width) {
+            background-size: $width $height;
+        }
+    }
+}
