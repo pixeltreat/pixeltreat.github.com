@@ -3,59 +3,58 @@
 // ****************************************
 
 // font path
-$fontspath: '../fonts/opensans/';
+$fontspath: '../fonts/Roboto/';
 
 // font types object to generate @font-face
 $fontTypes: (
   (
-    "Open Sans",
+    "Roboto",
     300,
     normal,
-    "OpenSans-Light"
+    "Roboto-Light"
   ),
-  // (
-  //   "Open Sans",
-  //   300,
-  //   italic,
-  //   "SourceSansPro/SourceSansPro-Light-Italic"
-  // ),
   (
-    "Open Sans",
+    "Roboto",
+    300,
+    italic,
+    "Roboto-LightItalic"
+  ),
+  (
+    "Roboto",
     400,
     normal,
-    "OpenSans-Regular"
+    "Roboto-Regular"
   ),
   (
-    "Open Sans",
+    "Roboto",
     400,
     italic,
-    "OpenSans-Italic"
+    "Roboto-Italic"
   ),
   (
-    "Open Sans",
+    "Roboto",
     600,
     normal,
-    "OpenSans-Semibold"
+    "Roboto-Medium"
   ),
   (
-    "Open Sans",
+    "Roboto",
     600,
     italic,
-    "OpenSans-SemiboldItalic"
+    "Roboto-MediumItalic"
   ),
   (
-    "Open Sans",
+    "Roboto",
     700,
     normal,
-    "OpenSans-Bold"
+    "Roboto-Bold"
+  ),
+  (
+    "Roboto",
+    700,
+    italic,
+    "Roboto-BoldItalic"
   )
-  // ,
-  // (
-  //   "Open Sans",
-  //   700,
-  //   italic,
-  //   "SourceSansPro/SourceSansPro-Bold-Italic"
-  // )
 );
 
 // iterator will generate @font-face selector for each font type
@@ -67,6 +66,6 @@ $fontTypes: (
         font-stretch: normal;
         // since all the browsers currently supports woff, we are going to use only woff.
         // add eot reference if supporting IE8
-        src: local($fontfamily), url( ($fontspath + $type +'.woff') ) format('woff');
+        src: local($fontfamily), url( ($fontspath + $type +'-webfont.woff') ) format('woff');
     }
 }

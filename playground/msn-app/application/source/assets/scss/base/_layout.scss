@@ -1,3 +1,7 @@
+// ****************************************
+// layout
+// ****************************************
+
 h1, h2, h3, h4, h5, h6{
     margin: 0;
 }
@@ -7,11 +11,12 @@ body {
     font-weight: $regular;
     font-size: $body-copy;
     line-height: $base__line-height;
+    min-width: 320px;
 }
 
 .accessibility-links {
     position: fixed;
-    z-index: 20;
+    z-index: 99;
     top: 10px;
     left: 10px;
 
@@ -33,24 +38,24 @@ body {
 
 .page-wrap{
     position: relative;
-    @extend %practitioner-view-transition;
-    transition-property: all;
-    height: 100%;
-    overflow: auto;
+    padding-left: 55px;
+    transition: $transition__default-all;
 
-    .is-practitioners-visible &{
-        height: 50%;
+    .has-nav-expanded & {
+        padding-left: $nav-width;
     }
 }
+
 .wrapper {
     position: relative;
     margin: 0;
     width: 100%;
 }
+
 .app-content{
-    padding: 1.6rem 4rem 1.2rem;
+    min-height: calc(100vh - 55px);
 }
+
 .app-view{
     @extend .wrapper;
-    overflow: hidden;
 }

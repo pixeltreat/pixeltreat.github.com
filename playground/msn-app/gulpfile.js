@@ -67,7 +67,7 @@ gulp.task('zip', function() {
 gulp.task('watch', function() {
     watch = true;
     gulp.watch(filePath.styles, ['styles']);
-    gulp.watch([filePath.scripts, filePath.copyfiles[0] ], ['scripts']);
+    gulp.watch([filePath.scripts, filePath.html], ['scripts']);
     gulp.watch(filePath.copyfiles, ['copyFiles']);
 });
 

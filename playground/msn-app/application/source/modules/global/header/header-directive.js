@@ -1,5 +1,9 @@
 'use strict';
 
+// dependencies
+var domUtils = require('core/dom-utils');
+
+// directive export
 exports = module.exports = createDirective;
 
 /**
@@ -8,7 +12,6 @@ exports = module.exports = createDirective;
 function createDirective() {
     /**
      * Returned object.
-     * @var {Object}
      */
     var directive = {
         restrict        : 'A',
@@ -25,121 +28,93 @@ function createDirective() {
 
 /**
 * Create a link to the view.
-*
-* @param {Object} scope
+* @param {Object} getNavigationLinksFactory
 */
-function controllerFn() {
-    /**
-     * ...
-     * @var {String}
-     */
+function controllerFn(getNavigationLinksFactory) {
     var vm = this;
 
-    vm.navLinks = [
-        {
-            'label': 'Admin',
-            'icon': 'admin',
-            'URL': '#',
-            'subnav': [
-                {
-                    'label': 'Subnav Link1',
-                    'URL': '#'
-                },
-                {
-                    'label': 'Subnav Link2',
-                    'URL': '#'
-                }
-            ]
-        },
-        {
-            'label': 'Dashboard',
-            'icon': 'dashboard',
-            'URL': '#'
-        },
-        {
-            'label': 'Employee',
-            'icon': 'employee',
-            'URL': '#',
-            'subnav': [
-                {
-                    'label': 'Short View',
-                    'URL': '#'
-                },
-                {
-                    'label': 'Expanded View',
-                    'URL': '#'
-                },
-                {
-                    'label': 'Download Template',
-                    'URL': '#'
-                },
-                {
-                    'label': 'Upload Data',
-                    'URL': '#'
-                },
-                {
-                    'label': 'Download Data',
-                    'URL': '#'
-                }
-            ]
-        },
-        {
-            'label': 'Shelter',
-            'icon': 'shelter',
-            'URL': '#',
-            'subnav': [
-                {
-                    'label': 'Subnav Link1',
-                    'URL': '#'
-                }
-            ]
-        },
-        {
-            'label': 'Transportation',
-            'icon': 'transport',
-            'URL': '#',
-            'subnav': [
-                {
-                    'label': 'Subnav Link1',
-                    'URL': '#'
-                }
-            ]
-        },
-        {
-            'label': 'Reports',
-            'icon': 'reports',
-            'URL': '#',
-            'subnav': [
-                {
-                    'label': 'Subnav Link1',
-                    'URL': '#'
-                }
-            ]
-        },
-        {
-            'label': 'Help',
-            'icon': 'help',
-            'URL': '#'
-        },
-        {
-            'label': 'Contact',
-            'icon': 'contact',
-            'URL': '#'
-        },
-        {
-            'label': 'Refresh',
-            'icon': 'refresh',
-            'URL': '#'
-        },
-        {
-            'label': 'User',
-            'icon': 'user',
-            'URL': '#'
-        },
-        {
-            'label': 'Logout',
-            'icon': 'logout',
-            'URL': '#'
-        }
-    ];
+    // get the navigation data and set it to `vm`.
+    getNavigationLinksFactory.then(function(navLinksData){
+        vm.navLinks = navLinksData;
+    });
+
+    /**
+     * Toggle navigation to show/hide on the page
+     */
+    vm.toggleNav    = toggleNavView;
+
+    /**
+     * Toggle active class for both main/subnav li elements
+     */
+    vm.toggleSubnav = toggleSubnavView;
+}
+
+/**
+ * toogle nav view on mouseover/mouseout
+ * @param  {Object} event
+ */
+function toggleNavView(event) {
+    var rootEle = document.documentElement;
+    var eType   = event.type;
+
+    // check for event type to add/remove class on root element
+    if(eType === 'mouseover') {
+        domUtils.addClass(rootEle, 'has-nav-expanded');
+    } else {
+        domUtils.removeClass(rootEle, 'has-nav-expanded');
+    }
+}
+
+/**
+ * toogle subnav on click
+ * @param  {Object} event
+ */
+function toggleSubnavView(event) {
+    var ele         = event.currentTarget || event.srcElement;
+    var parent      = ele.parentNode;
+    var activeClass = getActiveClass(ele);
+    var hasClass    = domUtils.hasClass(ele, activeClass);
+
+    // prevent event propogation
+    event.stopPropagation();
+
+    // check if class exisit, if yes, just remove
+    if(hasClass) {
+        removeActiveClass(ele, activeClass);
+    } else {
+        // remove active class from siblings
+        domUtils.forEach(parent.children, function(item){
+            removeActiveClass(item, activeClass);
+        });
+
+        // set active class
+        domUtils.addClass(ele, activeClass);
+    }
+}
+
+/**
+ * removes active class from the element
+ * @param  {object} ele
+ * @param  {string} activeClass
+ */
+function removeActiveClass(ele, activeClass) {
+    domUtils.removeClass(ele, activeClass);
+}
+
+/**
+ * return which class to add/remove based on the nav depth
+ * @param  {object} ele
+ * @return {string} class name
+ */
+function getActiveClass(ele) {
+    console.log(ele);
+    var mainNav = domUtils.hasClass(ele, 'app-nav__main__li');
+    var subNav  = domUtils.hasClass(ele, 'app-nav__sub__li');
+
+    // check if it is main nav element or subnav
+    if(mainNav){
+        return 'is-subnav-opened';
+    } else if(subNav) {
+        return 'is-subnav-li-active';
+    }
 }

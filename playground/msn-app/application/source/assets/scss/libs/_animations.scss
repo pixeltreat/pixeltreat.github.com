@@ -1,3 +1,7 @@
+// ****************************************
+// animation
+// ****************************************
+
 // fadein from left
 @keyframes fadeInLeft {
 	0% {
@@ -27,9 +31,4 @@
     animation-name: fadeIn;
     animation-duration: 1s;
     animation-fill-mode:forwards;
-}
-
-%practitioner-view-transition{
-	transition-duration: 0.5s;
-  	transition-timing-function: ease-in;
 }

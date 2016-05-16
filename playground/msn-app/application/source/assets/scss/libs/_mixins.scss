@@ -1,8 +1,10 @@
-/*----------------
- Image 2x size
---------------- */
+// ****************************************
+// mixins
+// ****************************************
 
-@mixin retina-img($image, $width:null, $height: null) {
+// Image 2x size
+// usage @include retina-img("../img/retina/image.png", auto, 46px);
+@mixin RetinaImg($image, $width:null, $height: null) {
     @media (min--moz-device-pixel-ratio: 1.5),
             (-ms-min-device-pixel-ratio: 1.5),
             (-webkit-min-device-pixel-ratio: 1.5),
@@ -14,5 +16,24 @@
         @if ($width) {
             background-size: $width $height;
         }
+    }
+}
+
+// arrow mixin
+@mixin Arrow($size, $position, $color: inherit) {
+    content: "";
+    border: #{$size}px solid transparent;
+    border-#{$position}-color: $color;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+// loop through array functionality
+$competency: ('UI': #0099ff, 'UX': #00cc66, 'FE': #ff6600, 'CD': #333399, 'CX':#ff9900, 'CW': #9900cc,'QA': #689f38,'SF': #006699, 'EM': #cc3333);
+
+// loop through the competencies and print selectors for each one.
+@each $skill, $color in $competency {
+    [data-competency="#{$skill}"]:before {
+        background-color: $color;
     }
 }

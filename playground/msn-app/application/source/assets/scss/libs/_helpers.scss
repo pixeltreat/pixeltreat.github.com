@@ -1,10 +1,15 @@
+// ****************************************
+// helpers
+// ****************************************
+
 html {
     font-size: $base__font-size * 1px;
     box-sizing: border-box;
-    -ms-text-size-adjust: none;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
@@ -15,47 +20,13 @@ html, body{
     padding: 0;
 }
 
-a{
-    color: $link;
-    text-decoration: none;
-
-    &:visited{
-        color: $visited;
-    }
-
-    &:hover,
-    &:active{
-        color: $hover;
-        text-decoration: underline;
-
-        li &{
-            text-decoration: none;
-        }
-    }
-}
-
-b, strong, h2, h3, h4{
-    font-weight: $semi-bold;
-}
-
 input[placeholder]{
     text-overflow: ellipsis;
 
-    /* &::-webkit-input-placeholder {
-       color: ;
-       font-weight: $light;
+    ::placeholder {
+        font-weight: $light;
+        text-overflow: ellipsis;
     }
-
-    &::-moz-placeholder {
-       color: ;
-       font-weight: $light;
-    }
-
-    &:-ms-input-placeholder {
-       color: ;
-       font-weight: $light;
-       text-overflow: ellipsis;
-    } */
 }
 
 [hidden] {

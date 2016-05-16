@@ -1,5 +1,8 @@
-"use strict";
+'use strict';
 
+// dependencies
+
+// directive export
 exports = module.exports = createDirective;
 
 /**
@@ -8,7 +11,6 @@ exports = module.exports = createDirective;
 function createDirective() {
     /**
      * Returned object.
-     * @var {Object}
      */
     var directive = {
         restrict: 'A',
@@ -26,13 +28,7 @@ function createDirective() {
 
 /**
 * Create a link to the view.
-*
-* @param {Object} scope
 */
 function controllerFn() {
-    /**
-     * ...
-     * @var {String}
-     */
-    var vm = this;
+    //var vm = this;
 }

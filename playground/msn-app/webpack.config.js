@@ -10,22 +10,24 @@ var webpack = require('webpack'),
 
 // paths
 var PATHS = {
-    root           : __dirname + '/' + config.base.root,
-    src            : __dirname + config.base.src,
-    dist           : __dirname + config.base.dist,
-    nodeModulesRoot: path.resolve('./node_modules')
+    root            : __dirname + '/' + config.base.root,
+    srcAssetsJS     : __dirname + '/' + config.webpackResolvePaths.srcAssetsJS,
+    srcModules      : __dirname + '/' + config.webpackResolvePaths.srcModules,
+    dist            : __dirname + '/' + config.base.dist,
+    nodeModulesRoot : path.resolve('./node_modules')
 };
 
 // configurations
 module.exports = {
     context        : PATHS.root,
     entry          : {
-        'app-scripts' : './source/assets/js/core/base.js'
+        'app-scripts': './source/assets/js/core/base.js'
     },
 
     resolve: {
         root: [
-            PATHS.root,
+            PATHS.srcAssetsJS,
+            PATHS.srcModules,
             PATHS.nodeModules
         ],
         extensions: ['', '.js']
@@ -40,13 +42,12 @@ module.exports = {
     //debug: true,
 
     /* source map for dev server */
-    devtool        : 'source-map',
+    devtool: 'source-map',
 
-    output         : {
-        path           : PATHS.dist,
-        filename: '[name].js',
-        sourceMapFilename: '[name].map'
-        //hotUpdateFunction: true
+    output: {
+        path              : PATHS.dist,
+        filename          : '[name].js',
+        sourceMapFilename : '[name].map'
     },
 
     // plugins: [
@@ -57,16 +58,16 @@ module.exports = {
      * globals variables
      */
     externals: {
-        'Modernizr': 'Modernizr',
-        'window'   : 'window'
+        'Modernizr' : 'Modernizr',
+        'window'    : 'window'
     },
 
     /* loaders */
-    module         : {
-        loaders        : [{
-           test: /\.html$/,
-           loader: 'raw',
-           exclude: /node_modules/
+    module: {
+        loaders: [{
+           test    : /\.html$/,
+           loader  : 'raw',
+           exclude : /node_modules/
         }]
     }
 };

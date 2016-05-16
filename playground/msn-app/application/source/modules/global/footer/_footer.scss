@@ -1,5 +1,14 @@
 .app-footer{
     text-align: center;
-    margin: 3rem 0;
-    padding: 0 4rem;
+    padding: 1rem 4rem;
+
+    p {
+        margin: 0;
+    }
+
+    &__copyright-text,
+    &__rights-text {
+        font-size: 1.3rem;
+        display: block;
+    }
 }

@@ -1,8 +1,12 @@
+// ****************************************
+// slient-extends
+// ****************************************
+
 %wrap-size {
     position: relative;
     margin: 0 auto;
     width: 100%;
-    max-width: 120rem;
+    max-width: 90rem;
 }
 
 %inline-block__valign-middle {
