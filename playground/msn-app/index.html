@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <title>MSN App</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="page description for SEO">
+    <meta name="keywords" content="keywords for SEO">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="assets/css/app-styles.css">
+
+    <!-- scripts -->
+    <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js" async></script>
+    <script src="assets/js/app-scripts.js" async defer></script>
+</head>
+
+<body>
+    <noscript>
+        Looks like you're trying to access this page without JS enabled, please check your browser settings.
+    </noscript>
+    <div class="page-wrap" ng-controller="AppCtrl">
+        <!-- accessibility links to skip to content -->
+        <div class="accessibility-links">
+            <a href="#app-nav" target="_self" class="sr-only">skip to Navigation</a>
+            <a href="#app-content" target="_self" class="sr-only">skip to Content</a>
+        </div>
+
+        <!-- header -->
+        <div header></div>
+
+        <!-- main -->
+        <main role="main" class="app-content" id="app-content">
+            <section ui-view class="app-view"></section>
+        </main>
+
+        <!-- footer -->
+        <div footer></div>
+    </div>
+</body>
+</html>
