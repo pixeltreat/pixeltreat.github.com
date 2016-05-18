@@ -27,6 +27,12 @@ var afx_browsers = [
 module.exports = function (watch) { //publish
     return gulp
         .src( filePath.stylesEntry )
+        .pipe(plugins.plumber({
+            errorHandler: function (err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
         .pipe( plugins.sourcemaps.init({ loadMaps: true }) )
         .pipe( plugins.sass({ errLogToConsole: true }) )
         .pipe( plugins.autoprefixer(afx_browsers) )
