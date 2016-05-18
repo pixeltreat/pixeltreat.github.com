@@ -107,7 +107,6 @@ function removeActiveClass(ele, activeClass) {
  * @return {string} class name
  */
 function getActiveClass(ele) {
-    console.log(ele);
     var mainNav = domUtils.hasClass(ele, 'app-nav__main__li');
     var subNav  = domUtils.hasClass(ele, 'app-nav__sub__li');
 
