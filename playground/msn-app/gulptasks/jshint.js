@@ -8,15 +8,10 @@ var config        = require('../config');
 // JS files path from config.js
 var scriptFiles = config.filePath.scripts;
 
-function jshint() {
+module.exports = function() {
 	return gulp.src(scriptFiles)
-	.pipe(reload({
-		stream: true,
-		once: true
-	}))
-	.pipe(plugins.jshint())
-	.pipe(plugins.jshint.reporter('jshint-stylish'))
-	.pipe(plugins.if(!browserSync.active, plugins.jshint.reporter('fail')));
-}
-
-module.exports = jshint;
+	.pipe( reload({ stream: true, once: true }) )
+	.pipe( plugins.jshint() )
+	.pipe( plugins.jshint.reporter('jshint-stylish') )
+	.pipe( plugins.if( !browserSync.active, plugins.jshint.reporter('fail') ) );
+};

@@ -17,9 +17,9 @@ var entryFile = config.filePath.scriptsEntry;
 
 module.exports = function (watch) { //publish
     return gulp
-        .src(entryFile)
-        .pipe(webpack(webpackConfig))
-        .pipe(gulp.dest(base.distAssets + '/js'))
-        .pipe(plugins.if (watch, reload({stream: true}) ))
-        .pipe(plugins.size({title: 'webpack bundle'}));
+        .src( entryFile)
+        .pipe( webpack(webpackConfig) )
+        .pipe( gulp.dest(base.distAssets + '/js') )
+        .pipe( plugins.if( watch, reload({stream: true}) ) )
+        .pipe( plugins.size( {title: 'webpack bundle'} ) );
 };

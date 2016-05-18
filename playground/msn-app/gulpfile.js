@@ -6,12 +6,11 @@
  'use strict';
  /*jshint -W024 */
 
- // Include gulp and webpack
+ // Include gulp
  var gulp          = require('gulp');
 
  // Include Plugins
  /* all the plugins starts with 'gulp' will loaded using load-plugins */
- var plugins        = require('gulp-load-plugins')();
  var del            = require('del');
  var psi            = require('psi');
  var runSequence    = require('run-sequence');
@@ -25,12 +24,6 @@
  var stylesCompile  = require('./gulptasks/styles');
  var scriptsCompile = require('./gulptasks/scripts');
  var copyFiles      = require('./gulptasks/copyfiles');
-
- // Clean Output Directory
- gulp.task('clean', del.bind(null, ['.tmp', base.dist]));
-
- // Lint JavaScript
- gulp.task('jshint', require('./gulptasks/jshint'));
 
  // compile styles
  gulp.task('styles', function() {
@@ -47,20 +40,21 @@
      return copyFiles(watch);
  });
 
+ // Clean Output Directory
+ gulp.task('clean', del.bind(null, ['.tmp', base.dist]));
+
+ // Lint JavaScript
+ gulp.task('jshint', require('./gulptasks/jshint'));
+
 // browser-sync task for starting the server.
 gulp.task('browser-sync', require('./gulptasks/browser-reload'));
 
+// zip build folder for download
+gulp.task('zip', require('./gulptasks/zip'));
+
 // Run PageSpeed Insights for publish build
 gulp.task('psInsights', function() {
-    return psi.output('pixeltreat.com', { strategy: 'desktop' });
-});
-
-// zip build folder for download
-gulp.task('zip', function() {
-    return gulp
-       .src(base.dist + '/**/*')
-       .pipe(plugins.zip('build.zip'))
-       .pipe(gulp.dest(base.dist + '/nightly'));
+    return psi.output('http://pixeltreat.com/playground/msn-app', { strategy: 'desktop', optimized: true });
 });
 
 // watch task

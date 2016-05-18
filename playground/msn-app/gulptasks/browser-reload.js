@@ -8,8 +8,6 @@ var buildFolder = config.base.dist;
 module.exports = function() {
 	browserSync({
 	   notify: false,
-	   server: {
-		   baseDir: buildFolder
-	   }
+	   server: { baseDir: buildFolder }
    });
 };

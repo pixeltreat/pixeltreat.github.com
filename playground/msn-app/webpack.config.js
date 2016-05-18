@@ -50,9 +50,12 @@ module.exports = {
         sourceMapFilename : '[name].map'
     },
 
-    // plugins: [
-    //     new webpack.optimize.CommonsChunkPlugin('common-scripts.js')
-    // ],
+    plugins: [
+        //new webpack.optimize.CommonsChunkPlugin('common-scripts.js')
+
+        // uglfy / minify js
+        //new webpack.optimize.UglifyJsPlugin()
+    ],
 
     /**
      * globals variables

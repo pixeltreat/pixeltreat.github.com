@@ -26,19 +26,13 @@ var afx_browsers = [
 
 module.exports = function (watch) { //publish
     return gulp
-        .src(filePath.stylesEntry)
-        .pipe(plugins.sourcemaps.init({ loadMaps: true }))
-        .pipe(plugins.sass({
-            errLogToConsole: true
-        }))
-        .pipe(plugins.autoprefixer(afx_browsers))
-        .pipe(cleanCSS())
-        .pipe(plugins.sourcemaps.write('.'))
-        .pipe(gulp.dest(base.distAssets + '/css'))
-        .pipe(plugins.if(watch, reload({
-            stream: true
-        })))
-        .pipe(plugins.size({
-            title: 'Styles'
-    }));
+        .src( filePath.stylesEntry )
+        .pipe( plugins.sourcemaps.init({ loadMaps: true }) )
+        .pipe( plugins.sass({ errLogToConsole: true }) )
+        .pipe( plugins.autoprefixer(afx_browsers) )
+        .pipe( cleanCSS() )
+        .pipe( plugins.sourcemaps.write('.') )
+        .pipe( gulp.dest(base.distAssets + '/css') )
+        .pipe( plugins.if( watch, reload({ stream: true }) ) )
+        .pipe( plugins.size({ title: 'Styles' }) );
 };
