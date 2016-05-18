@@ -12,6 +12,8 @@ body {
     font-size: $body-copy;
     line-height: $base__line-height;
     min-width: 320px;
+    background-color: $body__bg-color;
+    color: $body__text-color;
 }
 
 .accessibility-links {

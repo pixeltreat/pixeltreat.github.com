@@ -3,94 +3,40 @@
 // ****************************************
 
 // brand colors
-$primary-color    : #375D81;
-$secondary-color  : #ABC8E2;
-$tertiary-color   : #183152;
-$quaternary-color : #F8F8F8;
-$quinary-color    : ;
+$primary-color            : #375D81;
+$secondary-color          : #ABC8E2;
+$tertiary-color           : #183152;
+$quaternary-color         : #F8F8F8;
+$quinary-color            : ;
 
 // base colors
-$base-white : #fff;
-$base-black : #000;
-$base-red   : #c00;
+$base-white               : #fff;
+$base-black               : #000;
+$base-red                 : #c00;
 
-// color swatches
-$base__text-color: $tertiary-color;
+// body colors
+$body__text-color         : $tertiary-color;
+$body__bg-color           : $quaternary-color;
 
 // link colors
-$link                 : ;
-$visited              : ;
-$hover                : ;
-$visited              : ;
+$link                     : ;
+$visited                  : ;
+$hover                    : ;
+$visited                  : ;
 
-body {
-    background-color: $quaternary-color;
-    color: $base__text-color;
-}
-
-.app-header {
-    background-color: $primary-color;
-}
-
-.app-logo {
-    background-color: $tertiary-color;
-}
-
-.app-logo__menu-collapse {
-    &:hover &-icon,
-    &:hover &-icon::before,
-    &:hover &-icon::after {
-        background-color: $base-white;
-    }
-
-    &-icon {
-        background-color: $secondary-color;
-
-        &::before,
-        &::after {
-            background: $secondary-color;
-        }
-    }
-}
-
-.has-nav-expanded .app-logo__menu-collapse {
-    border-color: $secondary-color;
-
-    &:hover {
-        border-color: $base-red;
-    }
-
-    &:hover .app-logo__menu-collapse-icon {
-        &::before,
-        &::after {
-            background-color: $base-white;
-        }
-    }
-
-}
+// header
+$app-header-bg            : $primary-color;
+$app-logo-bg              : $tertiary-color;
+$menu-collapse-btn-normal : $secondary-color;
+$menu-collapse-btn-hover  : $base-white;
 
 // navigation
-.app-nav__main__li__a {
-    background-color: $primary-color;
-    color: $secondary-color;
-
-    &::after{
-        border-color: #2b4b6e;
-    }
-
-    &:hover,
-    .is-subnav-opened & {
-        color: $base-white;
-        background-color: $tertiary-color;
-    }
-
-    .is-subnav-opened &::before {
-        background-color: $secondary-color;
-    }
-}
+$main-nav-bg              : $primary-color;
+$main-nav-text            : $secondary-color;
+$main-nav-active-bg       : $tertiary-color;
+$main-nav-active-text     : $base-white;
+$main-nav-divider         : #2b4b6e;
 
 // footer
-.app-footer{
-    border-top: 1px solid $secondary-color;
-    color: $primary-color;
-}
+$footer-border            : $secondary-color;
+$footer-text              : $primary-color;

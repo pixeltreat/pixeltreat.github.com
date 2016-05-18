@@ -8,6 +8,7 @@
     width: 55px;
     overflow: hidden;
     transition: $transition__default-all;
+    background-color: $app-header-bg;
 
     &::after {
         content: "";

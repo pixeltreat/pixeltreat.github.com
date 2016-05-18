@@ -1,6 +1,8 @@
 .app-footer{
     text-align: center;
     padding: 1rem 4rem;
+    border-top: 1px solid $footer-border;
+    color: $footer-text;
 
     p {
         margin: 0;

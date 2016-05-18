@@ -112,8 +112,8 @@ function getActiveClass(ele) {
 
     // check if it is main nav element or subnav
     if(mainNav){
-        return 'is-subnav-opened';
+        return 'is-mainnav-active';
     } else if(subNav) {
-        return 'is-subnav-li-active';
+        return 'is-subnav-active';
     }
 }
