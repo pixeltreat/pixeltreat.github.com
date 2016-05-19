@@ -7,7 +7,7 @@ angular.module(moduleName, [
     /*Dependencies*/
 ])
 
-.directive('appLogo', [
+.directive(moduleName, [
     require('./app-logo-directive')
 ]);
 

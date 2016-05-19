@@ -6,7 +6,6 @@
 // app setup
 module.exports = angular.module('msnsApp', [
     'ui.router',
-    require('../../modules/global/app-logo'),
     require('../../modules/global/header'),
     require('../../modules/global/footer')
 ])

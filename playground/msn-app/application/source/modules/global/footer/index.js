@@ -7,7 +7,7 @@ angular.module(moduleName, [
     /*Dependencies*/
 ])
 
-.directive('footer', [
+.directive(moduleName, [
     require('./footer-directive')
 ]);
 
