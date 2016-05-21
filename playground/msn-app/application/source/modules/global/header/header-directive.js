@@ -33,23 +33,22 @@ function controllerFn() {
     var vm = this;
 
     /**
-     * Toggle navigation to show/hide on the page
+     * show navigation in expanded view
      */
-    vm.toggleNav = toggleNavView;
+    vm.showNav = showNavView;
+    vm.hideNav = hideNavView;
 }
 
 /**
- * toogle nav view on mouseover/mouseout
- * @param  {Object} event
+ * show nav view and expand
  */
-function toggleNavView(event) {
-    var rootEle = document.documentElement;
-    var eType   = event.type;
+function showNavView() {
+    domUtils.addClass(document.documentElement, 'has-nav-expanded');
+}
 
-    // check for event type to add/remove class on root element
-    if(eType === 'mouseover') {
-        domUtils.addClass(rootEle, 'has-nav-expanded');
-    } else {
-        domUtils.removeClass(rootEle, 'has-nav-expanded');
-    }
+/**
+ * hide nav view and collapse
+ */
+function hideNavView() {
+    domUtils.removeClass(document.documentElement, 'has-nav-expanded');
 }

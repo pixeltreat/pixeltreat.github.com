@@ -6,8 +6,10 @@
 // app setup
 module.exports = angular.module('msnsApp', [
     'ui.router',
-    require('../../modules/global/header'),
-    require('../../modules/global/footer')
+    require('global/header'),
+    require('global/footer'),
+    require('dashboard'),
+    require('employee')
 ])
 
 // config
@@ -17,10 +19,14 @@ module.exports = angular.module('msnsApp', [
     require('./core/routes')
 ])
 
+// app controller
+.controller('AppCtrl', function(){ })
+
 // config to trigger disabling debug info
 .config(['$compileProvider', removeDebugInfo])
 
-.controller('AppCtrl', function(){ });
+// set state and sate params to root scope
+.run(setStateAndParams);
 
 /**
  * This will remove the debug information from compiled DOM
@@ -28,4 +34,15 @@ module.exports = angular.module('msnsApp', [
  */
 function removeDebugInfo($compileProvider) {
     $compileProvider.debugInfoEnabled(false);
+}
+
+/**
+ * set state and sate params to root scope
+ * @param {object} $rootScope
+ * @param {object} $state
+ * @param {object} $stateParams
+ */
+function setStateAndParams($rootScope, $state, $stateParams) {
+    $rootScope.$state       = $state;
+    $rootScope.$stateParams = $stateParams;
 }

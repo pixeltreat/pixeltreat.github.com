@@ -19,9 +19,10 @@ var PATHS = {
 
 // configurations
 module.exports = {
-    context        : PATHS.root,
-    entry          : {
-        'app-scripts': './source/assets/js/core/base.js'
+    context: PATHS.root,
+    entry: {
+        'app-scripts': './source/assets/js/core/base.js',
+        'vendor'     : ['jquery', 'angular', 'angular-ui-router']
     },
 
     resolve: {
@@ -30,7 +31,10 @@ module.exports = {
             PATHS.srcModules,
             PATHS.nodeModules
         ],
-        extensions: ['', '.js']
+        extensions: ['', '.js'],
+        alias: {
+            jQuery: 'jquery'
+        }
     },
 
     resolveLoader: {
@@ -38,8 +42,6 @@ module.exports = {
     },
 
     target: 'web',
-    //watch: true,
-    //debug: true,
 
     /* source map for dev server */
     devtool: 'source-map',
@@ -51,7 +53,7 @@ module.exports = {
     },
 
     plugins: [
-        //new webpack.optimize.CommonsChunkPlugin('common-scripts.js')
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', Infinity),
 
         // uglfy / minify js
         //new webpack.optimize.UglifyJsPlugin()
@@ -62,15 +64,16 @@ module.exports = {
      */
     externals: {
         'Modernizr' : 'Modernizr',
+        'kendo'     : 'kendo',
         'window'    : 'window'
     },
 
     /* loaders */
     module: {
-        loaders: [{
-           test    : /\.html$/,
-           loader  : 'raw',
-           exclude : /node_modules/
-        }]
+        loaders: [
+            { test: /\.html$/,     loader: 'raw', exclude: /node_modules/ },
+            { test: /jquery\.js$/, loader: 'expose?$' },
+            { test: /jquery\.js$/, loader: 'expose?jQuery' }
+        ]
     }
 };

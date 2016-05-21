@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 
 <head>
-    <title>MSN App</title>
+    <title ng-bind="$state.current.title">MSNS App</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,11 +11,8 @@
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="//kendo.cdn.telerik.com/2016.2.504/styles/kendo.common.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/app-styles.css">
-
-    <!-- scripts -->
-    <script src="//ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js" async></script>
-    <script src="assets/js/app-scripts.js" async defer></script>
 </head>
 
 <body>
@@ -34,11 +31,21 @@
 
         <!-- main -->
         <main role="main" class="app-content" id="app-content">
+            <!-- page title -->
+            <h1 class="app-title" ng-bind="$state.current.title"></h1>
+
+            <!-- page view changes here -->
             <section ui-view class="app-view"></section>
         </main>
 
         <!-- footer -->
         <div footer></div>
     </div>
+
+    <!-- scripts jquery, kendo and app scripts -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" async></script>
+    <script src="assets/js/vendor.js"></script>
+    <script src="//kendo.cdn.telerik.com/2016.2.504/js/kendo.all.min.js"></script>
+    <script src="assets/js/app-scripts.js"></script>
 </body>
 </html>

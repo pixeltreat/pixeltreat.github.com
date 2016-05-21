@@ -52,12 +52,14 @@ body {
     position: relative;
     margin: 0;
     width: 100%;
+    padding: 1rem 2rem;
 }
 
 .app-content{
+    @extend .wrapper;
     min-height: calc(100vh - 55px);
 }
 
 .app-view{
-    @extend .wrapper;
+    padding: 2rem 0;
 }

@@ -18,6 +18,12 @@ var entryFile = config.filePath.scriptsEntry;
 module.exports = function (watch) { //publish
     return gulp
         .src( entryFile)
+        .pipe(plugins.plumber({
+            errorHandler: function (err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
         .pipe( webpack(webpackConfig) )
         .pipe( gulp.dest(base.distAssets + '/js') )
         .pipe( plugins.if( watch, reload({stream: true}) ) )

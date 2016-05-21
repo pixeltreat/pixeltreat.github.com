@@ -1,11 +1,11 @@
 <nav class="app-nav" role="navigation" id="app-nav">
     <ol class="app-nav__main">
         <!-- main nav iterator -->
-        <li class="app-nav__main__li {{navLink.hasSubnav}}"
+        <li class="app-nav__main__li {{navLink.hasSubnav}}" ui-sref-active="is-mainnav-active"
             ng-repeat="navLink in vm.navLinks"
             ng-click="vm.toggleSubnav($event)">
 
-            <a class="app-nav__main__li__a" href="{{navLink.URL}}">
+            <a class="app-nav__main__li__a" href ui-sref="{{navLink.URL}}">
                 <span class="f-icon__nav-{{navLink.icon}} app-nav__main__li__a__icon" aria-hidden="true"></span>
                 <span class="app-nav__main__li__a__text">{{navLink.label}}</span>
             </a>
@@ -13,11 +13,11 @@
             <!-- subnav -->
             <ul ng-if="navLink.subnav" class="app-nav__sub">
                 <!-- subnav iterator -->
-                <li class="app-nav__sub__li"
+                <li class="app-nav__sub__li" ui-sref-active="is-subnav-active"
                     ng-repeat="subnavLink in navLink.subnav"
                     ng-click="vm.toggleSubnav($event)">
 
-                    <a class="app-nav__sub__li__a" href="{{subnavLink.URL}}">{{subnavLink.label}}</a>
+                    <a class="app-nav__sub__li__a" href ui-sref="{{subnavLink.URL}}">{{subnavLink.label}}</a>
 
                 </li>
             </ul>
