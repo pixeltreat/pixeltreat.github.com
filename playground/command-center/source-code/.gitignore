@@ -1,0 +1,27 @@
+# Source Files #
+################
+.*/
+node_modules/
+application/source/assets/bower/
+
+# Compiled Files #
+##################
+.tmp/
+.sass-cache/
+application/build
+
+# MAC OS Files #
+############
+**/.DS_Store
+
+# WIN OS Files #
+############
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Log Files #
+############
+*.log

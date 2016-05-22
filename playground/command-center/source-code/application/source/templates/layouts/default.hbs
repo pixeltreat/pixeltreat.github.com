@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {{> meta-tags }}
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{assets}}/css/app-styles.css">
+</head>
+<body class="{{pageclass}}">
+    <div class="page-wrap">
+        <!-- header -->
+        {{> header }}
+
+        <!-- main -->
+        <main role="main" class="page-content">
+            {% body  %}
+        </main>
+        <!-- footer -->
+        {{> footer }}
+    </div>
+
+    <!-- JS: VENDOR -->
+    <script src="{{assets}}/js/vendor-libs.js"></script>
+    <!-- JS: site-wide -->
+    <script src="{{assets}}/js/app-scripts.js"></script>
+</body>
+</html>

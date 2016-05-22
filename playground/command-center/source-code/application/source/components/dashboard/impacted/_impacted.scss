@@ -1,0 +1,39 @@
+// ****************************************
+// impacted
+// ****************************************
+.dashboard-impacted {
+    @extend .flex-g;
+    margin: 20px 0;
+
+    @include MediaQueries(#{$mobile}) {
+        display: block;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: $font-weight__semi-bold;
+    }
+
+    &__tags {
+        margin-top: 5px;
+
+        .tag{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.dashboard-impacted__regions {
+    @extend .flex-col__1-2;
+}
+
+.dashboard-impacted__facilities {
+    @extend .flex-col__1-2;
+    text-align: right;
+
+
+    @include MediaQueries(#{$mobile}) {
+        margin-top: 10px;
+        text-align: left;
+    }
+}

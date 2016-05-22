@@ -1,0 +1,34 @@
+// ****************************************
+// page-title
+// ****************************************
+.page-title {
+    @extend .flex-g;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 5px;
+
+    @include MediaQueries(#{$mobile}) {
+        display: block;
+    }
+
+    // @include MediaQueries(#{$tablet-and-above}) {
+    //
+    // }
+
+    &__text {
+        @extend .flex-col__1-3;
+        font-size: 2rem;
+        font-weight: $font-weight__semi-bold;
+
+
+    }
+
+    &__desc {
+        @extend .flex-col__2-3;
+        margin: 0;
+        font-size: 1.3rem;
+
+        @include MediaQueries(#{$tablet-and-above}) {
+            text-align: right;
+        }
+    }
+}

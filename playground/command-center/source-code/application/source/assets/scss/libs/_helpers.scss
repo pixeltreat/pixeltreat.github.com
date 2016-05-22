@@ -1,0 +1,26 @@
+// ****************************************
+// helpers
+// ****************************************
+.hide-from__screen {
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    position: fixed;
+    height: 1px;
+    width: 1px;
+}
+
+%no-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+%inline-block__valign-middle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+%inline-block__valign-top {
+    display: inline-block;
+    vertical-align: top;
+}

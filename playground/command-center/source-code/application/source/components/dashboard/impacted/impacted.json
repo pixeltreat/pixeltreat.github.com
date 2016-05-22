@@ -1,0 +1,22 @@
+{
+    "sections": [
+        {
+            "type": "regions",
+            "title": "Regions Impacted:",
+            "tags": [
+                "Region 1",
+                "Region 2",
+                "Region 3",
+                "Region 4"
+            ]
+        },
+        {
+            "type": "facilities",
+            "title": "Facility Types Impacted:",
+            "tags": [
+                "Hospitals",
+                "Nursing Home"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+---
+layout: default
+title: "Home Page content"
+description: "Page Description"
+keywords: "Page Keywords"
+pageclass: page-home
+---
+<section class="body-section">
+    <div class="wrap">
+        {{> page-title
+            text="Dashboard"
+            desc="15-042 Severe Weather - Statewide - 13 December 2015"
+        }}
+
+        {{> impacted }}
+
+        <div class="info-cards-section">
+            {{#each info-card.section }}
+              {{> info-card this}}
+            {{/each}}
+
+        </div>
+    </div>
+
+</section>

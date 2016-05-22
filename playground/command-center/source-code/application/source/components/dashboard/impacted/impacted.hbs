@@ -1,0 +1,13 @@
+<!-- impacted -->
+<article class="dashboard-impacted">
+    {{#each impacted.sections}}
+        <div class="dashboard-impacted__{{this.type}}">
+            <h3 class="dashboard-impacted__title">{{this.title}}</h3>
+            <div class="dashboard-impacted__tags">
+                {{#each this.tags}}
+                  <span class="tag tag--blue">{{this}}</span>
+                {{/each}}
+            </div>
+        </div>
+    {{/each}}
+</article>

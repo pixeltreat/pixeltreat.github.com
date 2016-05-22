@@ -1,0 +1,67 @@
+{
+    "section": [
+        {
+            "title": "operations",
+            "icon": "lock",
+            "status": "red",
+            "highlightNumber": "34",
+            "highlightLabel": "Closed",
+            "footerLabel": "Total",
+            "footerValue": "100"
+        },
+        {
+            "title": "Evacuated",
+            "icon": "evacuate",
+            "status": "green",
+            "highlightNumber": "11",
+            "highlightLabel": "completed",
+            "footerLabel": "Total",
+            "footerValue": "22"
+        },
+        {
+            "title": "Fuel Out",
+            "icon": "fuel-tank",
+            "status": "red",
+            "highlightNumber": "10",
+            "highlightLabel": "Facilities",
+            "footerLabel": "Total",
+            "footerValue": "100"
+        },
+        {
+            "title": "Fuel Low",
+            "icon": "fuel-low",
+            "status": "red",
+            "highlightNumber": "4",
+            "highlightLabel": "No Supply",
+            "footerLabel": "Total",
+            "footerValue": "100"
+        },
+        {
+            "title": "Adult ICU",
+            "icon": "icu",
+            "status": "green",
+            "highlightNumber": "1265",
+            "highlightLabel": "Available",
+            "footerLabel": "Total",
+            "footerValue": "1400"
+        },
+        {
+            "title": "Medical Surgical",
+            "icon": "medical-surgical",
+            "status": "green",
+            "highlightNumber": "432",
+            "highlightLabel": "Available",
+            "footerLabel": "Total",
+            "footerValue": "2345"
+        },
+        {
+            "title": "Neonatal ICU",
+            "icon": "neonatal",
+            "status": "green",
+            "highlightNumber": "99",
+            "highlightLabel": "Available",
+            "footerLabel": "Total",
+            "footerValue": "567"
+        }
+    ]
+}

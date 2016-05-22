@@ -1,0 +1,19 @@
+// ****************************************
+// layout
+// ****************************************
+.tag {
+    display: inline-block;
+    font-size: 1.3rem;
+    margin-right: 6px;
+    padding: 5px 10px;
+    border-radius: 4px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.tag--blue {
+    background-color: $brand__blue;
+    color: #fff;
+}

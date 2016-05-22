@@ -1,0 +1,36 @@
+// ****************************************
+// header
+// ****************************************
+.page-header {
+    padding: 15px 0 5px;
+    background-color: $base__white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+
+    @include MediaQueries(#{$desktop-and-above}) {
+        min-height: 75px;
+    }
+
+    .wrap {
+        @extend .flex-g;
+    }
+}
+
+.page-header__logo {
+    @extend .flex-col__3-4;
+    @extend .flex-col-lg__1-3;
+
+    &__img {
+        max-height: 35px;
+
+        @include MediaQueries(#{$desktop-and-above}) {
+            max-height: 55px;
+        }
+    }
+}
+
+.page-header__right-section {
+    @extend .flex-col__1-4;
+    @extend .flex-col-lg__2-3;
+    text-align: right;
+}

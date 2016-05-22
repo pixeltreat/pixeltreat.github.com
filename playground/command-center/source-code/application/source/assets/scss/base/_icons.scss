@@ -1,0 +1,48 @@
+// ****************************************
+// icons
+// ****************************************
+// fonts path
+$iconsFont: "../fonts/icons";
+
+/* Regular */
+@font-face {
+    font-family: "icons";
+    font-weight: normal;
+    font-style: normal;
+    src: url(($iconsFont + '.woff')) format('woff')
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+.f-icon:before,
+[data-icon]:before,
+[class*="f-icon"]:before {
+    display: inline-block;
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-decoration: inherit;
+    cursor: pointer;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+.f-icon__chevron-down:before { content: "\f100"; }
+.f-icon__chevron-left:before { content: "\f101"; }
+.f-icon__chevron-right:before { content: "\f102"; }
+.f-icon__chevron-up:before { content: "\f103"; }
+.f-icon__evacuate:before { content: "\f104"; }
+.f-icon__fuel-low:before { content: "\f105"; }
+.f-icon__fuel-tank:before { content: "\f106"; }
+.f-icon__icu:before { content: "\f107"; }
+.f-icon__lock:before { content: "\f108"; }
+.f-icon__logout:before { content: "\f109"; }
+.f-icon__medical-surgical:before { content: "\f10c"; }
+.f-icon__menu:before { content: "\f10d"; }
+.f-icon__neonatal:before { content: "\f10a"; }
+.f-icon__user-profile:before { content: "\f10b"; }

@@ -1,0 +1,31 @@
+// ****************************************
+// media-queries
+// ****************************************
+
+//BREAK POINTS
+$small-bp  : 37.5em !default; // 37.5x16 = 600px
+$medium-bp : 60em !default; // 60x16 = 960px
+$large-bp  : 75em !default; // 75x16 = 1200px
+
+$screen            : "only screen" !default;
+$landscape         : "#{$screen} and (orientation: landscape)" !default;
+$portrait          : "#{$screen} and (orientation: portrait)" !default;
+
+$mobile            : "#{$screen} and (max-width: #{$small-bp})" !default;
+
+$tablet-and-below  : "#{$screen} and (max-width: #{$medium-bp})" !default;
+$tablet            : "#{$screen} and (min-width: #{$small-bp + 0.063}) and (max-width: #{$medium-bp})" !default;
+$tablet-and-above  : "#{$screen} and (min-width: #{$small-bp + 0.063})" !default;
+
+$desktop-and-below : "#{$screen} and (max-width: #{$large-bp})" !default;
+$desktop           : "#{$screen} and (min-width: #{$medium-bp + 0.063}) and (max-width: #{$large-bp})" !default;
+$desktop-and-above : "#{$screen} and (min-width: #{$medium-bp + 0.063})" !default;
+
+// ****************************************
+// Media Queries configuration
+// ****************************************
+@mixin MediaQueries($breakpoint) {
+    @media #{$breakpoint} {
+        @content;
+    }
+}

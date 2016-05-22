@@ -1,0 +1,172 @@
+// ****************************************
+// navigation
+// ****************************************
+
+// menu icon
+.page-navigation__mobile-menu {
+    display: inline-block;
+    background:transparent;
+    border: 0;
+    outline: 0 none;
+    position: relative;
+    width: 32px;
+    height: 28px;
+
+    @include MediaQueries(#{$desktop-and-above}) {
+        display: none;
+    }
+
+    &__icon {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 32px;
+        height: 3px;
+        font-size: 0;
+        user-select: none;
+        background-color: $brand__blue;
+        transition: background-color 0.3s $transition__default;
+        border-radius: 3px;
+
+        &:before,
+        &:after {
+            cursor: pointer;
+            border-radius: 3px;
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $brand__blue;
+            transition: transform 0.3s $transition__default;
+        }
+
+        &:before {
+            bottom: 1px;
+            transform: translateY(-250%);
+        }
+
+        &:after {
+            top: 1px;
+            transform: translateY(250%);
+        }
+
+        .has-menu-visible &{
+            background-color: transparent;
+
+            &:before {
+                top: 0;
+                transform: translateY(0) rotate(45deg);
+            }
+
+            &:after {
+                top: 0;
+                transform: translateY(0) rotate(-45deg);
+            }
+        }
+    }
+
+    &__text {
+        @extend .hide-from__screen;
+    }
+}
+
+.page-navigation {
+    &__ol {
+        @extend %no-list;
+        position: absolute;
+        right: 20px;
+        top: 100%;
+        margin-top: 1px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        padding: 10px 15px 15px;
+        z-index: 9;
+        transform-origin: top right;
+        @include drop-down__hide();
+
+        .has-menu-visible & {
+            @include drop-down__show();
+
+        }
+
+        @include MediaQueries(#{$desktop-and-above}) {
+            @include drop-down__show('no-extend');
+            position: static;
+            box-shadow: 0 0 0;
+            background-color: transparent;
+            padding: 0;
+        }
+    }
+
+    &__ol__li {
+        text-align: left;
+
+        @include MediaQueries(#{$desktop-and-above}) {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &__user-icon {
+            @extend .f-icon;
+            @extend .f-icon__user-profile;
+            @extend %inline-block__valign-middle;
+            font-size: 3.5rem;
+            color: $brand__blue;
+        }
+
+        &__user-text {
+            @extend %inline-block__valign-middle;
+            padding: 5px 0 0 10px;
+        }
+
+        &__greeting-text {
+            display: block;
+            font-size: 1.4rem;
+            text-align: left;
+        }
+
+        &__username {
+            display: block;
+            font-size: 1.4rem;
+            text-align: left;
+            font-weight: $font-weight__bold;
+        }
+
+        &__logout {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+            color: $brand__blue;
+
+            @include MediaQueries(#{$desktop-and-above}) {
+                margin: 0 0 0 20px;
+            }
+
+            &__icon {
+                @extend .f-icon;
+                @extend .f-icon__logout;
+                @extend %inline-block__valign-middle;
+                font-size: 2rem;
+
+                @include MediaQueries(#{$desktop-and-above}) {
+                    display: block;
+                    text-align: center;
+                }
+            }
+
+            &__text {
+                @extend %inline-block__valign-middle;
+                padding: 0 0 0 15px;
+                font-size: 1.4rem;
+
+                @include MediaQueries(#{$desktop-and-above}) {
+                    display: block;
+                    text-align: center;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
