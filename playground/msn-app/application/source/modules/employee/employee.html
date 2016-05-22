@@ -1,4 +1,26 @@
 <article class="employee" ui-view>
-    <h4>Kendo UI Grid Sample</h4>
-    <kendo-grid options="vm.mainGridOptions"></kendo-grid>
+    <div kendo-grid k-options="vm.employeeGridOptions" class="employee__grid"></div>
+
+    <!-- <br />
+    <br />
+    <div class="employee__grid" kendo-grid
+         k-data-source="vm.gridData"
+         k-columns="vm.gridColumns"
+         k-selectable="true">
+        <table>
+            <tr k-row-template data-uid="#: uid #">
+                <td>
+                    <input type="checkbox" class="checkbox" />
+                </td>
+                <td>
+                    <button class="k-button k-button-icontext k-grid-Edit">Edit</button>
+                </td>
+                <td>
+                    <button class="k-button k-button-icontext k-grid-Delete">Delete</button>
+                </td>
+                <td k-sortable="true">#: artist #</td>
+                <td k-sortable="true">#: track #</td>
+            </tr>
+        </table>
+    </div> -->
 </article>

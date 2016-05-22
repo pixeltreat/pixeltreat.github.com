@@ -9,16 +9,20 @@ $table-header-text: $tertiary-color;
 .k-grid-header-wrap,
 .k-grid-footer-wrap,
 .k-header,
-.k-grid-content td{
+.k-grid-content td {
     border-color: $table-border;
 }
 
 .k-grid-header th.k-header {
     background-color: $table-header-bg;
     color: $tertiary-color;
-    font-size: 1.5rem;
     font-weight: $bold;
-    padding: 6px 15px;
+    letter-spacing: 1px;
+
+    .k-link {
+        text-decoration: none;
+        color: $tertiary-color;
+    }
 }
 
 .k-grid-content {
@@ -27,7 +31,7 @@ $table-header-text: $tertiary-color;
     }
 
     tr:nth-child(odd) td {
-        background-color: $table-odd-row-bg;
+        //background-color: $table-odd-row-bg;
     }
 
     td {

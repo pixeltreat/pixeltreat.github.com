@@ -11,7 +11,9 @@
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="//kendo.cdn.telerik.com/2016.2.504/styles/kendo.common.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="//kendo.cdn.telerik.com/2016.2.504/styles/kendo.common.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="//kendo.cdn.telerik.com/2016.2.504/styles/kendo.common-material.min.css">
+    <link rel="stylesheet" type="text/css" href="//kendo.cdn.telerik.com/2016.2.504/styles/kendo.material.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/app-styles.css">
 </head>
 
@@ -33,6 +35,9 @@
         <main role="main" class="app-content" id="app-content">
             <!-- page title -->
             <h1 class="app-title" ng-bind="$state.current.title"></h1>
+
+            <!-- alerts directive -->
+            <div alerts></div>
 
             <!-- page view changes here -->
             <section ui-view class="app-view"></section>

@@ -1,9 +1,9 @@
 [{
     "label": "Admin",
     "icon": "admin",
-    "URL": "#",
+    "URL": "admin",
     "hasSubnav": "has-subnav",
-    
+
     "subnav": [{
         "label": "Subnav Link1",
         "URL": "#"
@@ -43,7 +43,7 @@
 }, {
     "label": "Shelter",
     "icon": "shelter",
-    "URL": "#",
+    "URL": "shelter",
     "hasSubnav": "has-subnav",
 
     "subnav": [{
@@ -53,7 +53,7 @@
 }, {
     "label": "Transportation",
     "icon": "transport",
-    "URL": "#",
+    "URL": "transportation",
     "hasSubnav": "has-subnav",
     "subnav": [{
         "label": "Subnav Link1",
@@ -62,7 +62,7 @@
 }, {
     "label": "Reports",
     "icon": "reports",
-    "URL": "#",
+    "URL": "reports",
     "hasSubnav": "has-subnav",
 
     "subnav": [{
@@ -72,21 +72,21 @@
 }, {
     "label": "Help",
     "icon": "help",
-    "URL": "#"
+    "URL": "help"
 }, {
     "label": "Contact",
     "icon": "contact",
-    "URL": "#"
+    "URL": "contact"
 }, {
     "label": "Refresh",
     "icon": "refresh",
-    "URL": "#"
+    "URL": "refresh"
 }, {
     "label": "User",
     "icon": "user",
-    "URL": "#"
+    "URL": "user"
 }, {
     "label": "Logout",
     "icon": "logout",
-    "URL": "#"
+    "URL": "logout"
 }]

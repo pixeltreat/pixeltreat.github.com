@@ -28,12 +28,49 @@
     display: inline-block;
 }
 
-// loop through array functionality
-$competency: ('UI': #0099ff, 'UX': #00cc66, 'FE': #ff6600, 'CD': #333399, 'CX':#ff9900, 'CW': #9900cc,'QA': #689f38,'SF': #006699, 'EM': #cc3333);
-
-// loop through the competencies and print selectors for each one.
-@each $skill, $color in $competency {
-    [data-competency="#{$skill}"]:before {
-        background-color: $color;
+/**
+ * Dropdown animation
+ */
+// hide
+@mixin drop-down__hide($extend: 'extend') {
+    @if ($extend == 'no-extend') {
+        backface-visibility: hidden;
+        transform: scale(0);
+        opacity: 0;
+        transition: $transition__default-all;
+        visibility: hidden;
+    } @else {
+        @extend %drop-down__hide;
     }
 }
+
+// show
+@mixin drop-down__show($extend: 'extend') {
+    @if ($extend == 'no-extend') {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+    } @else {
+        @extend %drop-down__show;
+    }
+}
+
+// extend for hide
+%drop-down__hide {
+    @include drop-down__hide('no-extend');
+}
+
+// extend for show
+%drop-down__show {
+    @include drop-down__show('no-extend');
+}
+
+// loop through array functionality
+// $mode: ('primary': $primary-color , 'secondary': $secondary-color, 'tertiary': $tertiary-color);
+//
+// // loop through the competencies and print selectors for each one.
+// @each $theme, $color in $mode {
+//     [data-theme="#{$theme}"]:before {
+//         background-color: $color;
+//     }
+// }

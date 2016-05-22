@@ -41,7 +41,7 @@ function controllerFn(getNavigationLinksFactory) {
     /**
      * Toggle active class for both main/subnav li elements
      */
-    vm.toggleSubnav = toggleSubnavView;
+    //vm.toggleSubnav = toggleSubnavView;
 }
 
 /**

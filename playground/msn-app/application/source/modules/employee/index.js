@@ -3,11 +3,11 @@
 var moduleName = 'employee';
 
 angular.module(moduleName, [
-    'kendo.directives',
     require('./add-employee')
 ])
 
 .controller('EmployeeCtrl', [
+    '$http',
     require('./employee-controller')
 ]);
 

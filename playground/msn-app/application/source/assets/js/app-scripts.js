@@ -6,6 +6,8 @@
 // app setup
 module.exports = angular.module('msnsApp', [
     'ui.router',
+    'kendo.directives',
+    require('global/alerts'),
     require('global/header'),
     require('global/footer'),
     require('dashboard'),
