@@ -26,11 +26,19 @@ function createDirective() {
 }
 
 /**
-* Create a link to the view.
-*/
-function controllerFn($element) {
+ * Create a link to the view.
+ * @param  {object} $element
+ * @param  {object} getAlertsFactory
+ */
+function controllerFn($element, getAlertsFactory) {
     var vm = this;
 
+    // get the navigation data and set it to `vm`.
+    getAlertsFactory.then(function(alertsData){
+        vm.alerts = alertsData;
+    });
+
+    // show/hide alerts
     vm.toggleAlertsView = function(){
         $element.toggleClass('is-alerts-visible');
     };

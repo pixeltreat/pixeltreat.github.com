@@ -9,7 +9,7 @@ exports = module.exports = createFactory;
 function createFactory($http) {
     var options = {
         method: 'get',
-        url   : 'data/navigation.json'
+        url   : 'data/alerts.json'
     };
 
     var xhR = $http(options);
