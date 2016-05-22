@@ -1,0 +1,5 @@
+cd Documents/workSpace/SVGFont
+
+fontcustom watch svg-source/
+
+fontcustom compile svg-source/
