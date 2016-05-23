@@ -7,6 +7,8 @@ require('./external-libs.js')();
 var appModule = require('../app-scripts');
 
 // replaces ng-app="appName"
-angular.element(document).ready(function() {
-    angular.bootstrap(document, [appModule.name]);
+angular.element(document).ready(function () {
+    angular.bootstrap(document, [appModule.name], {
+        //strictDi: true
+    });
 });

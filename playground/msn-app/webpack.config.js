@@ -17,8 +17,12 @@ var PATHS = {
     nodeModulesRoot : path.resolve('./node_modules')
 };
 
+var devOptions = [
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', Infinity)
+];
+
 // configurations
-module.exports = {
+var webpackConfig = {
     context: PATHS.root,
     entry: {
         'app-scripts': './source/assets/js/core/base.js',
@@ -52,12 +56,7 @@ module.exports = {
         sourceMapFilename : '[name].map'
     },
 
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', Infinity),
-
-        // uglfy / minify js
-        //new webpack.optimize.UglifyJsPlugin()
-    ],
+    plugins: devOptions,
 
     /**
      * globals variables
@@ -77,3 +76,5 @@ module.exports = {
         ]
     }
 };
+
+module.exports = webpackConfig;

@@ -13,18 +13,17 @@ function createDirective() {
      * Returned object.
      */
     var directive = {
-        restrict: 'A',
-        replace: true,
-        template: require('./footer.html'),
-        scope: {},
-        controllerAs: 'vm',
+        restrict        : 'A',
+        replace         : true,
+        template        : require('./footer.html'),
+        scope           : {},
+        controllerAs    : 'vm',
         bindToController: true,
-        controller: controllerFn
+        controller      : controllerFn
     };
 
     return directive;
 }
-
 
 /**
 * Create a link to the view.

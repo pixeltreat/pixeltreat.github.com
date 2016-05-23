@@ -13,13 +13,13 @@ function createDirective() {
      * Returned object.
      */
     var directive = {
-        restrict: 'A',
-        replace: true,
-        template: require('./alerts.html'),
-        scope: {},
-        controllerAs: 'vm',
+        restrict        : 'A',
+        replace         : true,
+        template        : require('./alerts.html'),
+        scope           : {},
+        controllerAs    : 'vm',
         bindToController: true,
-        controller: controllerFn
+        controller      : ['$http', 'getDataFactory', controllerFn]
     };
 
     return directive;
@@ -27,19 +27,21 @@ function createDirective() {
 
 /**
  * Create a link to the view.
- * @param  {object} $element
  * @param  {object} getAlertsFactory
  */
-function controllerFn($element, getAlertsFactory) {
+function controllerFn($http, getDataFactory) {
     var vm = this;
 
-    // get the navigation data and set it to `vm`.
-    getAlertsFactory.then(function(alertsData){
+    // pass the URL to factory and get the data as promise
+    var alerts = getDataFactory('data/alerts.json');
+
+    // get the alerts data and set it to `vm`.
+    alerts.then(function (alertsData) {
         vm.alerts = alertsData;
     });
 
     // show/hide alerts
-    vm.toggleAlertsView = function(){
-        $element.toggleClass('is-alerts-visible');
+    vm.toggleAlertsView = function () {
+        vm.toggleAlert = !vm.toggleAlert;
     };
 }

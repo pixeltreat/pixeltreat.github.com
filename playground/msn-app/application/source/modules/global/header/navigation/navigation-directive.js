@@ -20,21 +20,24 @@ function createDirective() {
         scope           : {},
         controllerAs    : 'vm',
         bindToController: true,
-        controller      : controllerFn
+        controller      : ['$http', 'getDataFactory', controllerFn]
     };
 
     return directive;
 }
 
 /**
-* Create a link to the view.
-* @param {Object} getNavigationLinksFactory
-*/
-function controllerFn(getNavigationLinksFactory) {
+ * Create a link to the view.
+ * @param  {object} getAlertsFactory
+ */
+function controllerFn($http, getDataFactory) {
     var vm = this;
 
-    // get the navigation data and set it to `vm`.
-    getNavigationLinksFactory.then(function(navLinksData){
+    // pass the URL to factory and get the data as promise
+    var navigation = getDataFactory('data/navigation.json', 'get', 'check');
+
+    // get the alerts data and set it to `vm`.
+    navigation.then(function(navLinksData){
         vm.navLinks = navLinksData;
     });
 

@@ -8,13 +8,13 @@ angular.module(moduleName, [
 ])
 
 .directive(moduleName, [
-    'getNavigationLinksFactory',
+    'getDataFactory',
     require('./navigation-directive')
 ])
 
-.factory('getNavigationLinksFactory', [
+.factory('getDataFactory', [
     '$http',
-    require('./get-navigation-links-factory')
+    require('core/get-data-factory')
 ]);
 
 module.exports = moduleName;

@@ -19,6 +19,7 @@ exports.filePath = {
     scripts   : src + '/**/*.js',
     copyfiles : [
         src + '/index.html',
+        srcAssets + '/js/kendo/**/*',
         srcAssets + '/fonts/**/*',
         srcAssets + '/img/**/*',
         src + '/data/**/*'

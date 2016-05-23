@@ -13,7 +13,7 @@
  * Native DOM ready function.
  * @param  {Function} callback
  */
-exports.ready = function(callback) {
+exports.ready = function (callback) {
     document.addEventListener('DOMContentLoaded', callback, false);
 };
 
@@ -24,7 +24,7 @@ exports.ready = function(callback) {
  * fallback to document.
  * @return {nodeList | Array} Returns the target as a DOM node.
  */
-exports.findAll = function(selector, context) {
+exports.findAll = function (selector, context) {
     return (context || document).querySelectorAll(selector);
 };
 
@@ -35,7 +35,7 @@ exports.findAll = function(selector, context) {
  * fallback to document.
  * @return {Object} returns the target as a DOM node
  */
-exports.findFirst = function(selector, context) {
+exports.findFirst = function (selector, context) {
     return (context || document).querySelector(selector);
 };
 
@@ -55,7 +55,7 @@ function checkClassListSupport() {
  * element.
  * @return {Boolean} Returns true/false
  */
-exports.hasClass = function(el, className) {
+exports.hasClass = function (el, className) {
     var classListSupport = checkClassListSupport();
 
     // check if the element is not null and classList is supported
@@ -75,7 +75,7 @@ exports.hasClass = function(el, className) {
  * @param {String} className This will be used as a style class to be added to
  * the element.
  */
-exports.addClass = function(el, className) {
+exports.addClass = function (el, className) {
     var classListSupport = checkClassListSupport();
 
     // check if the element is not null and classList is supported
@@ -95,7 +95,7 @@ exports.addClass = function(el, className) {
  * @param {String} className This will be used as a style class to be removed
  * from the element.
  */
-exports.removeClass = function(el, className) {
+exports.removeClass = function (el, className) {
     var classListSupport = checkClassListSupport();
 
     // check if the element is not null and classList is supported
@@ -118,7 +118,7 @@ exports.removeClass = function(el, className) {
  * @param  {Array}   array
  * @param  {Function} callback
  */
-exports.forEach = function(array, callback) {
+exports.forEach = function (array, callback) {
     var i;
     var length = array.length;
 

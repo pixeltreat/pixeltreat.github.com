@@ -8,13 +8,13 @@ angular.module(moduleName, [
 ])
 
 .directive(moduleName, [
-    'getAlertsFactory',
+    'getDataFactory',
     require('./alerts-directive')
 ])
 
-.factory('getAlertsFactory', [
+.factory('getDataFactory', [
     '$http',
-    require('./get-alerts-factory')
+    require('core/get-data-factory')
 ]);
 
 module.exports = moduleName;
