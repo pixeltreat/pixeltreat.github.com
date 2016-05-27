@@ -2,7 +2,7 @@
 FED Stack: Angular, SCSS, Gulp and Webpack
 
 ## Requirements ##
-    Node.js v.5.0 and above
+    Node.js v.4.4.4 and above
 
 ## Install ##
     'npm run setup'
