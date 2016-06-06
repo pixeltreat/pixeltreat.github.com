@@ -1,4 +1,4 @@
-﻿define(['./helpers/_helpers_'], function(Helpers) {
+﻿define(['./helpers/helpers'], function(Helpers) {
 	/**
 	 ui-panel class
 

@@ -1,4 +1,4 @@
-﻿define(['./helpers/_helpers_'], function(Helpers) {
+﻿define(['./helpers/helpers'], function(Helpers) {
 	/**
 	 URL controller is used to trigger events when there is a url change
 
