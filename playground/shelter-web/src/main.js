@@ -14,7 +14,7 @@ require.config({
 		domReady : '../assets/js/src/libs/require/domReady',
 		path     : '../assets/js/src/libs/require/path',
 		// namespace that aggregate core classes that are in frequent use
-		Boiler : 'core/_boiler_'
+		Boiler : './core/boiler'
 },
     //defulat value is 7 seconds
 waitSeconds: 30
