@@ -20,7 +20,7 @@
     <script src="../assets/js/modernizr.min.js" async></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="style-guide.js" defer></script>
-
+    <script src="../assets/js/kendo.all.min.js"></script>
 </head>
 
 <body>
@@ -29,18 +29,14 @@
         <header role="banner" class="styleguide-page__header">
             <div class="app-logo">
                 <a href="/" class="app-logo__link">MSNS logo</a>
-
                 <h2 class="styleguide-page__header-title">Visual style guide</h2>
             </div>
 
             <div class="side-nav">
                 <nav role="navigation" aria-label="Primary Navigation" class="style-guide-nav">
                     <ul>
+                        <li><a href="#color-palette">Color Palette</a></li>
                         <li><a href="#form-elements">Form Elements</a></li>
-                        <!-- <li><a href="#color-palette">Color Palette</a></li>
-                        <li><a href="#typography">Typography</a></li>
-                        <li><a href="#page-search">Page Search</a></li>
-                        <li><a href="#tables">Tables</a></li> -->
                         <li><a href="#glyphs">Glyphs</a></li>
                     </ul>
                 </nav>
@@ -50,12 +46,45 @@
         <!-- main -->
         <main role="main" class="styleguide-page__main">
 
+            <article id="color-palette" class="styleguide__color-palette">
+                <h2 class="subsection-title">
+                    <strong class="subsection-number">Color Palette</strong>
+                    <span class="snippet-toggle">code snippet</span>
+                </h2>
+                <p>All palette colors are available with "Backgournd" and "Text" color. Background classes end with <em>-bg</em> and text color classes end with <em>-text</em></p>
+
+                <p>We automated contrast ratio(4.5:1) for all colors by default, so dark background elements gets light text color and light background elements gets darker text color, however this behaviour can be overridden as needed.</p>
+
+                <div class="code-sample">
+                    <p>
+                        <strong>Colored text:</strong>
+                        <span class="primary-text"> Lorem ipsum dolor sit amet.</span>
+                    </p>
+                </div>
+
+                <div class="code-sample">
+                    <p>
+                        <strong>Colored background:</strong>
+                        <span class="primary-bg"> Lorem ipsum dolor sit amet.</span>
+                    </p>
+                </div>
+
+                <ul class="colors">
+                    <li class="primary-bg">#375D81</li>
+                    <li class="secondary-bg">#ABC8E2</li>
+                    <li class="tertiary-bg">#183152</li>
+                    <li class="quaternary-bg">#F8F8F8</li>
+                    <li class="quinary-bg">#333333</li>
+                </ul>
+            </article>
+
             <article id="form-elements" class="styleguide__form-elements">
                 <h2 class="subsection-title">
                     <strong class="subsection-number">Form Elements</strong>
                     <span class="snippet-toggle">code snippet</span>
                 </h2>
 
+                <!-- inputs and textarea -->
                 <div class="flex-row">
                     <div class="flex-col__1-2">
                         <!-- form input -->
@@ -65,13 +94,26 @@
                                 <span class="form-element-with-label__text">Normal</span>
                                 <input type="text" class="form-element-with-label__inp" />
                             </label>
-
+                        </div>
+                        <div class="code-sample">
                             <label class="form-element-with-label">
                                 <span class="form-element-with-label__text">Invalid with message</span>
                                 <input type="text" class="form-element-with-label__inp k-invalid" />
                                 <span class="k-widget k-tooltip k-tooltip-validation k-invalid-msg" role="alert">
                                     <span class="k-icon k-warning"></span> Invalid message
                                 </span>
+                            </label>
+                        </div>
+                        <div class="code-sample">
+                            <label class="form-element-with-label">
+                                <span class="form-element-with-label__text">Valid</span>
+                                <input type="text" class="form-element-with-label__inp k-valid" />
+                            </label>
+                        </div>
+                        <div class="code-sample">
+                            <label class="form-element-with-label">
+                                <span class="form-element-with-label__text">Disabled</span>
+                                <input type="text" disabled="disabled" value="Disabled Text" class="form-element-with-label__inp k-state-disabled" />
                             </label>
                         </div>
                     </div>
@@ -84,16 +126,30 @@
                                 <textarea class="form-element-with-label__inp"></textarea>
                             </label>
                         </div>
+
+                        <!-- buttons -->
+                        <h3 class="nested-sub-title">Primary button</h3>
+                        <div class="code-sample">
+                            <button class="btn">Normal</button>
+                            <button class="btn" disabled>Disabled</button>
+                        </div>
+
+                        <h3 class="nested-sub-title">Secondary button with icons</h3>
+                        <div class="code-sample">
+                            <button class="btn--secondary"><span class="f-icon f-icon__add" aria-hidden="true"></span> Add</button>
+                            <button class="btn--secondary"><span class="f-icon f-icon__filter-on" aria-hidden="true"></span> Filter On</button>
+                        </div>
                     </div>
                 </div>
 
+                <!-- checkbox and radio -->
                 <div class="flex-row">
                     <div class="flex-col__1-2">
                         <!-- radio -->
                         <h3 class="nested-sub-title">Radio Button</h3>
                         <div class="code-sample">
                             <label class="radio-button">
-                                <input class="radio-button__inp" checked type="radio">
+                                <input class="radio-button__inp" type="radio">
                                 <span class="radio-button__text">Normal</span>
                             </label>
                             <label class="radio-button">
@@ -136,26 +192,69 @@
                     </div>
                 </div>
 
+                <!-- Buttons & select-->
                 <div class="flex-row">
                     <div class="flex-col__1-2">
-                        <!-- checkbox -->
-                        <h3 class="nested-sub-title">Checkbox</h3>
+                        <!-- select dropdown -->
+                        <h3 class="nested-sub-title">Normal Select</h3>
+                        <div class="custom-select">
+                            <select id="select" data-role="dropdownlist">
+                                <option value="" selected="selected">All</option>
+                                <option value="1">Region1 FMS Shelter</option>
+                                <option value="2">Region1 EMS Shelter</option>
+                                <option value="3">Region2 FMS Shelter</option>
+                                <option value="4">Region2 EMS Shelter</option>
+                                <option value="5">Region3 FMS Shelter</option>
+                            </select>
+                            <script>$("#select").kendoDropDownList();</script>
+                        </div>
+
+                        <!-- Invalid select dropdown -->
+                        <h3 class="nested-sub-title">Invalid Select</h3>
+                        <div class="custom-select k-invalid">
+                            <span class="k-widget k-combobox k-header">
+                                <span tabindex="-1" unselectable="on" class="k-dropdown-wrap k-state-default">
+                                    <input class="k-input" type="text" style="width: 100%;" value="All">
+                                    <span tabindex="-1" unselectable="on" class="k-select">
+                                        <span unselectable="on" class="k-icon k-i-arrow-s" role="button" tabindex="-1" aria-controls="select_listbox">select</span>
+                                    </span>
+                                </span>
+                            </span>
+                            <span class="k-widget k-tooltip k-tooltip-validation k-invalid-msg">Please select valid item</span>
+                        </div>
+
+                        <!-- valid select dropdown -->
+                        <h3 class="nested-sub-title">Valid Select</h3>
+                        <div class="custom-select k-valid">
+                            <span class="k-widget k-combobox k-header">
+                                <span tabindex="-1" unselectable="on" class="k-dropdown-wrap k-state-default">
+                                    <input class="k-input" type="text" style="width: 100%;" value="All">
+                                    <span tabindex="-1" unselectable="on" class="k-select">
+                                        <span unselectable="on" class="k-icon k-i-arrow-s" role="button" tabindex="-1" aria-controls="select_listbox">select</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="flex-col__1-2">
+                        <!-- From CSS -->
+                        <h3 class="nested-sub-title">Loader from CSS</h3>
                         <div class="code-sample">
-                            <button class="btn">Normal Button</button>
-                            <button class="btn" disabled>Disabled Button</button>
+                            <div class="loader-icon"></div>
+                        </div>
+
+                        <!-- From Image tag -->
+                        <h3 class="nested-sub-title">Loader from Image</h3>
+                        <div class="code-sample">
+                            <img src="../assets/img/loader.svg" alt="loader" />
                         </div>
                     </div>
-                    <div class="flex-col__1-2"></div>
-                </div>
-                <div class="flex-row">
-                    <div class="flex-col__1-2"></div>
-                    <div class="flex-col__1-2"></div>
                 </div>
 
                 <!-- go to top link -->
                 <div class="back-to-top"><a href="#">Go to top</a></div>
             </article>
-
 
             <article id="glyphs" class="styleguide__glyphs">
                 <h2 class="subsection-title">
@@ -164,9 +263,18 @@
                 </h2>
                 <div class="glyphs-container">
                     <div class="code-sample">
+                        <span class="f-icon f-icon__add"></span>
                         <span class="f-icon f-icon__alerts"></span>
+                        <span class="f-icon f-icon__calendar"></span>
+                        <span class="f-icon f-icon__close"></span>
                         <span class="f-icon f-icon__delete"></span>
+                        <span class="f-icon f-icon__download"></span>
                         <span class="f-icon f-icon__edit"></span>
+                        <span class="f-icon f-icon__error"></span>
+                        <span class="f-icon f-icon__export"></span>
+                        <span class="f-icon f-icon__filter-off"></span>
+                        <span class="f-icon f-icon__filter-on"></span>
+                        <span class="f-icon f-icon__idle"></span>
                         <span class="f-icon f-icon__nav-admin"></span>
                         <span class="f-icon f-icon__nav-contact"></span>
                         <span class="f-icon f-icon__nav-dashboard"></span>
@@ -178,7 +286,13 @@
                         <span class="f-icon f-icon__nav-shelter"></span>
                         <span class="f-icon f-icon__nav-transport"></span>
                         <span class="f-icon f-icon__nav-user"></span>
+                        <span class="f-icon f-icon__next"></span>
+                        <span class="f-icon f-icon__not-reported"></span>
                         <span class="f-icon f-icon__save"></span>
+                        <span class="f-icon f-icon__search"></span>
+                        <span class="f-icon f-icon__showall"></span>
+                        <span class="f-icon f-icon__success"></span>
+                        <span class="f-icon f-icon__upload"></span>
                     </div>
                 </div>
                 <!-- go to top link -->

@@ -1957,7 +1957,6 @@ $ct.roles = function () {
 $ct.helpers = function () {
 
     var errorMsgShow = function (errorTemplate, viewModel) {
-
         $('.msg-container').empty();
 
         $($.trim(errorTemplate)).appendTo('.msg-container').each(function () {
@@ -1966,15 +1965,12 @@ $ct.helpers = function () {
             }, 800);
         });
 
-        var messageHeader = $('.msg-container')
+        var messageHeader = $('.msg-container');
         kendo.bind(messageHeader, viewModel);
-
-
     };
 
     var sucessMsgShow = function (succTemplate, viewModel) {
-
-        $('.msg-container').empty()
+        $('.msg-container').empty();
         $($.trim(succTemplate)).appendTo('.msg-container').each(function () {
             $(this).closest('.msg-container').animate({
                 bottom: 0
@@ -1982,47 +1978,36 @@ $ct.helpers = function () {
         }).delay(4000).queue(function () {
             $(this).closest('.msg-container').animate({
                 bottom: -($('.msg-container').height() + 20)
-            }, function () { $('.msg-container').empty() });
-
+            }, function () {
+                $('.msg-container').empty();
+            });
         });
 
-        var messageHeader = $('.msg-container')
+        var messageHeader = $('.msg-container');
         kendo.bind(messageHeader, viewModel);
-
     };
 
     var hideErrorMsgWindow = function (errorTemplate, viewModel) {
-
         $('.msg-container').empty();
-
     };
 
 
     var displayPageBusyCursor = function (msg) {
-
         $('#pageleveloverlay').show();
-
     };
 
     var hidePageBusyCursor = function (msg) {
-
         $('#pageleveloverlay').hide();
-
     };
 
 
     var displayWorkAreaBusyCursor = function (msg) {
-
-
         $('#workareaoverlay').show();
     };
 
     var hideWorkAreaBusyCursor = function (msg) {
-
         //To wait before hiding busy cursor.
-        //setTimeout(function () { $('#workareaoverlay').hide(); }, 50000);
         $('#workareaoverlay').hide();
-
     };
 
 
@@ -2035,13 +2020,10 @@ $ct.helpers = function () {
 
 
     var displayAlertWindow = function (msg) {
-
-        alert(msg)
-
+        alert(msg);
     };
 
     var displayConfirmWindow = function (msg) {
-
         if (confirm(msg)) {
             return true;
         }
@@ -2051,7 +2033,6 @@ $ct.helpers = function () {
     };
 
     var displayWindow = function (template, windowTitle, viewModel) {
-
         var WindowElement = $("#commonWindow");
         WindowElement.html("");
         WindowElement.append(template.getJQueryElement());
@@ -2064,19 +2045,17 @@ $ct.helpers = function () {
             if (viewModel.initialize !== undefined) {
                 viewModel.initialize();
             }
-
         }
 
         WindowElement.show();
 
         var window = WindowElement.data("kendoWindow");
 
-        if (windowTitle != undefined) {
+        if (windowTitle !== undefined) {
             window.title(windowTitle);
         }
 
         window.center().open();
-
     };
 
 
@@ -2089,7 +2068,7 @@ $ct.helpers = function () {
     };
 
     var executeFunctionByName = function (functionName, context, args) {
-        var args = Array.prototype.slice.call(arguments).splice(2);
+        args = Array.prototype.slice.call(arguments).splice(2);
         var namespaces = functionName.split(".");
         var func = namespaces.pop();
         for (var i = 0; i < namespaces.length; i++) {
@@ -2103,46 +2082,39 @@ $ct.helpers = function () {
             return new Date(epochDate * 1000);
     };
 
-
     var getTodaysDateWithMaxTime = function () {
-
         var todayDate = new Date();
         return new Date(todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate(), 23, 59, 0, 0);
-
     };
 
 
     var getCurrentTimeStamp = function () {
-
         var todayDate = new Date();
 
         return todayDate.getMonth() + 1 + "/" + todayDate.getDate() + "/" + todayDate.getFullYear() + " " + todayDate.getHours() + ":" + todayDate.getMinutes() + ":" + todayDate.getSeconds();
-
     };
 
-
     return {
-        toLower: toLower,
-        toUpper: toUpper,
-        executeFunctionByName: executeFunctionByName,
-        getDateFromEpochDate: getDateFromEpochDate,
-        getTodaysDateWithMaxTime: getTodaysDateWithMaxTime,
-        getCurrentTimeStamp: getCurrentTimeStamp,
+        toLower                  : toLower,
+        toUpper                  : toUpper,
+        executeFunctionByName    : executeFunctionByName,
+        getDateFromEpochDate     : getDateFromEpochDate,
+        getTodaysDateWithMaxTime : getTodaysDateWithMaxTime,
+        getCurrentTimeStamp      : getCurrentTimeStamp,
 
-        displayAlertWindow: displayAlertWindow,
-        displayConfirmWindow: displayConfirmWindow,
-        displayWindow: displayWindow,
+        displayAlertWindow       : displayAlertWindow,
+        displayConfirmWindow     : displayConfirmWindow,
+        displayWindow            : displayWindow,
 
-        errorMsgShow: errorMsgShow,
-        sucessMsgShow: sucessMsgShow,
-        hideErrorMsgWindow: hideErrorMsgWindow,
+        errorMsgShow             : errorMsgShow,
+        sucessMsgShow            : sucessMsgShow,
+        hideErrorMsgWindow       : hideErrorMsgWindow,
 
-        displayPageBusyCursor: displayPageBusyCursor,
-        hidePageBusyCursor: hidePageBusyCursor,
+        displayPageBusyCursor    : displayPageBusyCursor,
+        hidePageBusyCursor       : hidePageBusyCursor,
         displayWorkAreaBusyCursor: displayWorkAreaBusyCursor,
-        hideWorkAreaBusyCursor: hideWorkAreaBusyCursor,
-        clearValidations: clearValidations
-
+        hideWorkAreaBusyCursor   : hideWorkAreaBusyCursor,
+        clearValidations         : clearValidations
     };
 } ();
 
@@ -5220,43 +5192,45 @@ $(document).ready(function (e) {
     var $appContent = $('#bd');
 
     // alerts
-    $appContent.on('click', '.app-alerts', function(){
-        $(this).toggleClass('is-alerts-visible');
+    $appContent.on('click', '.app-alerts', alertsToggle);
+
+    // navigation view toggle
+    $appHeader.on({
+        'mouseenter': showNavPanel,
+        'mouseleave': hideNavPanel
     });
 
-    // // submenu
-    // $appHeader.on('click', '.admin', function (e) {
-	// 	$(this).toggleClass('active');
-	// 	$(this).find('.sub-nav').slideToggle();
-	// 	$(this).find('.sub-nav').toggleClass('collapse');
-	// });
-    //
-    // $appHeader.on('mouseleave', '.admin', function (e) {
-	// 	$(this).find('.sub-nav').slideUp();
-	// 	$(this).find('.sub-nav').removeClass('collapse');
-	// 	$($(this)).removeClass('active');
-    // });
-    //
-    // $appHeader.on('click', '.nav a', function (e) {
-	// 	e.preventDefault();
-	// });
-
-
-    /* mobile specific */
-    // $appHeader.on('click', '.m-menu', function (e) {
-    //     // toggle navigation
-    //     $(this).toggleClass('active');
-    //     $('.main-nav').toggleClass('expand');
-    // });
-
-    /*Start of closing error window event*/
-    $('.msg-container').on('click', '.close-btn', function (e) {
-        $(this).closest('.msg-container').animate({
-            bottom: -($('.msg-container').height() + 20)
-        }, function () { $('.msg-container').empty(); });
-    });
-    /*End of closing error window event*/
-
+    // hide nav when close button clicked
+    $appHeader.on('click', '.app-logo__menu-collapse', hideNavPanel);
 });
+
+/**
+ * root HTML element
+ * @type {object}
+ */
+var rootEle = document.documentElement;
+
+/**
+ * Toggle alerts view on the page
+ * @param  {object} e event
+ */
+function alertsToggle(e){
+    var alertsEle = e.currentTarget;
+    $(alertsEle).toggleClass('is-alerts-visible');
+}
+
+/**
+ * show navigation panel
+ */
+function showNavPanel() {
+    $(rootEle).addClass('has-nav-expanded');
+}
+
+/**
+ * hide navigation panel
+ */
+function hideNavPanel() {
+    $(rootEle).removeClass('has-nav-expanded');
+}
 
 //# sourceMappingURL=app-libs.js.map
