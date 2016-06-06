@@ -1,58 +1,134 @@
 {
   "checksum": {
-    "previous": "ee4382c633e8d5c8d80c47bd31e28eb7df7b435259f29e84cd022a9428e659ce",
-    "current": "ee4382c633e8d5c8d80c47bd31e28eb7df7b435259f29e84cd022a9428e659ce"
+    "previous": "e172516cbce9555ac25038f867f72753561b148f364eb99e5f31a04bf3a2920a",
+    "current": "e172516cbce9555ac25038f867f72753561b148f364eb99e5f31a04bf3a2920a"
   },
   "fonts": [
-    "icon-fonts/icon-fonts_ee4382c633e8d5c8d80c47bd31e28eb7.ttf",
-    "icon-fonts/icon-fonts_ee4382c633e8d5c8d80c47bd31e28eb7.svg",
-    "icon-fonts/icon-fonts_ee4382c633e8d5c8d80c47bd31e28eb7.woff",
-    "icon-fonts/icon-fonts_ee4382c633e8d5c8d80c47bd31e28eb7.eot"
+    "icon-fonts/icon-fonts_e172516cbce9555ac25038f867f72753.ttf",
+    "icon-fonts/icon-fonts_e172516cbce9555ac25038f867f72753.svg",
+    "icon-fonts/icon-fonts_e172516cbce9555ac25038f867f72753.woff",
+    "icon-fonts/icon-fonts_e172516cbce9555ac25038f867f72753.eot"
   ],
   "glyphs": {
-    "nav-admin": {
+    "add": {
+      "codepoint": 61711,
+      "source": "svg-source/add.svg"
+    },
+    "alerts": {
       "codepoint": 61696,
+      "source": "svg-source/alerts.svg"
+    },
+    "calendar": {
+      "codepoint": 61712,
+      "source": "svg-source/calendar.svg"
+    },
+    "close": {
+      "codepoint": 61713,
+      "source": "svg-source/close.svg"
+    },
+    "delete": {
+      "codepoint": 61697,
+      "source": "svg-source/delete.svg"
+    },
+    "download": {
+      "codepoint": 61714,
+      "source": "svg-source/download.svg"
+    },
+    "edit": {
+      "codepoint": 61698,
+      "source": "svg-source/edit.svg"
+    },
+    "error": {
+      "codepoint": 61715,
+      "source": "svg-source/error.svg"
+    },
+    "export": {
+      "codepoint": 61716,
+      "source": "svg-source/export.svg"
+    },
+    "filter-off": {
+      "codepoint": 61717,
+      "source": "svg-source/filter-off.svg"
+    },
+    "filter-on": {
+      "codepoint": 61718,
+      "source": "svg-source/filter-on.svg"
+    },
+    "idle": {
+      "codepoint": 61719,
+      "source": "svg-source/idle.svg"
+    },
+    "nav-admin": {
+      "codepoint": 61699,
       "source": "svg-source/nav-admin.svg"
     },
     "nav-contact": {
-      "codepoint": 61697,
+      "codepoint": 61700,
       "source": "svg-source/nav-contact.svg"
     },
     "nav-dashboard": {
-      "codepoint": 61698,
+      "codepoint": 61701,
       "source": "svg-source/nav-dashboard.svg"
     },
     "nav-employee": {
-      "codepoint": 61699,
+      "codepoint": 61702,
       "source": "svg-source/nav-employee.svg"
     },
     "nav-help": {
-      "codepoint": 61700,
+      "codepoint": 61703,
       "source": "svg-source/nav-help.svg"
     },
     "nav-logout": {
-      "codepoint": 61701,
+      "codepoint": 61704,
       "source": "svg-source/nav-logout.svg"
     },
     "nav-refresh": {
-      "codepoint": 61702,
+      "codepoint": 61705,
       "source": "svg-source/nav-refresh.svg"
     },
     "nav-reports": {
-      "codepoint": 61703,
+      "codepoint": 61706,
       "source": "svg-source/nav-reports.svg"
     },
     "nav-shelter": {
-      "codepoint": 61704,
+      "codepoint": 61707,
       "source": "svg-source/nav-shelter.svg"
     },
     "nav-transport": {
-      "codepoint": 61705,
+      "codepoint": 61708,
       "source": "svg-source/nav-transport.svg"
     },
     "nav-user": {
-      "codepoint": 61706,
+      "codepoint": 61709,
       "source": "svg-source/nav-user.svg"
+    },
+    "next": {
+      "codepoint": 61720,
+      "source": "svg-source/next.svg"
+    },
+    "not-reported": {
+      "codepoint": 61721,
+      "source": "svg-source/not-reported.svg"
+    },
+    "save": {
+      "codepoint": 61710,
+      "source": "svg-source/save.svg"
+    },
+    "search": {
+      "codepoint": 61722,
+      "source": "svg-source/search.svg"
+    },
+    "showall": {
+      "codepoint": 61723,
+      "source": "svg-source/showall.svg"
+    },
+    "success": {
+      "codepoint": 61724,
+      "source": "svg-source/success.svg"
+    },
+    "upload": {
+      "codepoint": 61726,
+      "source": "svg-source/upload.svg"
     }
   },
   "options": {
@@ -67,8 +143,8 @@
     "font_name": "icon-fonts",
     "force": false,
     "input": {
-      "templates": "svg-source/",
-      "vectors": "svg-source/"
+      "templates": "svg-source",
+      "vectors": "svg-source"
     },
     "no_hash": false,
     "output": {
