@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE 9]> <html class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html class="no-js">
@@ -46,8 +46,8 @@
         <!-- main -->
         <main role="main" class="app-content" id="bd">
             <!-- employee header -->
-            <div class="employee-header" id="idxEmployeeHeader" style="display: none;"></div>
-
+            <div class="employee-header" id="idxEmployeeHeader" hidden></div>
+            <div class="shelteree-header" id="idxSheltereeHeader" hidden> </div>
             <!-- page view changes here -->
             <section class="appcontent app-view"></section>
 
@@ -56,7 +56,7 @@
 
             <!-- overlay loader -->
             <div id="workareaoverlay" class="overlay" hidden>
-                <img class="overlay__img" src="assets/img/loader.svg" alt="loader" />
+                <object type="image/svg+xml" class="overlay__img" data="assets/img/loader.svg">Loader image</object>
             </div>
         </main>
 
@@ -75,7 +75,7 @@
     </div>
 
     <div id="pageleveloverlay" class="overlay">
-        <img class="overlay__img" src="assets/img/loader.svg" alt="loader" />
+        <object type="image/svg+xml" class="overlay__img" data="assets/img/loader.svg">Loader image</object>
     </div>
 
     <div id="messagepopup" class="msg-container" hidden></div>

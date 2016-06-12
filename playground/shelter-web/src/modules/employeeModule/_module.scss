@@ -1,4 +1,9 @@
 // ****************************************
 // baseModule
 // ****************************************
-@import "employeeList/_component";
+@import "uploadEmployee/_component";
+@import "employeeAttendance/_component";
+
+.is-employee-section {
+    margin-top: 110px;
+}

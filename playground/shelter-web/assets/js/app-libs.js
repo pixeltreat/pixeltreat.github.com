@@ -28,6 +28,10 @@ var globalSuperAdminId = 20;
 //Employee template URL
 var globalEmployeeTemplateURL = "http://localhost/FileRepository/ShelterTemplates/Employee_Upload-Template.xlsx";
 
+//Shelteree templat
+
+var globalSheltereeTemplateURL = "http://localhost/FileRepository/ShelterTemplates/Shelteree_Upload-Template.xlsx";
+
 
 
 // Files Order
@@ -303,6 +307,17 @@ $ct.cn = function () {
     };
     //end of event controller
 
+
+    // start of shelterstaus controller
+   
+    //end of shelterstaus controller
+    var sheltereeFacilityUrl = baseServiceUrl + "SheltereeFacility/"
+    var getSheltereeFacilityUrl = function () {
+        return sheltereeFacilityUrl;
+    };
+
+    
+
     return {
         //Start of admin controllers
         getAgencyUrl: getAgencyUrl,
@@ -335,7 +350,8 @@ $ct.cn = function () {
         getEventUrl: getEventUrl,
         //end of event controller
     
-        getEmployeeAttendanceUrl: getEmployeeAttendanceUrl
+        getEmployeeAttendanceUrl: getEmployeeAttendanceUrl,   
+        getSheltereeFacilityUrl: getSheltereeFacilityUrl
        
 
 
@@ -695,6 +711,113 @@ $ct.en = function () {
 
 
     //End  of employee attendence events
+
+    //start of shelteree events  
+
+    //Use this event when user clicks on shelteree menu item second time onwords
+    var sheltereeMenuItemClicked = "SHELTEREE_MENU_ITEM_CLICKED";
+
+    var getSheltereeMenuItemClicked = function () {
+        return sheltereeMenuItemClicked;
+    };
+
+    //to refresh current shelteree page with newly selected data in shelteree header(Shelter type and Shelter)
+    var sheltereeHeaderDataChanged = "SHELTEREE_HEADER_DATA_CHANGED";
+
+    var getSheltereeHeaderDataChanged = function () {
+        return sheltereeHeaderDataChanged;
+    };
+
+    //to load shelter type, shelter drop down lists, when user click on shelteree menu item first time
+    var loadSheltereeHeaderInfo = "LOAD_SHELTEREE_HEADER_INFO";
+
+    var getLoadSheltereeHeaderInfo = function () {
+        return loadSheltereeHeaderInfo;
+    };
+
+
+    //to show shelter dropdown lists in shelteree shelter header
+    var showSheltereeShelterHeader = "SHOW_SHELTEREE_SHELTER_HEADER";
+
+    var getShowSheltereeShelterHeader = function () {
+        return showSheltereeShelterHeader;
+    };
+
+    //to hide shelter dropdown lists in shelteree shelter header
+    var hideSheltereeShelterHeader = "HIDE_SHELTEREE_SHELTER_HEADER";
+
+    var getHideSheltereeShelterHeader = function () {
+        return hideSheltereeShelterHeader;
+    };
+
+
+    var hideSheltereeHeader = "HIDE_SHELTEREE_HEADER";
+
+    var getHideSheltereeHeader = function () {
+        return hideSheltereeHeader;
+    };
+
+    var hideSheltereeHeaderNav = "HIDE_SHELTEREE_HEADER_NAV";
+
+    var getHideSheltereeHeaderNavigation = function () {
+        return hideSheltereeHeaderNav;
+    };
+
+
+    var showActiveSheltereeHeader = "SHOW_ACTIVE_SHELTEREE_HEADER";
+
+    var getShowActiveSheltereeHeader = function () {
+        return showActiveSheltereeHeader;
+    };
+
+    var sheltereeCreatedOrUpdated = "SHELTEREE_CREATED_OR_UPDATED";
+
+    var getSheltereeCreatedOrUpdated = function () {
+        return sheltereeCreatedOrUpdated;
+    };
+
+    var sheltereeDischargeCreatedOrUpdated = "SHELTEREE_DISCHARGE_CREATED_OR_UPDATED";
+
+    var getSheltereeDischargeCreatedOrUpdated = function () {
+      return sheltereeDischargeCreatedOrUpdated;
+    };
+
+
+    var sheltereeMedicalUpdateCreatedOrUpdated = "SHELTEREE_MEDICAL_UPDATE_CREATED_OR_UPDATED";
+
+    var getSheltereeMedicalUpdateCreatedOrUpdated = function () {
+        return sheltereeMedicalUpdateCreatedOrUpdated;
+    };
+
+
+
+    var sheltereeRecordReload = "RELOAD_SHELTEREE_RECORD";
+
+    var getSheltereeRecordReload = function () {
+        return sheltereeRecordReload;
+    };
+
+    var manageSheltereeClicked = "MANAGE_SHELTEREE_CLICKED";
+
+    var getManageSheltereeClicked = function () {
+        return manageSheltereeClicked;
+    };
+
+    var manageSheltereeDischargeClicked = "MANAGE_SHELTEREE_DISCHARGE_CLICKED";
+
+    var getManageSheltereeDischargeClicked = function () {
+        return manageSheltereeDischargeClicked;
+    };
+
+
+    var manageSheltereeMedicalUpdateClicked = "MANAGE_SHELTEREE_MEDICAL_UPDATE_CLICKED";
+
+    var getManageSheltereeMedicalUpdateClicked = function () {
+        return manageSheltereeMedicalUpdateClicked;
+    };
+
+    //end of shelteree events
+
     return {
 
         //start of application independant common events
@@ -765,10 +888,30 @@ $ct.en = function () {
         //start of employee  attendence events    
         getEmployeeAttendenceComments: getEmployeeAttendenceComments,
         getEmployeeAttendanceUpdated: getEmployeeAttendanceUpdated,
-        getEmployeeAttendenceList: getEmployeeAttendenceList
+        getEmployeeAttendenceList: getEmployeeAttendenceList,
 
 
         //end of employee  attendenceevents 
+
+        //start of shelteree events  
+
+        getSheltereeMenuItemClicked: getSheltereeMenuItemClicked,
+        getSheltereeHeaderDataChanged: getSheltereeHeaderDataChanged,
+        getLoadSheltereeHeaderInfo: getLoadSheltereeHeaderInfo,
+        getShowSheltereeShelterHeader: getShowSheltereeShelterHeader,
+        getHideSheltereeShelterHeader: getHideSheltereeShelterHeader,
+        getHideSheltereeHeader: getHideSheltereeHeader,
+        getHideSheltereeHeaderNavigation: getHideSheltereeHeaderNavigation,
+        getShowActiveSheltereeHeader: getShowActiveSheltereeHeader,
+        getSheltereeCreatedOrUpdated: getSheltereeCreatedOrUpdated,
+        getSheltereeDischargeCreatedOrUpdated: getSheltereeDischargeCreatedOrUpdated,
+        getSheltereeMedicalUpdateCreatedOrUpdated:getSheltereeMedicalUpdateCreatedOrUpdated,
+        getSheltereeRecordReload: getSheltereeRecordReload,
+        getManageSheltereeClicked: getManageSheltereeClicked,
+        getManageSheltereeDischargeClicked: getManageSheltereeDischargeClicked,
+        getManageSheltereeMedicalUpdateClicked: getManageSheltereeMedicalUpdateClicked
+
+        //end of shelteree events
     };
 } ();
 
@@ -1067,8 +1210,72 @@ $ct.rn = function () {
 
     //end of employee routes
    
+
+    //start of shelteree routes
+
+
+    var sheltereeList = "sheltereelist";
+
+    var getSheltereeList = function () {
+        return sheltereeList;
+    };
    
-   
+    var sheltereeMedicalUpdateList = "sheltereemedicalupdatelist";
+
+    var getSheltereeMedicalUpdateList = function () {
+        return sheltereeMedicalUpdateList;
+    };
+
+    var sheltereeDischargeList = "sheltereedischargelist";
+
+    var getSheltereeDischargeList = function () {
+        return sheltereeDischargeList;
+    };
+    
+    var shelteree = "shelteree";
+
+    var getShelteree = function () {
+        return shelteree;
+    };
+
+
+    var bulkUpdateShelteree = "bulkupdateshelteree";
+
+    var getBulkUpdateShelteree = function () {
+        return bulkUpdateShelteree;
+    };
+
+    var bulkUpdateSheltereeDischarge = "bulkupdatesheltereedischarge";
+
+    var getBulkUpdateSheltereeDischarge = function () {
+        return bulkUpdateSheltereeDischarge;
+    };
+
+
+    var bulkUpdateSheltereeMedicalUpdate = "bulkupdatesheltereemedicalupdate";
+
+    var getBulkUpdateSheltereeMedicalUpdate = function () {
+        return bulkUpdateSheltereeMedicalUpdate;
+    };
+
+    var downloadShelteree = "downloadshelteree";
+
+    var getDownloadShelteree = function () {
+        return downloadShelteree;
+    };
+
+
+    var uploadShelteree = "uploadshelteree";
+
+    var getUploadShelteree = function () {
+        return uploadShelteree;
+    };
+
+
+
+
+    //end of shelteree routes
+    
 
 
     return {
@@ -1130,10 +1337,25 @@ $ct.rn = function () {
         getBulkUpdateEmployeeAttendance: getBulkUpdateEmployeeAttendance,
         getMultiFacilityEmployeeAttendance: getMultiFacilityEmployeeAttendance,
         getMultiFacilityEmployeeExtendedList: getMultiFacilityEmployeeExtendedList,
-        getMultiFacilityEmployeeList: getMultiFacilityEmployeeList
+        getMultiFacilityEmployeeList: getMultiFacilityEmployeeList,
 
         //end of employee routes
 
+
+        //start of shelteree routes
+
+        getSheltereeList: getSheltereeList,
+        getSheltereeMedicalUpdateList: getSheltereeMedicalUpdateList,
+        getSheltereeDischargeList: getSheltereeDischargeList,
+        getShelteree: getShelteree,
+        getBulkUpdateShelteree: getBulkUpdateShelteree,
+        getBulkUpdateSheltereeDischarge: getBulkUpdateSheltereeDischarge,
+        getBulkUpdateSheltereeMedicalUpdate: getBulkUpdateSheltereeMedicalUpdate,
+        getDownloadShelteree: getDownloadShelteree,
+        getUploadShelteree: getUploadShelteree
+
+
+        //end of shelteree routes
     };
 } ();
 //Message types, Acknowledge Types and response message validation
@@ -1594,6 +1816,11 @@ $ct.msg = function () {
         return employeeUploadError;
     };
 
+    var sheltereeUploadError = "Invalid Data";
+    var getSheltereeUploadError = function () {
+        return sheltereeUploadError;
+    };
+
 
 
     //Form specific messages
@@ -1761,7 +1988,24 @@ $ct.msg = function () {
         return ShelterStatusSuccessMsg;
     };
 
+    // shelteree related messages
 
+    var sheltereeSuccessMsg = "Shelteree" + successMsg;
+    var getSheltereeSuccessMsg = function () {
+        return sheltereeSuccessMsg;
+    };
+
+
+    var sheltereeDeleteSuccessMsg = "Shelteree " + deleteSuccessMsg;
+    var getSheltereeDeleteSuccessMsg = function () {
+        return sheltereeDeleteSuccessMsg;
+    };
+
+
+    var sheltereeUploadSuccessMsg = "Data " + successMsg;
+    var getSheltereeUploadSuccessMsg = function () {
+        return sheltereeUploadSuccessMsg;
+    };
 
     return {
 
@@ -1825,7 +2069,13 @@ $ct.msg = function () {
         // shelterstatus related messages
 
         getShelterStatusSuccessMsg: getShelterStatusSuccessMsg,
-        getEmployeeAttendenceUpdatedSuccessMsg: getEmployeeAttendenceUpdatedSuccessMsg
+        getEmployeeAttendenceUpdatedSuccessMsg: getEmployeeAttendenceUpdatedSuccessMsg,
+
+        // shelteree related messages
+        getSheltereeSuccessMsg: getSheltereeSuccessMsg,
+        getSheltereeDeleteSuccessMsg:getSheltereeDeleteSuccessMsg,
+        getSheltereeUploadSuccessMsg: getSheltereeUploadSuccessMsg,
+        getSheltereeUploadError: getSheltereeUploadError
 
     };
 } ();
@@ -1872,10 +2122,18 @@ $ct.other = function () {
     };
 
 
+    var sheltereeTemplateURL = globalSheltereeTemplateURL;
+
+    var getSheltereeTemplateURL = function () {
+        return sheltereeTemplateURL;
+    };
+
+
 
     return {
 
-        getEmployeeTemplateURL: getEmployeeTemplateURL
+        getEmployeeTemplateURL: getEmployeeTemplateURL,
+        getSheltereeTemplateURL: getSheltereeTemplateURL
 
     };
 
@@ -4546,7 +4804,7 @@ $ct.ds.emp.employee = function () {
         }, null, true)
 
         return '';
-    }
+    };
 
    
 
@@ -5176,14 +5434,604 @@ $ct.ds.emp.empattendance = function () {
 }();
 $ct.ds.sheltree.sheltree = function () {
 
-    var testFunction = function () {
+    var getShelterees = function (ViewModel, successCallBack) {
+
+        var datasource = new kendo.data.DataSource({
+            transport: {
+                read: function (options) {
+                    var filter = null;
+                    if (options.data.filter !== undefined) {
+                        filter = options.data.filter;
+                    }
+                    var sort = null;
+                    if (options.data.sort !== undefined) {
+                        sort = options.data.sort;
+                    }
+                    var requestParam = {};
+                    requestParam.Criteria = { PageSize: options.data.pageSize, PageIndex: options.data.page, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
+                    //TODO:
+
+                    requestParam.ShelterId = ViewModel.sheltereeHeaderData.shelter.Id;
+                    //requestParam.ShelterId = 1;
+                   
+                    requestParam.SelectedSheltereeIds = ViewModel.get("sheltereeRequestData.SelectedSheltereeIds");
+                    requestParam.UnSelectedSheltereeIds = ViewModel.get("sheltereeRequestData.UnSelectedSheltereeIds");
+                    requestParam.ViewAll = ViewModel.sheltereeRequestData.ViewAll;
+                    requestParam.FetchSelectedOnly = ViewModel.sheltereeRequestData.FetchSelectedOnly;
+
+
+                    ViewModel.set("selectedId", "-1");
+                  
+                    $ct.ajax.ajaxPost($ct.cn.getSheltereeFacilityUrl() + 'GetShelterees', requestParam, function (result) {
+
+                        if ($ct.mt.isNoDataFound(result)) {
+                            var currPageIndex = datasource.page();
+                            if (currPageIndex > 1)
+                                datasource.page(currPageIndex - 1);
+                        }
+
+                        options.success(result);
+
+                        if (successCallBack != null)
+                            successCallBack(result);
+                    }, null, true)
+                }
+            },
+            serverSorting: true,
+            serverPaging: true,
+            serverFiltering: true,
+            pageSize: 10,
+            schema: {
+                data: function (response) {
+                    return response.Data.SheltereeRawData;
+                },
+                total: function (response) {
+
+                    if (response != null && response != undefined && response != "")
+                        return response.TotalRecords;
+                },
+                model: { // define the model of the data source. Required for validation and property types.
+                    fields: {
+                        //IsMedical: { type: "boolean" }
+                    }
+                }
+            }
+        });
+
+        return datasource;
 
 
     };
 
+    var deleteSheltereeById = function (selEmployeeId, selEmployeeVersion, successCallBack) {
+
+        var requestParam = {};
+
+        requestParam.Id = selEmployeeId;
+        requestParam.EmployeeVersion = selEmployeeVersion;
+        //getSheltereeFacilityUrl
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'DeleteEmployee', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+
+    };
+
+    var exportSheltereesListToExcel = function (ViewModel, successCallBack) {
+
+        var filter = null;
+        if (ViewModel.dsSheltereeList.filter() !== undefined) {
+            filter = ViewModel.dsSheltereeList.filter();
+        }
+        var sort = null;
+        if (ViewModel.dsSheltereeList.sort() !== undefined) {
+            sort = ViewModel.dsSheltereeList.sort();
+        }
+
+        var pageIndex = 1;
+        if (ViewModel.dsSheltereeList.page() !== undefined) {
+            pageIndex = ViewModel.dsSheltereeList.page();
+        }
+
+        var pageSize = 10;
+        if (ViewModel.dsSheltereeList.pageSize() !== undefined) {
+            pageSize = ViewModel.dsSheltereeList.pageSize();
+        }
+
+
+        var requestParam = {};
+        requestParam.Criteria = { PageSize: pageSize, PageIndex: pageIndex, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
+
+        requestParam.ShelterId = ViewModel.sheltereeHeaderData.shelter.Id;
+
+        requestParam.SelectedEmployeeIds = ViewModel.get("sheltereeRequestData.SelectedSheltereeIds");
+        requestParam.UnSelectedEmployeeIds = ViewModel.get("sheltereeRequestData.UnSelectedSheltereeIds");
+        requestParam.ViewAll = ViewModel.sheltereeRequestData.ViewAll;
+        requestParam.FetchSelectedOnly = ViewModel.sheltereeRequestData.FetchSelectedOnly;
+
+        //getSheltereeFacilityUrl
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'ExportEmployeeToExcel', requestParam, function (result) {
+
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+        return "";
+
+    };
+    var getSheltereeBulkUpdateLookup = function (ViewModel, successCallBack) {
+
+        var requestParam = {};
+
+        requestParam.SelectedEmployeeIds = ViewModel.get("sheltereeRequestData.SelectedSheltereeIds");
+        requestParam.UnSelectedEmployeeIds = ViewModel.get("sheltereeRequestData.UnSelectedSheltereeIds");
+        requestParam.ViewAll = ViewModel.sheltereeRequestData.ViewAll;
+        requestParam.FetchSelectedOnly = ViewModel.sheltereeRequestData.FetchSelectedOnly;
+        //getSheltereeFacilityUrl
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'GetEmployeeBulKUpdateLookupData', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+        }, null, true)
+
+        return "";
+    };
+    var bulkUpdateSheltereeData = function (ViewModel, successCallBack) {
+
+        var requestParam = {};
+        var reqObj = ViewModel.saveRequest;
+
+        requestParam.ShelterId = ViewModel.shelterId;
+        // requestParam.SelectedPatientIds = ViewModel.SelectedPatientIds;
+
+        requestParam.SelectedStaffTypeId = reqObj.valStaffType;
+        requestParam.SelectedDepartmentId = reqObj.valDepartment;
+        requestParam.SelectedShiftId = reqObj.valShiftTime;
+        requestParam.SelectedStaffSpecialityId = reqObj.valStaffSpeciality;
+        //getSheltereeFacilityUrl
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'BulkUpdateEmployeeData', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+    var getActiveEvents = function (ViewModel, successCallBack) {
+
+        var requestParam = {};
+
+
+        requestParam.ShelterId = ViewModel.sheltereeHeaderData.shelter.Id;
+
+        $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'GetActiveEvent', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
+    var getImportActionOptions = function (successCallBack) {
+
+        var requestParam = "";
+        $ct.ajax.ajaxPost($ct.cn.getSheltereeFacilityUrl() + 'GetSheltereeImportActionOptions', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
+    var getExportFailedImportedSheltereeDataToExcel = function (viewModel, successCallBack) {
+        var requestParam = { "FileContentId": viewModel.FileContentId, "FacilityId": viewModel.FacilityId };
+        $ct.ajax.ajaxPost($ct.cn.getSheltereeFacilityUrl() + 'ExportFailedImportedSheltreeToExcel', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+        }, null, true)
+
+        return '';
+    };
+
+    var downloadSheltereeToExcel = function (ViewModel, successCallBack) {
+
+        var requestParam = {};
+
+        requestParam.ShelterId = ViewModel.selectedShelterItem.Id;
+
+
+        $ct.ajax.ajaxPost($ct.cn.getSheltereeFacilityUrl() + 'DownloadSheltereeToExcel', requestParam, function (result) {
+
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+        return "";
+
+
+    };
+
+    var getSheltereeDischargees = function (ViewModel, successCallBack) {
+
+        var datasource = new kendo.data.DataSource({
+            transport: {
+                read: function (options) {
+                    var filter = null;
+                    if (options.data.filter !== undefined) {
+                        filter = options.data.filter;
+                    }
+                    var sort = null;
+                    if (options.data.sort !== undefined) {
+                        sort = options.data.sort;
+                    }
+                    var requestParam = {};
+                    requestParam.Criteria = { PageSize: options.data.pageSize, PageIndex: options.data.page, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
+                    //TODO:
+
+                    requestParam.ShelterId = ViewModel.sheltereeHeaderData.shelter.Id;
+                    //requestParam.ShelterId = 1;
+
+                    requestParam.SelectedSheltereeIds = ViewModel.get("sheltereeRequestData.SelectedSheltereeIds");
+                    requestParam.UnSelectedSheltereeIds = ViewModel.get("sheltereeRequestData.UnSelectedSheltereeIds");
+                    requestParam.ViewAll = ViewModel.sheltereeRequestData.ViewAll;
+                    requestParam.FetchSelectedOnly = ViewModel.sheltereeRequestData.FetchSelectedOnly;
+
+                    ViewModel.set("selectedId", "-1");
+                    
+                    $ct.ajax.ajaxPost($ct.cn.getSheltereeFacilityUrl() + 'GetSheltereeDischargeView', requestParam, function (result) {
+
+                        if ($ct.mt.isNoDataFound(result)) {
+                            var currPageIndex = datasource.page();
+                            if (currPageIndex > 1)
+                                datasource.page(currPageIndex - 1);
+                        }
+
+                        options.success(result);
+
+                        if (successCallBack != null)
+                            successCallBack(result);
+                    }, null, true)
+                }
+            },
+            serverSorting: true,
+            serverPaging: true,
+            serverFiltering: true,
+            pageSize: 10,
+            schema: {
+                data: function (response) {
+                    return response.Data.DischargeRawData;
+                },
+                total: function (response) {
+
+                    if (response != null && response != undefined && response != "")
+                        return response.TotalRecords;
+                },
+                model: { // define the model of the data source. Required for validation and property types.
+                    fields: {
+                       // IsMedical: { type: "boolean" }
+                    }
+                }
+            }
+        });
+
+        return datasource;
+
+
+    };
+    var deleteSheltereeDischargeById = function (selEmployeeId, selEmployeeVersion, successCallBack) {
+
+        var requestParam = { };
+
+        requestParam.Id = selEmployeeId;
+        requestParam.EmployeeVersion = selEmployeeVersion;
+        //getSheltereeFacilityUrl
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'DeleteEmployee', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+}, null, true)
+
+
+        return "";
+
+        };
+    var exportSheltereeDischargeesListToExcel = function (ViewModel, successCallBack) {
+
+        var filter = null;
+        if (ViewModel.dsSheltereeDischargeList.filter() !== undefined) {
+            filter = ViewModel.dsSheltereeDischargeList.filter();
+        }
+        var sort = null;
+        if (ViewModel.dsSheltereeDischargeList.sort() !== undefined) {
+            sort = ViewModel.dsSheltereeDischargeList.sort();
+        }
+
+        var pageIndex = 1;
+        if (ViewModel.dsSheltereeDischargeList.page() !== undefined) {
+            pageIndex = ViewModel.dsSheltereeDischargeList.page();
+        }
+
+        var pageSize = 10;
+        if (ViewModel.dsSheltereeDischargeList.pageSize() !== undefined) {
+            pageSize = ViewModel.dsSheltereeDischargeList.pageSize();
+        }
+
+
+        var requestParam = {};
+        requestParam.Criteria = { PageSize: pageSize, PageIndex: pageIndex, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
+
+        requestParam.ShelterId = ViewModel.sheltereeHeaderData.shelter.Id;
+
+        requestParam.SelectedEmployeeIds = ViewModel.get("sheltereeRequestData.SelectedSheltereeIds");
+        requestParam.UnSelectedEmployeeIds = ViewModel.get("sheltereeRequestData.UnSelectedSheltereeIds");
+        requestParam.ViewAll = ViewModel.sheltereeRequestData.ViewAll;
+        requestParam.FetchSelectedOnly = ViewModel.sheltereeRequestData.FetchSelectedOnly;
+
+
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'ExportEmployeeToExcel', requestParam, function (result) {
+
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+        return "";
+
+    };
+    var getSheltereeDischargeBulkUpdateLookup = function (ViewModel, successCallBack) {
+
+        var requestParam = {};
+
+        requestParam.SelectedEmployeeIds = ViewModel.get("sheltereeRequestData.SelectedSheltereeIds");
+        requestParam.UnSelectedEmployeeIds = ViewModel.get("sheltereeRequestData.UnSelectedSheltereeIds");
+        requestParam.ViewAll = ViewModel.sheltereeRequestData.ViewAll;
+        requestParam.FetchSelectedOnly = ViewModel.sheltereeRequestData.FetchSelectedOnly;
+        //getSheltereeFacilityUrl
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'GetEmployeeBulKUpdateLookupData', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+        }, null, true)
+
+        return "";
+    };
+    var bulkUpdateSheltereeDischargeData = function (ViewModel, successCallBack) {
+
+        var requestParam = {};
+        var reqObj = ViewModel.saveRequest;
+
+        requestParam.ShelterId = ViewModel.shelterId;
+        // requestParam.SelectedPatientIds = ViewModel.SelectedPatientIds;
+
+        requestParam.SelectedStaffTypeId = reqObj.valStaffType;
+        requestParam.SelectedDepartmentId = reqObj.valDepartment;
+        requestParam.SelectedShiftId = reqObj.valShiftTime;
+        requestParam.SelectedStaffSpecialityId = reqObj.valStaffSpeciality;
+        //getSheltereeFacilityUrl
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'BulkUpdateEmployeeData', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
+    var getSheltereeMedicalUpdatees = function (ViewModel, successCallBack) {
+
+        var datasource = new kendo.data.DataSource({
+            transport: {
+                read: function (options) {
+                    var filter = null;
+                    if (options.data.filter !== undefined) {
+                        filter = options.data.filter;
+                    }
+                    var sort = null;
+                    if (options.data.sort !== undefined) {
+                        sort = options.data.sort;
+                    }
+                    var requestParam = {};
+                    requestParam.Criteria = { PageSize: options.data.pageSize, PageIndex: options.data.page, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
+                    //TODO:
+                    requestParam.ShelterId = ViewModel.sheltereeHeaderData.shelter.Id;
+                    //requestParam.ShelterId = 1;
+
+                    requestParam.SelectedSheltereeIds = ViewModel.get("sheltereeRequestData.SelectedSheltereeIds");
+                    requestParam.UnSelectedSheltereeIds = ViewModel.get("sheltereeRequestData.UnSelectedSheltereeIds");
+                    requestParam.ViewAll = ViewModel.sheltereeRequestData.ViewAll;
+                    requestParam.FetchSelectedOnly = ViewModel.sheltereeRequestData.FetchSelectedOnly;
+
+                    ViewModel.set("selectedId", "-1");
+                    
+                    $ct.ajax.ajaxPost($ct.cn.getSheltereeFacilityUrl() + 'GetSheltereeMedicalUpdateView', requestParam, function (result) {
+
+                        if ($ct.mt.isNoDataFound(result)) {
+                            var currPageIndex = datasource.page();
+                            if (currPageIndex > 1)
+                                datasource.page(currPageIndex - 1);
+                        }
+
+                        options.success(result);
+
+                        if (successCallBack != null)
+                            successCallBack(result);
+                    }, null, true)
+                }
+            },
+            serverSorting: true,
+            serverPaging: true,
+            serverFiltering: true,
+            pageSize: 10,
+            schema: {
+                data: function (response) {
+                    return response.Data.MedicalUpdateRawData;
+                },
+                total: function (response) {
+
+                    if (response != null && response != undefined && response != "")
+                        return response.TotalRecords;
+                },
+                model: { // define the model of the data source. Required for validation and property types.
+                    fields: {
+                        IsMedical: { type: "boolean" }
+                    }
+                }
+            }
+        });
+
+        return datasource;
+
+
+    };
+    var deleteSheltereeMedicalUpdateById = function (selEmployeeId, selEmployeeVersion, successCallBack) {
+
+        var requestParam = {};
+
+        requestParam.Id = selEmployeeId;
+        requestParam.EmployeeVersion = selEmployeeVersion;
+        //getSheltereeFacilityUrl
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'DeleteEmployee', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+
+    };
+    var exportSheltereeMedicalUpdateesListToExcel = function (ViewModel, successCallBack) {
+
+        var filter = null;
+        if (ViewModel.dsSheltereeMedicalUpdateList.filter() !== undefined) {
+            filter = ViewModel.dsSheltereeMedicalUpdateList.filter();
+        }
+        var sort = null;
+        if (ViewModel.dsSheltereeMedicalUpdateList.sort() !== undefined) {
+            sort = ViewModel.dsSheltereeMedicalUpdateList.sort();
+        }
+
+        var pageIndex = 1;
+        if (ViewModel.dsSheltereeMedicalUpdateList.page() !== undefined) {
+            pageIndex = ViewModel.dsSheltereeMedicalUpdateList.page();
+        }
+
+        var pageSize = 10;
+        if (ViewModel.dsSheltereeMedicalUpdateList.pageSize() !== undefined) {
+            pageSize = ViewModel.dsSheltereeMedicalUpdateList.pageSize();
+        }
+
+
+        var requestParam = {};
+        requestParam.Criteria = { PageSize: pageSize, PageIndex: pageIndex, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
+
+        requestParam.ShelterId = ViewModel.sheltereeHeaderData.shelter.Id;
+
+        requestParam.SelectedEmployeeIds = ViewModel.get("sheltereeRequestData.SelectedSheltereeIds");
+        requestParam.UnSelectedEmployeeIds = ViewModel.get("sheltereeRequestData.UnSelectedSheltereeIds");
+        requestParam.ViewAll = ViewModel.sheltereeRequestData.ViewAll;
+        requestParam.FetchSelectedOnly = ViewModel.sheltereeRequestData.FetchSelectedOnly;
+
+        //getSheltereeFacilityUrl
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'ExportEmployeeToExcel', requestParam, function (result) {
+
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+        return "";
+
+    };
+    var getSheltereeMedicalUpdateBulkUpdateLookup = function (ViewModel, successCallBack) {
+
+        var requestParam = {};
+
+        requestParam.SelectedEmployeeIds = ViewModel.get("sheltereeRequestData.SelectedSheltereeIds");
+        requestParam.UnSelectedEmployeeIds = ViewModel.get("sheltereeRequestData.UnSelectedSheltereeIds");
+        requestParam.ViewAll = ViewModel.sheltereeRequestData.ViewAll;
+        requestParam.FetchSelectedOnly = ViewModel.sheltereeRequestData.FetchSelectedOnly;
+        //getSheltereeFacilityUrl
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'GetEmployeeBulKUpdateLookupData', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+        }, null, true)
+
+        return "";
+    };
+    var bulkUpdateSheltereeMedicalUpdateData = function (ViewModel, successCallBack) {
+
+        var requestParam = {};
+        var reqObj = ViewModel.saveRequest;
+
+        requestParam.ShelterId = ViewModel.shelterId;
+        // requestParam.SelectedPatientIds = ViewModel.SelectedPatientIds;
+
+        requestParam.SelectedStaffTypeId = reqObj.valStaffType;
+        requestParam.SelectedDepartmentId = reqObj.valDepartment;
+        requestParam.SelectedShiftId = reqObj.valShiftTime;
+        requestParam.SelectedStaffSpecialityId = reqObj.valStaffSpeciality;
+        //getSheltereeFacilityUrl
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'BulkUpdateEmployeeData', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
     return {
 
-        testFunction: testFunction
+        getShelterees:getShelterees,
+        deleteSheltereeById: deleteSheltereeById,
+        exportSheltereesListToExcel: exportSheltereesListToExcel,
+        getSheltereeBulkUpdateLookup:getSheltereeBulkUpdateLookup,
+        bulkUpdateSheltereeData:bulkUpdateSheltereeData,
+        getActiveEvents: getActiveEvents,
+        getImportActionOptions:getImportActionOptions,
+        getExportFailedImportedSheltereeDataToExcel: getExportFailedImportedSheltereeDataToExcel,
+        downloadSheltereeToExcel: downloadSheltereeToExcel,
+        getSheltereeDischargees: getSheltereeDischargees,
+        deleteSheltereeDischargeById: deleteSheltereeDischargeById,
+        exportSheltereeDischargeesListToExcel: exportSheltereeDischargeesListToExcel,
+        getSheltereeDischargeBulkUpdateLookup: getSheltereeDischargeBulkUpdateLookup,
+        bulkUpdateSheltereeDischargeData: bulkUpdateSheltereeDischargeData,
+
+        getSheltereeMedicalUpdatees: getSheltereeMedicalUpdatees,
+        deleteSheltereeMedicalUpdateById: deleteSheltereeMedicalUpdateById,
+        exportSheltereeMedicalUpdateesListToExcel: exportSheltereeMedicalUpdateesListToExcel,
+        getSheltereeMedicalUpdateBulkUpdateLookup: getSheltereeMedicalUpdateBulkUpdateLookup,
+        bulkUpdateSheltereeMedicalUpdateData:bulkUpdateSheltereeMedicalUpdateData
+
+
     };
 
 }();
