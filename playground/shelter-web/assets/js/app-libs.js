@@ -9,10 +9,11 @@
 
 //Servicelayer on local machine.
 //var globalBaseServiceUrl = 'http://localhost:7222/api/';
-//var globalBaseServiceUrl = 'https://beta.comtecinfo.com/sheltersl/api/';
 var globalBaseServiceUrl = 'https://beta.comtecinfo.com/sheltersl/api/';
+//var globalBaseServiceUrl = 'http://localhost:52848/api/';
 
 
+var gloabalHospiceId = 540003;
 
 //Roles
 
@@ -1968,7 +1969,7 @@ $ct.msg = function () {
     var getMedicalConditionSuccessMsg = function () {
         return medicalConditionSuccessMsg;
     };
-    var sheltereeEmployeeSuccessMsg = "shelteree Employee " + successMsg;
+    var sheltereeEmployeeSuccessMsg = "shelteree Employee Ratio" + successMsg;
     var getSheltereeEmployeeSuccessMsg = function () {
         return sheltereeEmployeeSuccessMsg;
     };
@@ -2028,7 +2029,7 @@ $ct.msg = function () {
     var getMedicalConditionDeleteSuccessMsg = function () {
         return medicalConditionDeleteSuccessMsg;
     };
-    var sheltereeEmployeeDeleteSuccessMsg = "shelteree Employee " + deleteSuccessMsg;
+    var sheltereeEmployeeDeleteSuccessMsg = "shelteree Employee Ratio" + deleteSuccessMsg;
     var getSheltereeEmployeeDeleteSuccessMsg = function () {
         return sheltereeEmployeeDeleteSuccessMsg;
     };
@@ -2250,6 +2251,12 @@ $ct.ht = function () {
 
 $ct.other = function () {
 
+    var hospiceId = gloabalHospiceId;
+
+    var getHospiceId = function () {
+        return hospiceId;
+    };
+
     var employeeTemplateURL = globalEmployeeTemplateURL;
 
     var getEmployeeTemplateURL = function () {
@@ -2266,7 +2273,7 @@ $ct.other = function () {
 
 
     return {
-
+        getHospiceId : getHospiceId,
         getEmployeeTemplateURL: getEmployeeTemplateURL,
         getSheltereeTemplateURL: getSheltereeTemplateURL
 
@@ -4650,7 +4657,7 @@ $ct.ds.shlt.shelter = function () {
                             var selectItem = {};
 
                             selectItem.Id = -1;
-                            selectItem.Name = "--All--";
+                            selectItem.Name = "All Shelters";
 
                             resultData.splice(0, 0, selectItem);
 
@@ -6396,12 +6403,12 @@ $ct.ds.admin.question = function () {
 
 $ct.ds.sheltree.sheltreeinput = function () {
 
-    var getMedicalConditionsMiscellenousAndMedicalEquipment = function (sheltereeId, successCallBack) {
+    var getMedicalTabQuestionGroupResponse = function (sheltereeId, successCallBack) {
 
         var requestParam = {};
         requestParam.SheltereeId = sheltereeId;
 
-        $ct.ajax.ajaxPost($ct.cn.getQuestionResponseUrl() + 'GetMedcialMiscMedicalEquipmentQuestionGroupResponse', requestParam, function (result) {
+        $ct.ajax.ajaxPost($ct.cn.getQuestionResponseUrl() + 'GetMedicalTabQuestionGroupResponse', requestParam, function (result) {
 
             if (successCallBack != null)
                 successCallBack(result);
@@ -6578,7 +6585,7 @@ $ct.ds.sheltree.sheltreeinput = function () {
 
     return {
 
-        getMedicalConditionsMiscellenousAndMedicalEquipment: getMedicalConditionsMiscellenousAndMedicalEquipment,
+        getMedicalTabQuestionGroupResponse: getMedicalTabQuestionGroupResponse,
         getCareRequirements: getCareRequirements,
         getVitals: getVitals,
         saveQuestionResponse: saveQuestionResponse,
