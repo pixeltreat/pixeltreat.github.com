@@ -5,26 +5,31 @@
 //global varibales in total application
 
 //Service layer deployed location (Without security)
-//var globalBaseServiceUrl = 'https://beta.comtecinfo.com/IMServiceDemo/api/';
+//var globalBaseServiceUrl = 'https://beta.comtecinfo.com/IMServiceDemo/';
 
 //Servicelayer on local machine.
-//var globalBaseServiceUrl = 'http://localhost:7222/api/';
-var globalBaseServiceUrl = 'https://beta.comtecinfo.com/sheltersl/api/';
-//var globalBaseServiceUrl = 'http://localhost:52848/api/';
+//var globalBaseServiceUrl = 'http://localhost:7222/';
+//var globalBaseServiceUrl = 'https://beta.comtecinfo.com/sheltersl/';
+//QA Service URL
+//var globalBaseServiceUrl = 'https://qa.comtecinfo.com:452/msns/msnsservice/';
+
+//var globalBaseServiceUrl = 'http://localhost:52848/';
+var globalBaseServiceUrl = 'https://beta.comtecinfo.com/msnssldemo/';
 
 
-var gloabalHospiceId = 540003;
+var gloabalHospiceId = 640306;
+
+var gloabalMiscellaneousSectionId = 2;
+var gloabalVitalSignsSectionId = 4;
+
+
 
 //Roles
-
+var globalSuperAdminId = 9;
 var globalAdministratorId = 4;
-var globalAssociationId = 34;
-var globalCallCenterId = 7;
-var globalDrcId = 5;
-var globalDataCellId = 35;
 var globalFacilityUpdateId = 3;
 var globalFacilityReadOnlyId = 2;
-var globalSuperAdminId = 20;
+
 
 //Question types
 //we can get rid of this
@@ -48,14 +53,6 @@ var globalQtTextAreaId = 4;
 var globalQtMultipleChoiceOnlyOneAnswerId = 5;
 var globalQtMultipleChoiceMultipleAnswerId = 6;
 var globalQtDropdownListId = 7;
-
-
-//Employee template URL
-var globalEmployeeTemplateURL = "https://beta.comtecinfo.com/FileRepository/ShelterTemplates/Employee_Upload-Template.xlsx";
-
-//Shelteree templat
-
-var globalSheltereeTemplateURL = "https://beta.comtecinfo.com/FileRepository/ShelterTemplates/Shelteree_Upload-Template.xlsx";
 
 
 
@@ -228,7 +225,7 @@ $ct.constants = function () {
 //Controler Names
 $ct.cn = function () {
 
-    var baseServiceUrl = globalBaseServiceUrl;
+    var baseServiceUrl = globalBaseServiceUrl + "api/";
 
     
     //Start of admin controllers
@@ -341,6 +338,8 @@ $ct.cn = function () {
         return sheltereeFacilityUrl;
     };
 
+    // start of question controller
+
     var questionUrl = baseServiceUrl + "Question/"
     var getQuestionUrl = function () {
         return questionUrl;
@@ -351,6 +350,15 @@ $ct.cn = function () {
         return questionResponseUrl;
     };
 
+    // end  of question controller
+
+    // start of reports controller
+    var reportsUrl = baseServiceUrl + "Reports/"
+    var getReportsUrl = function () {
+        return reportsUrl;
+    };
+    // end  of reports controller
+    
 
     return {
         //Start of admin controllers
@@ -387,7 +395,13 @@ $ct.cn = function () {
         getEmployeeAttendanceUrl: getEmployeeAttendanceUrl,   
         getSheltereeFacilityUrl: getSheltereeFacilityUrl,
         getQuestionUrl: getQuestionUrl,
-        getQuestionResponseUrl: getQuestionResponseUrl
+        getQuestionResponseUrl: getQuestionResponseUrl,
+
+
+        // start of reports controller
+        getReportsUrl: getReportsUrl
+        //end of reports controller
+
        
 
 
@@ -413,6 +427,11 @@ $ct.en = function () {
     var goToNoPermissionPage = "GO_TO_NO_PERMISSION_PAGE";
     var getGoToNoPermissionPage = function () {
         return goToNoPermissionPage;
+    };
+
+    var goToNoRolePage = "GO_TO_NO_ROLE_PAGE";
+    var getGoToNoRolePage = function () {
+        return goToNoRolePage;
     };
 
     var showValidationMsg = "SHOW_VALIDATION_MESSAGE";
@@ -646,6 +665,19 @@ $ct.en = function () {
         return questionCreatedOrUpdated;
     };
 
+    var displayEventList = "DISPLAY_EVENT_LIST";
+
+    var getDisplayEventList = function () {
+        return displayEventList;
+    };
+
+
+    var eventCreatedOrUpdated = "EVENT_CREATED_OR_UPDATED";
+
+    var getEventCreatedOrUpdated = function () {
+        return eventCreatedOrUpdated;
+    };
+
 
     //end of admin events
 
@@ -874,7 +906,8 @@ $ct.en = function () {
         //start of application independant common events
 
         getUpdateSecuritySettings: getUpdateSecuritySettings,
-        getDoNotHavePermission: getDoNotHavePermission, 
+        getDoNotHavePermission: getDoNotHavePermission,
+        getGoToNoRolePage: getGoToNoRolePage,
         getGoToNoPermissionPage : getGoToNoPermissionPage,
         getShowValidationMsg: getShowValidationMsg,
         getShowSuccMsg: getShowSuccMsg,
@@ -915,7 +948,8 @@ $ct.en = function () {
         getShelterIdentificationCreatedOrUpdated:getShelterIdentificationCreatedOrUpdated,
         getDisplayquestionList: getDisplayquestionList,
         getQuestionCreatedOrUpdated:getQuestionCreatedOrUpdated,
-
+        getDisplayEventList: getDisplayEventList,
+        getEventCreatedOrUpdated: getEventCreatedOrUpdated,
         //end of admin events  
 
 
@@ -979,6 +1013,18 @@ $ct.rn = function () {
 
     var getNoPermission = function () {
         return noPermission;
+    };
+
+    var noRole = "norole";
+
+    var getNoRole = function () {
+        return noRole;
+    };
+
+    var noActiveEvent = "noactiveevent";
+
+    var getNoActiveEvent = function () {
+        return noActiveEvent;
     };
 
     /*end of other routes */
@@ -1168,6 +1214,19 @@ $ct.rn = function () {
     var getQuestion = function () {
         return question;
     };
+
+    var eventList = "eventlist";
+
+    var getEventList = function () {
+        return eventList;
+    };
+
+
+    var event = "event";
+
+    var getEvent= function () {
+        return event;
+    };
    
     //end of admin routes
     
@@ -1342,14 +1401,38 @@ $ct.rn = function () {
 
     //end of shelteree routes
     
+    //start of report routes
 
+
+    var staffRawDataReport = "staffrawdatareport";
+
+    var getStaffRawDataReport = function () {
+        return staffRawDataReport;
+    };
+
+
+    var staffAttendanceRawDataReport = "staffattendancerawdatareport";
+
+    var getStaffAttendanceRawDataReport = function () {
+        return staffAttendanceRawDataReport;
+    };
+
+
+    var sheltereeRawDataReport = "sheltereerawdatareport";
+
+    var getSheltereeRawDataReport = function () {
+        return sheltereeRawDataReport;
+    };
+
+    //end of report routes
 
     return {
 
         /*start of other routes */
 
-        getNoPermission : getNoPermission,
-
+        getNoPermission: getNoPermission,
+        getNoRole: getNoRole,
+        getNoActiveEvent : getNoActiveEvent,
         /*end of other module routes */
 
 
@@ -1381,6 +1464,8 @@ $ct.rn = function () {
         getshelterIdentificationList:getshelterIdentificationList,
         getQuestionList: getQuestionList,
         getQuestion: getQuestion,
+        getEventList: getEventList,
+        getEvent: getEvent,
         //end of admin routes
 
 
@@ -1419,10 +1504,17 @@ $ct.rn = function () {
         getBulkUpdateSheltereeDischarge: getBulkUpdateSheltereeDischarge,
         getBulkUpdateSheltereeMedicalUpdate: getBulkUpdateSheltereeMedicalUpdate,
         getDownloadShelteree: getDownloadShelteree,
-        getUploadShelteree: getUploadShelteree
-
+        getUploadShelteree: getUploadShelteree,
 
         //end of shelteree routes
+
+        //start of report routes
+
+        getStaffRawDataReport: getStaffRawDataReport,
+        getStaffAttendanceRawDataReport: getStaffAttendanceRawDataReport,
+        getSheltereeRawDataReport: getSheltereeRawDataReport
+
+        //end  of report routes
     };
 } ();
 //Message types, Acknowledge Types and response message validation
@@ -1507,7 +1599,10 @@ $ct.mt = function () {
         noDataFound: "nodatafound",
         noActiveEvent: "noactiveevent",
         exportToExcel: "exporttoexcel" ,
-        businessRuleValidation: "businessrulevalidation"
+        businessRuleValidation: "businessrulevalidation",
+        authentication: "authentication",
+        concurrentEvent: "concurrentevent"
+
     };
 
     var getSuccess = function () {
@@ -1540,6 +1635,27 @@ $ct.mt = function () {
 
     var getNoDataFound = function () {
         return messageTypes.noDataFound;
+    };
+
+
+    var getAuthentication = function () {
+        return messageTypes.authentication;
+    };
+
+    var getConcurrentEvent = function () {
+        return messageTypes.concurrentEvent;
+    };
+
+
+    var isAuthenticationFailed = function (response) {
+
+        if ((response.MessageType !== undefined) && (response.MessageType !== null)) {
+            if (messageTypes.authentication === $ct.helpers.toLower(response.MessageType)) {
+                return true;
+            }
+        }
+        return false;
+
     };
 
     var isVersionConflict = function (response) {
@@ -1589,6 +1705,18 @@ $ct.mt = function () {
     };
 
 
+    var isConcurrentEvent = function (response) {
+
+        if ((response.MessageType !== undefined) && (response.MessageType !== null)) {
+            if (messageTypes.concurrentEvent === $ct.helpers.toLower(response.MessageType)) {
+                return true;
+            }
+        }
+        return false;
+
+    };
+
+
     return {
 
         //Acknowledge types
@@ -1604,12 +1732,16 @@ $ct.mt = function () {
         getMessage: getMessage,
         getVersionConflict: getVersionConflict,
         getNoDataFound: getNoDataFound,
+        getAuthentication: getAuthentication,
+        getConcurrentEvent: getConcurrentEvent,
 
         //Message type validations
+        isAuthenticationFailed : isAuthenticationFailed,
         isVersionConflict: isVersionConflict,
         isNoDataFound: isNoDataFound,
         isBusinessRule : isBusinessRule,
         isNoActiveEvent: isNoActiveEvent,
+        isConcurrentEvent: isConcurrentEvent,
 
         isError : isError,
         getErrorObject: getErrorObject
@@ -1874,12 +2006,12 @@ $ct.msg = function () {
 
     //Common messages
 
-    var genericErrorMsg = 'An unknown error occured while processing your request. Please contact administrator.';
+    var genericErrorMsg = 'An Unknown Error Occured While Processing Your Request. Please Contact Administrator.';
     var getGenericErrorMsg = function () {
         return genericErrorMsg;
     };
 
-    var invalidServiceRequestObject = "Please configure ServiceRequest object properly."
+    var invalidServiceRequestObject = "Please Configure ServiceRequest Object Properly."
     var getInvalidServiceRequestObject = function () {
         return invalidServiceRequestObject;
     };
@@ -1889,7 +2021,7 @@ $ct.msg = function () {
         return invalidRequestMsg;
     };
 
-    var invalidResponseForRequestMsg = "Invalid response for request";
+    var invalidResponseForRequestMsg = "Invalid Response For Request";
     var getInvalidResponseForRequestMsg = function () {
         return invalidResponseForRequestMsg;
     };
@@ -1899,27 +2031,27 @@ $ct.msg = function () {
         return invalidResponseMsg;
     };
 
-    var versionConflictReloadMsg = "Version conflict occured do you want to refresh data ?";
+    var versionConflictReloadMsg = "Version Conflict Occured Do You Want To Refresh Data ?";
     var getVersionConflictReloadMsg = function () {
         return versionConflictReloadMsg;
     };
 
-    var deleteConfirmationMsg = "Are you sure you want to delete? ";
+    var deleteConfirmationMsg = "Are You Sure You Want To Delete? ";
     var getDeleteConfirmationMsg = function () {
         return deleteConfirmationMsg;
     };
 
-    var validationMsg = "Please fill required data ";
+    var validationMsg = "Please Fill Required Data ";
     var getValidationMsg = function () {
         return validationMsg;
     };
 
-    var successMsg = " saved successfully";
+    var successMsg = " Saved Successfully";
     var getSuccessMsg = function () {
         return successMsg;
     };
 
-    var deleteSuccessMsg = " deleted successfully";
+    var deleteSuccessMsg = " Deleted Successfully";
     var getDeleteSuccessMsg = function () {
         return deleteSuccessMsg;
     };
@@ -1952,12 +2084,12 @@ $ct.msg = function () {
         return shelterTypeSuccessMsg;
     };
 
-    var medicalConditionTierSuccessMsg = "MedicalConditionTier" + successMsg;
+    var medicalConditionTierSuccessMsg = "Medical Condition Tier" + successMsg;
     var getMedicalConditionTierSuccessMsg = function () {
         return medicalConditionTierSuccessMsg
     };
 
-    var staffSpecialtySuccessMsg = "StaffSpecialty " + successMsg;
+    var staffSpecialtySuccessMsg = "Staff Specialty " + successMsg;
     var getStaffSpecialtySuccessMsg = function () {
         return staffSpecialtySuccessMsg;
     };
@@ -1969,7 +2101,7 @@ $ct.msg = function () {
     var getMedicalConditionSuccessMsg = function () {
         return medicalConditionSuccessMsg;
     };
-    var sheltereeEmployeeSuccessMsg = "shelteree Employee Ratio" + successMsg;
+    var sheltereeEmployeeSuccessMsg = "Shelteree Staff Ratio" + successMsg;
     var getSheltereeEmployeeSuccessMsg = function () {
         return sheltereeEmployeeSuccessMsg;
     };
@@ -1992,12 +2124,20 @@ $ct.msg = function () {
         return questionSuccessMsg;
     };
 
-    var questionResponseSuccessMsg = "QuestionResponse" + successMsg;
+    var questionResponseSuccessMsg = "Question Response" + successMsg;
     var getQuestionResponseSuccessMsg = function () {
         return questionResponseSuccessMsg;
     };
 
-        var questionDeleteSuccessMsg = "Question" + deleteSuccessMsg;
+
+    var eventSuccessMsg = "Event" + successMsg;
+    var getEventSuccessMsg = function () {
+        return eventSuccessMsg;
+    };
+
+
+
+    var questionDeleteSuccessMsg = "Question" + deleteSuccessMsg;
     var getQuestionDeleteSuccessMsg = function () {
         return questionDeleteSuccessMsg;
     };
@@ -2006,17 +2146,17 @@ $ct.msg = function () {
         return agencyDeleteSuccessMsg;
     };
 
-    var medicalConditionTierDeleteSuccessMsg = "MedicalConditionTier" + deleteSuccessMsg;
+    var medicalConditionTierDeleteSuccessMsg = "Medical Condition Tier" + deleteSuccessMsg;
     var getMedicalConditionTierDeleteSuccessMsg  = function () {
         return medicalConditionTierDeleteSuccessMsg 
     };
 
-    var shelterTypeDeleteSuccessMsg = "ShelterType " + deleteSuccessMsg;
+    var shelterTypeDeleteSuccessMsg = "Shelter Type " + deleteSuccessMsg;
     var getShelterTypeDeleteSuccessMsg = function () {
         return shelterTypeDeleteSuccessMsg;
     };
 
-    var staffSpecialtyDeleteSuccessMsg = "StaffSpecialty " + deleteSuccessMsg;
+    var staffSpecialtyDeleteSuccessMsg = "Staff Specialty " + deleteSuccessMsg;
     var getStaffSpecialtyDeleteSuccessMsg = function () {
         return staffSpecialtyDeleteSuccessMsg;
     };
@@ -2029,7 +2169,7 @@ $ct.msg = function () {
     var getMedicalConditionDeleteSuccessMsg = function () {
         return medicalConditionDeleteSuccessMsg;
     };
-    var sheltereeEmployeeDeleteSuccessMsg = "shelteree Employee Ratio" + deleteSuccessMsg;
+    var sheltereeEmployeeDeleteSuccessMsg = "Shelteree Staff Ratio" + deleteSuccessMsg;
     var getSheltereeEmployeeDeleteSuccessMsg = function () {
         return sheltereeEmployeeDeleteSuccessMsg;
     };
@@ -2054,13 +2194,18 @@ $ct.msg = function () {
         return shelterIdentificationSuccessMsg;
     };
 
-    var uploadValidFile = "Please select excel file(.xls,.xslx)";
+    var eventDeleteSuccessMsg = "Event " + deleteSuccessMsg;
+    var getEventDeleteSuccessMsg = function () {
+        return eventDeleteSuccessMsg;
+    };
+    
+    var uploadValidFile = "Please Select Excel File(.xls,.xslx)";
     var getUploadValidFile = function () {
         return uploadValidFile;
     };
     
 
-    var validateUploadEmployees = "Please select Import Action";
+    var validateUploadEmployees = "Please Select Import Action";
     var getEmployeesUploadImportOption = function () {
         return validateUploadEmployees;
     };
@@ -2068,13 +2213,13 @@ $ct.msg = function () {
 
     // employee related messages
 
-    var EmployeeSuccessMsg = "Employee" + successMsg;
+    var EmployeeSuccessMsg = "Staff" + successMsg;
     var getEmployeeSuccessMsg = function () {
         return EmployeeSuccessMsg;
     };
 
 
-    var employeeDeleteSuccessMsg = "Employee " + deleteSuccessMsg;
+    var employeeDeleteSuccessMsg = "Staff " + deleteSuccessMsg;
     var getEmployeeDeleteSuccessMsg = function () {
         return employeeDeleteSuccessMsg;
     };
@@ -2085,7 +2230,7 @@ $ct.msg = function () {
     };
 
 
-    var employeeAttendenceUpdatedSuccessMsg = "Employee Attendence" + successMsg;
+    var employeeAttendenceUpdatedSuccessMsg = "Staff Attendence" + successMsg;
     var getEmployeeAttendenceUpdatedSuccessMsg = function () {
         return employeeAttendenceUpdatedSuccessMsg;
     };
@@ -2101,14 +2246,14 @@ $ct.msg = function () {
     };
 
 
-    var equipmentSupplyDeleteSuccessMsg = "EquipmentSupply " + deleteSuccessMsg;
+    var equipmentSupplyDeleteSuccessMsg = "Equipment Supply " + deleteSuccessMsg;
     var getequipmentSupplyDeleteSuccessMsg = function () {
         return equipmentSupplyDeleteSuccessMsg;
     };
 
     // shelterstatus related messages
 
-    var ShelterStatusSuccessMsg = "ShelterStatus" + successMsg;
+    var ShelterStatusSuccessMsg = "Shelter Status" + successMsg;
     var getShelterStatusSuccessMsg = function () {
         return ShelterStatusSuccessMsg;
     };
@@ -2121,23 +2266,115 @@ $ct.msg = function () {
     };
 
 
-    var sheltereeDeleteSuccessMsg = "Shelteree " + deleteSuccessMsg;
-    var getSheltereeDeleteSuccessMsg = function () {
-        return sheltereeDeleteSuccessMsg;
-    };
-
-
     var sheltereeUploadSuccessMsg = "Data " + successMsg;
     var getSheltereeUploadSuccessMsg = function () {
         return sheltereeUploadSuccessMsg;
     };
+
     var sheltereeMedicalConditionUpdateListSuccessMsg = "Medical Condition Update  Comment " + successMsg;
     var getSheltereeMedicalConditionUpdateListCommentSuccessMsg = function () {
         return sheltereeMedicalConditionUpdateListSuccessMsg;
     };
 
+    var demographicsSuccessMsg = "Demographics " + successMsg;
+    var getDemographicsSuccessMsg = function () {
+        return demographicsSuccessMsg;
+    };
+
+    var medicalSuccessMsg = "Medical " + successMsg;
+    var getMedicalSuccessMsg = function () {
+        return medicalSuccessMsg;
+    };
+
+    var treatmentsSuccessMsg = "Treatments " + successMsg;
+    var getTreatmentsSuccessMsg = function () {
+        return treatmentsSuccessMsg;
+    };
+
+    var equipmentSuccessMsg = "Equipment " + successMsg;
+    var getEquipmentSuccessMsg = function () {
+        return equipmentSuccessMsg;
+    };
+
+    var medicationSuccessMsg = "Medication" + successMsg;
+    var getMedicationSuccessMsg = function () {
+        return medicationSuccessMsg;
+    };
+    
+    var sheltereeDispositionSuccessMsg = "Disposition " + successMsg;
+    var getSheltereeDispostionSuccessMsg = function () {
+        return sheltereeDispositionSuccessMsg;
+    };
+
+    var incompletesheltereetabdatawarningMsg = " Current tab has incomplete data, do you want to proceed?";
+    var getIncompletesheltereetabdatawarningMsg = function () {
+        return incompletesheltereetabdatawarningMsg;
+    };
     
 
+
+    var sheltereeDeleteSuccessMsg = "Shelteree " + deleteSuccessMsg;
+    var getSheltereeDeleteSuccessMsg = function () {
+        return sheltereeDeleteSuccessMsg;
+    };
+
+   
+    
+
+    //specific validation messages
+
+    var staffTypeValidationMsg = "Please Select Atleast One Staff Type";
+    var getStaffTypeValidationMsg = function () {
+        return staffTypeValidationMsg;
+    };
+
+    var staffSpecialtyValidationMsg = "Please Select Atleast One Medical Condition";
+    var getStaffSpecialtyValidationMsg = function () {
+        return staffSpecialtyValidationMsg;
+    };
+
+    var bulkUpdateEmployeeValidationMsg = "Please Select Records To Bulk Update";
+    var getBulkUpdateEmployeeValidationMsg = function () {
+        return bulkUpdateEmployeeValidationMsg;
+    };
+
+    var bulkUpdateEmployeeAttendanceValidationMsg = "Please Select Atleast One Staff";
+    var getBulkUpdateEmployeeAttendanceValidationMsg = function () {
+        return bulkUpdateEmployeeAttendanceValidationMsg;
+    };
+    
+
+    var bulkUpdateEmployeeExtendedValidationMsg = "Please Select Records To Bulk Update";
+    var getBulkUpdateEmployeeExtendedValidationMsg = function () {
+        return bulkUpdateEmployeeExtendedValidationMsg;
+    };
+
+    var bulkUpdateSheltereeValidationMsg = "Please Select Records To Bulk Update";
+    var getBulkUpdateSheltereeValidationMsg = function () {
+        return bulkUpdateSheltereeValidationMsg;
+    };
+
+    var bulkUpdateSheltreeDischargeValidationMsg = "Please Select Records To Bulk Update";
+    var getBulkUpdateSheltreeDischargeValidationMsg = function () {
+        return bulkUpdateSheltreeDischargeValidationMsg;
+    };
+
+    var bulkUpdateSheltreeMedicalUpdateValidationMsg = "Please Select Records To Bulk Update";
+    var getBulkUpdateSheltreeMedicalUpdateValidationMsg = function () {
+        return bulkUpdateSheltreeMedicalUpdateValidationMsg;
+    };
+    
+    var reportSheltersValidationMsg = "Please Fill Required Data";
+    var getReportSheltersValidationMsg = function () {
+        return reportSheltersValidationMsg;
+    };
+
+    var reportEventsValidationMsg = "Please Fill Required Data";
+    var getReportEventsValidationMsg = function () {
+        return reportEventsValidationMsg;
+    };
+
+    
     return {
 
         //Common messages
@@ -2174,7 +2411,7 @@ $ct.msg = function () {
         getEquipmentSupplySuccessMsg: getEquipmentSupplySuccessMsg,
         getQuestionSuccessMsg:getQuestionSuccessMsg,
         getQuestionResponseSuccessMsg:getQuestionResponseSuccessMsg,
-
+        getEventSuccessMsg: getEventSuccessMsg,
 
 
         getDeleteSuccessMsg: getDeleteSuccessMsg,
@@ -2189,7 +2426,7 @@ $ct.msg = function () {
         getTransportTypeDeleteSuccessMsg: getTransportTypeDeleteSuccessMsg,
         getequipmentSupplyDeleteSuccessMsg: getequipmentSupplyDeleteSuccessMsg,
         getQuestionDeleteSuccessMsg:getQuestionDeleteSuccessMsg,
-
+        getEventDeleteSuccessMsg: getEventDeleteSuccessMsg,
 
         getUploadValidFile: getUploadValidFile,
         getEmployeesUploadImportOption: getEmployeesUploadImportOption,
@@ -2210,8 +2447,27 @@ $ct.msg = function () {
         getSheltereeDeleteSuccessMsg:getSheltereeDeleteSuccessMsg,
         getSheltereeUploadSuccessMsg: getSheltereeUploadSuccessMsg,
         getSheltereeUploadError: getSheltereeUploadError,
-        getSheltereeMedicalConditionUpdateListCommentSuccessMsg: getSheltereeMedicalConditionUpdateListCommentSuccessMsg
+        getSheltereeMedicalConditionUpdateListCommentSuccessMsg: getSheltereeMedicalConditionUpdateListCommentSuccessMsg,
+        getDemographicsSuccessMsg: getDemographicsSuccessMsg,
+        getMedicalSuccessMsg: getMedicalSuccessMsg,
+        getTreatmentsSuccessMsg:getTreatmentsSuccessMsg,
+        getEquipmentSuccessMsg: getEquipmentSuccessMsg,
+        getMedicationSuccessMsg: getMedicationSuccessMsg,
+        getSheltereeDispostionSuccessMsg: getSheltereeDispostionSuccessMsg,
+        getIncompletesheltereetabdatawarningMsg:getIncompletesheltereetabdatawarningMsg,
 
+
+        //specific validation messages
+        getStaffTypeValidationMsg: getStaffTypeValidationMsg,
+        getStaffSpecialtyValidationMsg: getStaffSpecialtyValidationMsg,
+        getBulkUpdateEmployeeValidationMsg: getBulkUpdateEmployeeValidationMsg,
+        getBulkUpdateEmployeeAttendanceValidationMsg: getBulkUpdateEmployeeAttendanceValidationMsg,
+        getBulkUpdateEmployeeExtendedValidationMsg: getBulkUpdateEmployeeExtendedValidationMsg,
+        getBulkUpdateSheltereeValidationMsg: getBulkUpdateSheltereeValidationMsg,
+        getBulkUpdateSheltreeDischargeValidationMsg: getBulkUpdateSheltreeDischargeValidationMsg,
+        getBulkUpdateSheltreeMedicalUpdateValidationMsg: getBulkUpdateSheltreeMedicalUpdateValidationMsg,
+        getReportSheltersValidationMsg: getReportSheltersValidationMsg,
+        getReportEventsValidationMsg: getReportEventsValidationMsg
 
     };
 } ();
@@ -2257,14 +2513,27 @@ $ct.other = function () {
         return hospiceId;
     };
 
-    var employeeTemplateURL = globalEmployeeTemplateURL;
+    var miscellaneousSectionId = gloabalMiscellaneousSectionId;
+
+    var getMiscellaneousSectionId = function () {
+        return miscellaneousSectionId;
+    };
+
+    var vitalSignsSectionId = gloabalVitalSignsSectionId;
+
+    var getVitalSignsSectionId = function () {
+        return vitalSignsSectionId;
+    };
+
+
+    var employeeTemplateURL = globalBaseServiceUrl + "uploadtemplate/" + "EmployeeUploadTemplate.xlsx";
 
     var getEmployeeTemplateURL = function () {
         return employeeTemplateURL;
     };
 
 
-    var sheltereeTemplateURL = globalSheltereeTemplateURL;
+    var sheltereeTemplateURL = globalBaseServiceUrl + "uploadtemplate/" + "SheltereeUploadTemplate.xlsx";
 
     var getSheltereeTemplateURL = function () {
         return sheltereeTemplateURL;
@@ -2273,7 +2542,9 @@ $ct.other = function () {
 
 
     return {
-        getHospiceId : getHospiceId,
+        getHospiceId: getHospiceId,
+        getMiscellaneousSectionId: getMiscellaneousSectionId,
+        getVitalSignsSectionId : getVitalSignsSectionId,
         getEmployeeTemplateURL: getEmployeeTemplateURL,
         getSheltereeTemplateURL: getSheltereeTemplateURL
 
@@ -2286,34 +2557,16 @@ $ct.other = function () {
 // role id's for security
 $ct.roles = function () {
 
+    var superAdminId = globalSuperAdminId;
+
+    var getSuperAdminId = function () {
+        return superAdminId;
+    };
+
     var administratorId = globalAdministratorId;
 
     var getAdministratorId = function () {
         return administratorId;
-    };
-
-    var associationId = globalAssociationId;
-
-    var getAssociationId = function () {
-        return associationId;
-    };
-
-    var callCenterId = globalCallCenterId;
-
-    var getCallCenterId = function () {
-        return callCenterId;
-    };
-
-    var drcId = globalDrcId;
-
-    var getDrcId = function () {
-        return drcId;
-    };
-
-    var dataCellId = globalDataCellId;
-
-    var getDataCellId = function () {
-        return dataCellId;
     };
 
     var facilityUpdateId = globalFacilityUpdateId;
@@ -2328,23 +2581,15 @@ $ct.roles = function () {
         return facilityReadOnlyId;
     };
 
-    var superAdminId = globalSuperAdminId;
 
-    var getSuperAdminId = function () {
-        return superAdminId;
-    };
 
 
     return {
 
+        getSuperAdminId: getSuperAdminId,
         getAdministratorId: getAdministratorId,
-        getAssociationId: getAssociationId,
-        getCallCenterId: getCallCenterId,
-        getDrcId: getDrcId,
-        getDataCellId: getDataCellId,
         getFacilityUpdateId: getFacilityUpdateId,
-        getFacilityReadOnlyId: getFacilityReadOnlyId,
-        getSuperAdminId: getSuperAdminId
+        getFacilityReadOnlyId: getFacilityReadOnlyId
 
     };
 
@@ -2490,6 +2735,8 @@ $ct.helpers = function () {
 
         if (windowTitle !== undefined) {
             window.title(windowTitle);
+        } else {
+            window.title("");
         }
 
         window.center().open();
@@ -2582,21 +2829,13 @@ $ct.security = function () {
         $.each(userIdentity.Roles, function (index, record) {
 
             if (
-            (record.Key == $ct.roles.getAdministratorId()) ||
+                    (record.Key == $ct.roles.getSuperAdminId()) ||
 
-            (record.Key == $ct.roles.getAssociationId()) ||
+                    (record.Key == $ct.roles.getAdministratorId()) ||
 
-            (record.Key == $ct.roles.getCallCenterId()) ||
+                    (record.Key == $ct.roles.getFacilityUpdateId()) ||
 
-            (record.Key == $ct.roles.getDrcId()) ||
-
-            (record.Key == $ct.roles.getDataCellId()) ||
-
-            (record.Key == $ct.roles.getFacilityUpdateId()) ||
-
-            (record.Key == $ct.roles.getFacilityReadOnlyId()) ||
-
-            (record.Key == $ct.roles.getSuperAdminId())
+                    (record.Key == $ct.roles.getFacilityReadOnlyId())
 
             ) {
                 validRole = true;
@@ -2617,29 +2856,17 @@ $ct.security = function () {
 
         $.each(userIdentity.Roles, function (index, record) {
 
+            if (record.Key == $ct.roles.getSuperAdminId())
+                isSuperAdmin = true;
+
             if (record.Key == $ct.roles.getAdministratorId())
                 isAdmin = true;
-
-            if (record.Key == $ct.roles.getAssociationId())
-                isAssociation = true;
-
-            if (record.Key == $ct.roles.getCallCenterId())
-                isCallCenter = true;
-
-            if (record.Key == $ct.roles.getDrcId())
-                isDrc = true;
-
-            if (record.Key == $ct.roles.getDataCellId())
-                isDataCell = true;
 
             if (record.Key == $ct.roles.getFacilityUpdateId())
                 isFacilityUpdate = true;
 
             if (record.Key == $ct.roles.getFacilityReadOnlyId())
                 isFacilityReadOnly = true;
-
-            if (record.Key == $ct.roles.getSuperAdminId())
-                isSuperAdmin = true;
 
         });
 
@@ -2649,56 +2876,12 @@ $ct.security = function () {
         if (isSuperAdmin) {
 
             isAdmin = false;
-            isAssociation = false;
-            isCallCenter = false;
-            isDrc = false;
-            isDataCell = false;
             isFacilityUpdate = false;
             isFacilityReadOnly = false;
 
         }
 
         if (isAdmin) {
-            isAssociation = false;
-            isCallCenter = false;
-            isDrc = false;
-            isDataCell = false;
-            isFacilityUpdate = false;
-            isFacilityReadOnly = false;
-        }
-
-        if (isDataCell) {
-
-            isAssociation = false;
-            isCallCenter = false;
-            isDrc = false;
-            isFacilityUpdate = false;
-            isFacilityReadOnly = false;
-
-        }
-
-
-
-
-        if (isCallCenter) {
-
-            isAssociation = false;
-            isDrc = false;
-            isFacilityUpdate = false;
-            isFacilityReadOnly = false;
-
-        }
-
-
-        if (isAssociation) {
-
-            isDrc = false;
-            isFacilityUpdate = false;
-            isFacilityReadOnly = false;
-
-        }
-
-        if (isDrc) {
 
             isFacilityUpdate = false;
             isFacilityReadOnly = false;
@@ -2715,35 +2898,16 @@ $ct.security = function () {
     };
 
 
+    var isSuperAdmin = false;
+
+    var isSuperAdminRole = function () {
+        return isSuperAdmin
+    };
 
     var isAdmin = false;
 
     var isAdminRole = function () {
         return isAdmin
-    };
-
-    var isAssociation = false;
-
-    var isAssociationRole = function () {
-        return isAssociation
-    };
-
-    var isCallCenter = false;
-
-    var isCallCenterRole = function () {
-        return isCallCenter
-    };
-
-    var isDrc = false;
-
-    var isDrcRole = function () {
-        return isDrc
-    };
-
-    var isDataCell = false;
-
-    var isDataCellRole = function () {
-        return isDataCell
     };
 
     var isFacilityUpdate = false;
@@ -2758,11 +2922,7 @@ $ct.security = function () {
         return isFacilityReadOnly
     };
 
-    var isSuperAdmin = false;
 
-    var isSuperAdminRole = function () {
-        return isSuperAdmin
-    };
 
 
     var getUserName = function () {
@@ -2803,190 +2963,11 @@ $ct.security = function () {
         setRoles: setRoles,
 
         //calling setRoles function is prerequisite
+        isSuperAdminRole: isSuperAdminRole,
         isAdminRole: isAdminRole,
-        isAssociationRole: isAssociationRole,
-        isCallCenterRole: isCallCenterRole,
-        isDrcRole: isDrcRole,
-        isDataCellRole: isDataCellRole,
         isFacilityUpdateRole: isFacilityUpdateRole,
-        isFacilityReadOnlyRole: isFacilityReadOnlyRole,
-        isSuperAdminRole: isSuperAdminRole
-
-    };
-} ();
-
-$ct.employeeColumnLookup = function () {
-
-    var employeeColumnLookup = null;
-
-    var depatmentLookUp = [];
-    var agencyLookUp = [];
-    var staffSpecialtyLookUp = [];
-    var staffTypeLookUp = [];
-    var shiftLookUp = [];
-
-    var setEmployeeColumnLookupdata = function (employeeColumnLookupdata) {
-
-        employeeColumnLookup = employeeColumnLookupdata.EmployeeLookupData;
-
-      
-        $.each(employeeColumnLookup.AgencyDepartmentData, function (index, record) {
-
-            var departmentData = {};
-
-            if (record.Key != -1) {
-
-                departmentData.DepartmentName = record.Value;
-
-                depatmentLookUp.push(departmentData);
-            }
-            
-        });
-       
+        isFacilityReadOnlyRole: isFacilityReadOnlyRole
         
-       
-        $.each(employeeColumnLookup.AgencyDepartmentData, function (index, record) {
-
-            var agencyData = {};
-            if (record.Key != -1) {
-              
-                agencyData.AgencyName = record.AgencyName;
-
-                agencyLookUp.push(agencyData);
-
-
-            }
-        });
-
-        
-        
-        $.each(employeeColumnLookup.StaffSpecialityData, function (index, record) {
-
-            var staffSpecialtyData = {};
-            if (record.Key != -1) {
-                staffSpecialtyData.StaffSpecialityName = record.Value;
-
-                staffSpecialtyLookUp.push(staffSpecialtyData);
-            }
-        });
-
-     
-       
-
-        $.each(employeeColumnLookup.StaffTypeData, function (index, record) {
-
-            var staffTypeData = {};
-
-            if (record.Key != -1) {
-
-                staffTypeData.StaffTypeName = record.Value;
-
-                staffTypeLookUp.push(staffTypeData);
-            }
-        });
-
-
-       
-
-        $.each(employeeColumnLookup.ShiftTimeData, function (index, record) {
-
-            var shiftData = {};
-
-            if (record.Key != -1) {
-
-                shiftData.ShiftTime = record.Value;
-                shiftLookUp.push(shiftData);
-            }
-
-        });
-       
-      
-    };
-
-    
-
-    var shelterColumnLookupdata = null;
-
-    var shelterNamesLookUp = [];
-
-    var setShelterColumnLookupdata = function (shelterColumnLookupdata) {
-       
-
-        shelterColumnLookupdata = shelterColumnLookupdata;
-
-        $.each(shelterColumnLookupdata, function (index, record) {
-
-            var shelterNamesData = {};
-
-            shelterNamesData.FacilityName = record.Name;
-
-            shelterNamesLookUp.push(shelterNamesData);
-        });
-
-
-    };
-
-    var getShelters = function () {
-      
-        return shelterNamesLookUp;
-
-    };
-
-
-    var getDepartments = function () {
-
-
-        return depatmentLookUp;
-
-    };
-
-    var getAgencies = function () {
-
-        var modifiedAgencyLookUp = [];
-
-        var unique = {};
-        $.each(agencyLookUp, function (index, record) {
-            if (!unique[record.AgencyName]) {
-                modifiedAgencyLookUp.push(record);
-                unique[record.AgencyName] = record;
-            }
-        });
-  
-        return modifiedAgencyLookUp;
-
-    };
-
-    var getStaffSpecialties = function () {
-
-        return staffSpecialtyLookUp;
-
-    };
-    var getStaffTypes= function () {
-
-        return staffTypeLookUp;
-
-    };
-
-    var getShifts = function () {
-
-        return shiftLookUp;
-
-    };
-
-
-    return {
-
-        setEmployeeColumnLookupdata: setEmployeeColumnLookupdata,
-        setShelterColumnLookupdata: setShelterColumnLookupdata,
-        getShelters:getShelters,
-        getDepartments: getDepartments,
-        getAgencies: getAgencies,
-        getStaffSpecialties: getStaffSpecialties,
-        getStaffTypes: getStaffTypes,
-        getShifts: getShifts
-
-      
-
     };
 } ();
 
@@ -3043,6 +3024,12 @@ $ct.ajax = function () {
                         $(document).trigger(event);
                         $ct.helpers.hideWorkAreaBusyCursor();
                         $ct.helpers.hidePageBusyCursor();
+                    }
+                    if ($ct.mt.isAuthenticationFailed(response)) {
+
+                        var event = jQuery.Event($ct.en.getGoToNoRolePage());
+                        $(document).trigger(event);
+
                     }
                 }
                 else {
@@ -3164,10 +3151,26 @@ $ct.ds.common = function () {
         return "";
     };
 
+    var getAlertsData = function (successCallBack) {
+
+        var requestParam = "";
+
+        $ct.ajax.ajaxPost($ct.cn.getShelterUrl() + 'GetShelterAlerts', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
 
     return {
 
-        getUserIdentityData: getUserIdentityData
+        getUserIdentityData: getUserIdentityData,
+        getAlertsData: getAlertsData
 
     };
 
@@ -4625,12 +4628,91 @@ $ct.ds.admin.equipmentsupply = function () {
 }();
 
 
-$ct.ds.shlt.shelter = function () {
+$ct.ds.admin.event = function () {
+    var getEvents = function (ViewModel, successCallBack) {
 
-    var getShelters = function (successCallBack) {
+        var datasource = new kendo.data.DataSource({
+            transport: {
+                read: function (options) {
+                    var filter = null;
+                    if (options.data.filter !== undefined) {
+                        filter = options.data.filter;
+                    }
+                    var sort = null;
+                    if (options.data.sort !== undefined) {
+                        sort = options.data.sort;
+                    }
+                    var requestParam = {};
+                    requestParam.Criteria = { PageSize: options.data.pageSize, PageIndex: options.data.page, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
 
-        var requestParam = "";
-        $ct.ajax.ajaxPost($ct.cn.getShelterUrl() + 'GetSheltersWithSecurity', requestParam, function (result) {
+
+
+                    $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'GetAllEvents', requestParam, function (result) {
+                        if ($ct.mt.isNoDataFound(result)) {
+                            var currPageIndex = datasource.page();
+                            if (currPageIndex > 1)
+                                datasource.page(currPageIndex - 1);
+                        }
+
+                        options.success(result);
+
+                        if (successCallBack != null)
+                            successCallBack(result);
+                    }, null, true)
+                }
+            },
+            serverSorting: true,
+            serverPaging: true,
+            serverFiltering: true,
+            pageSize: 10,
+            schema: {
+                data: function (response) {
+                    return response.Data;
+                },
+                total: function (response) {
+
+                    if (response != null && response != undefined && response != "")
+                        return response.TotalRecords;
+                },
+                model: { // define the model of the data source. Required for validation and property types.
+                    fields: {
+                        DisplayOrder: { type: "number" }
+                    }
+                }
+            }
+        });
+
+        return datasource;
+
+
+    };
+
+    var deleteEventById = function (ViewModel, successCallBack) {
+        var requestParam = {};
+
+        requestParam.EventId = ViewModel.selectedId;
+        requestParam.EventVersion = ViewModel.selectedRecordVersion;
+
+        $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'DeleteEvent', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+
+
+    };
+
+    var getEventById = function (eventId, successCallBack) {
+
+        var requestParam = {};
+
+        requestParam.EventId = eventId;
+
+        $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'GetEventById', requestParam, function (result) {
 
             if (successCallBack != null)
                 successCallBack(result);
@@ -4641,7 +4723,48 @@ $ct.ds.shlt.shelter = function () {
         return "";
     };
 
-    var getSheltersWithDs = function (successCallBack) {
+    var saveEvent = function (saveEventData, successCallBack) {
+
+        $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'SaveEvent', saveEventData, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+   
+
+    return {
+        getEvents: getEvents,
+        deleteEventById: deleteEventById,
+        getEventById: getEventById,
+        saveEvent: saveEvent
+    };
+
+}();
+
+
+$ct.ds.shlt.shelter = function () {
+
+
+    var getSheltersWithSecurityForActiveEvent = function (successCallBack) {
+
+        var requestParam = "";
+        $ct.ajax.ajaxPost($ct.cn.getShelterUrl() + 'GetSheltersWithSecurityForActiveEvent', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
+    var getSheltersWithSecurityForActiveEventWithDs = function (successCallBack) {
 
         var datasource = new kendo.data.DataSource({
             transport: {
@@ -4649,17 +4772,17 @@ $ct.ds.shlt.shelter = function () {
 
                     var requestParam = "";
 
-                    $ct.ajax.ajaxPost($ct.cn.getShelterUrl() + 'GetSheltersWithSecurity', requestParam, function (result) {
+                    $ct.ajax.ajaxPost($ct.cn.getShelterUrl() + 'GetSheltersWithSecurityForActiveEvent', requestParam, function (result) {
                         
                         var resultData = result.Data;
                         if ((resultData !== undefined && resultData !== null && resultData.length > 0) && ($ct.security.isMultiFacilityUser())) {
 
-                            var selectItem = {};
+                            //var selectItem = {};
 
-                            selectItem.Id = -1;
-                            selectItem.Name = "All Shelters";
+                            //selectItem.Id = -1;
+                            //selectItem.Name = "All Shelters";
 
-                            resultData.splice(0, 0, selectItem);
+                            //resultData.splice(0, 0, selectItem);
 
                         }
 
@@ -4674,6 +4797,43 @@ $ct.ds.shlt.shelter = function () {
         return datasource;
 
     };
+
+
+
+    var getSheltersWithSecurityAndCensusForActiveEventWithDs = function (successCallBack) {
+
+        var datasource = new kendo.data.DataSource({
+                transport: {
+                    read: function (options) {
+
+                    var requestParam = "";
+
+                    $ct.ajax.ajaxPost($ct.cn.getShelterUrl() + 'GetSheltersCensusWithSecurityForActiveEvent', requestParam, function (result) {
+
+                        var resultData = result.Data;
+                        if ((resultData !== undefined && resultData !== null && resultData.length > 0) && ($ct.security.isMultiFacilityUser())) {
+
+                                //var selectItem = {};
+
+                                    //selectItem.Id = -1;
+                            //selectItem.Name = "All Shelters";
+
+                    //resultData.splice(0, 0, selectItem);
+
+                    }
+
+            options.success(resultData);
+                        if (successCallBack != null)
+                            successCallBack(resultData);
+                        }, null, true)
+                        }
+                        }
+                        });
+
+        return datasource;
+
+            };
+
 
 
     var getShelterStatus = function (ViewModel, successCallBack) {
@@ -4693,7 +4853,7 @@ $ct.ds.shlt.shelter = function () {
                     var requestParam = {};
 
                     requestParam.Criteria = { PageSize: options.data.pageSize, PageIndex: options.data.page, Filter: filter, Sort: sort };
-
+                    requestParam.EventId = ViewModel.selectedEventItem.Key;
                     $ct.ajax.ajaxPost($ct.cn.getShelterStatusUrl() + 'GetShelterStatusList', requestParam, function (result) {
 
                         if ($ct.mt.isNoDataFound(result)) {
@@ -4891,6 +5051,7 @@ $ct.ds.shlt.shelter = function () {
         requestParam.ShelterStatus.ClosedDate = saveShelterStatusData.ClosedDate;
         requestParam.ShelterStatus.IsNew = saveShelterStatusData.IsNew;
         requestParam.ShelterStatus.Version = saveShelterStatusData.Version;
+        requestParam.ShelterStatus.EventId = saveShelterStatusData.EventId;
 
         $ct.ajax.ajaxPost($ct.cn.getShelterStatusUrl() + 'SaveShelterStatus', requestParam, function (result) {
 
@@ -4929,7 +5090,7 @@ $ct.ds.shlt.shelter = function () {
 
         var requestParam = {};
         requestParam.Criteria = { PageSize: pageSize, PageIndex: pageIndex, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
-
+        requestParam.EventId = ViewModel.selectedEventItem.Key;
 
 
         $ct.ajax.ajaxPost($ct.cn.getShelterStatusUrl() + 'ExportShelterStatusToExcel', requestParam, function (result) {
@@ -4945,9 +5106,9 @@ $ct.ds.shlt.shelter = function () {
 
 
     return {
-
-        getShelters: getShelters,
-        getSheltersWithDs: getSheltersWithDs,
+        getSheltersWithSecurityForActiveEvent: getSheltersWithSecurityForActiveEvent,
+        getSheltersWithSecurityForActiveEventWithDs: getSheltersWithSecurityForActiveEventWithDs,
+        getSheltersWithSecurityAndCensusForActiveEventWithDs: getSheltersWithSecurityAndCensusForActiveEventWithDs,
         getShelterStatus: getShelterStatus,
         getEvents: getEvents,
         saveShelterStatus: saveShelterStatus,
@@ -4983,7 +5144,7 @@ $ct.ds.emp.employee = function () {
         return '';
     };
 
-   
+
 
     var getEmployees = function (ViewModel, successCallBack) {
 
@@ -5002,14 +5163,14 @@ $ct.ds.emp.employee = function () {
                     requestParam.Criteria = { PageSize: options.data.pageSize, PageIndex: options.data.page, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
                     //TODO:
                     requestParam.ShelterId = ViewModel.empHeaderData.shelter.Id;
-                  
+
                     requestParam.SelectedEmployeeIds = ViewModel.get("empRequestData.SelectedEmployeeIds");
                     requestParam.UnSelectedEmployeeIds = ViewModel.get("empRequestData.UnSelectedEmployeeIds");
                     requestParam.ViewAll = ViewModel.empRequestData.ViewAll;
                     requestParam.FetchSelectedOnly = ViewModel.empRequestData.FetchSelectedOnly;
-                   
+
                     ViewModel.set("selectedId", "-1");
-                    
+
                     $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'GetEmployees', requestParam, function (result) {
 
                         if ($ct.mt.isNoDataFound(result)) {
@@ -5068,7 +5229,7 @@ $ct.ds.emp.employee = function () {
                     requestParam.Criteria = { PageSize: options.data.pageSize, PageIndex: options.data.page, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
 
                     requestParam.ShelterId = ViewModel.empHeaderData.shelter.Id;
-                    
+
                     requestParam.SelectedEmployeeIds = ViewModel.get("empRequestData.SelectedEmployeeIds");
                     requestParam.UnSelectedEmployeeIds = ViewModel.get("empRequestData.UnSelectedEmployeeIds");
                     requestParam.ViewAll = ViewModel.empRequestData.ViewAll;
@@ -5169,7 +5330,7 @@ $ct.ds.emp.employee = function () {
 
         requestParam.Id = selEmployeeId;
         requestParam.EmployeeVersion = selEmployeeVersion;
-        
+
         $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'DeleteEmployee', requestParam, function (result) {
 
             if (successCallBack != null)
@@ -5242,7 +5403,7 @@ $ct.ds.emp.employee = function () {
         requestParam.Criteria = { PageSize: pageSize, PageIndex: pageIndex, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
 
         requestParam.ShelterId = ViewModel.empHeaderData.shelter.Id;
-      
+
 
         //+Note Request Data Added
         requestParam.SelectedEmployeeIds = ViewModel.get("empRequestData.SelectedEmployeeIds");
@@ -5250,7 +5411,7 @@ $ct.ds.emp.employee = function () {
         requestParam.ViewAll = ViewModel.empRequestData.ViewAll;
         requestParam.FetchSelectedOnly = ViewModel.empRequestData.FetchSelectedOnly;
 
-        
+
         $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'ExportEmployeeToExcel', requestParam, function (result) {
 
 
@@ -5290,7 +5451,7 @@ $ct.ds.emp.employee = function () {
         var requestParam = {};
         requestParam.Criteria = { PageSize: pageSize, PageIndex: pageIndex, SearchToken: ViewModel.searchToken, Filter: filter, Sort: sort };
         requestParam.ShelterId = ViewModel.empHeaderData.shelter.Id;
-     
+
 
         //+Note Request Data Added
         requestParam.SelectedEmployeeIds = ViewModel.get("empRequestData.SelectedEmployeeIds");
@@ -5314,22 +5475,22 @@ $ct.ds.emp.employee = function () {
     };
 
 
-    var getActiveEvents = function (selectedShelterId, successCallBack) {
+    //var getActiveEvents = function (selectedShelterId, successCallBack) {
 
-        var requestParam = {};
+    //    var requestParam = {};
 
-        requestParam.ShelterId = selectedShelterId;
-        
-        $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'GetActiveEvent', requestParam, function (result) {
+    //    requestParam.ShelterId = selectedShelterId;
 
-            if (successCallBack != null)
-                successCallBack(result);
+    //    $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'GetActiveEvent', requestParam, function (result) {
 
-        }, null, true)
+    //        if (successCallBack != null)
+    //            successCallBack(result);
+
+    //    }, null, true)
 
 
-        return "";
-    };
+    //    return "";
+    //};
 
     var downloadEmployeeToExcel = function (ViewModel, successCallBack) {
 
@@ -5352,11 +5513,11 @@ $ct.ds.emp.employee = function () {
     };
 
     var getEmployeeColumnLookup = function (successCallBack) {
-      
+
         var requestParam = "";
 
         $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'GetEmployeeFilterLookupData', requestParam, function (result) {
-           
+
             if (successCallBack != null)
                 successCallBack(result);
 
@@ -5365,24 +5526,37 @@ $ct.ds.emp.employee = function () {
         return "";
     };
 
+    var downloadEmployeeTemplate = function (successCallBack) {
 
+        var Data = "";
+
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeUrl() + 'DownloadEmployeeTemplate', Data, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+        return "";
+
+    };
 
     return {
 
-            getImportActionOptions: getImportActionOptions,
-            getExportFailedImportedEmployeeDataToExcel: getExportFailedImportedEmployeeDataToExcel,
-            getEmployeeBulkUpdateLookup  : getEmployeeBulkUpdateLookup ,
-            bulkUpdateEmployeeData: bulkUpdateEmployeeData,
-            getEmployees: getEmployees,
-            getEmployeeExpandedList:getEmployeeExpandedList,
-            deleteEmployeeById: deleteEmployeeById,
-            getEmployeeById: getEmployeeById,
-            saveEmployee: saveEmployee,
-            exportEmployeesListToExcel: exportEmployeesListToExcel,
-            exportEmplyeesExpandedListToExcel:exportEmplyeesExpandedListToExcel,
-            downloadEmployeeToExcel: downloadEmployeeToExcel,
-            getActiveEvents: getActiveEvents,
-            getEmployeeColumnLookup: getEmployeeColumnLookup
+        getImportActionOptions: getImportActionOptions,
+        getExportFailedImportedEmployeeDataToExcel: getExportFailedImportedEmployeeDataToExcel,
+        getEmployeeBulkUpdateLookup  : getEmployeeBulkUpdateLookup ,
+        bulkUpdateEmployeeData: bulkUpdateEmployeeData,
+        getEmployees: getEmployees,
+        getEmployeeExpandedList:getEmployeeExpandedList,
+        deleteEmployeeById: deleteEmployeeById,
+        getEmployeeById: getEmployeeById,
+        saveEmployee: saveEmployee,
+        exportEmployeesListToExcel: exportEmployeesListToExcel,
+        exportEmplyeesExpandedListToExcel:exportEmplyeesExpandedListToExcel,
+        downloadEmployeeToExcel: downloadEmployeeToExcel,
+       // getActiveEvents: getActiveEvents,
+        getEmployeeColumnLookup: getEmployeeColumnLookup,
+        downloadEmployeeTemplate: downloadEmployeeTemplate
 
     };
 
@@ -5390,21 +5564,21 @@ $ct.ds.emp.employee = function () {
 $ct.ds.emp.empattendance = function () {
 
 
-    var getEmployeeAttendenceEvent = function (successCallBack) {
-        var Data = {};
-        Data.ShelterId = 1;
-        $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'GetActiveEvent', Data, function (result) {
+    //var getEmployeeAttendenceEvent = function (successCallBack) {
+    //    var Data = {};
+    //    Data.ShelterId = 1;
+    //    $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'GetActiveEvent', Data, function (result) {
 
-            if (successCallBack != null)
-                successCallBack(result);
+    //        if (successCallBack != null)
+    //            successCallBack(result);
 
-        }, null, true)
-
-
-        return "";
+    //    }, null, true)
 
 
-    };
+    //    return "";
+
+
+    //};
     var getEmployeeAttendenceInitialLoad = function (successCallBack) {
 
         $ct.ajax.ajaxPost($ct.cn.getEmployeeAttendanceUrl() + 'GetEmployeeShiftTime', "", function (result) {
@@ -5419,20 +5593,20 @@ $ct.ds.emp.empattendance = function () {
 
 
     };
-    var getEmployeeAttendenceFacilities = function (successCallBack) {
+    //var getEmployeeAttendenceFacilities = function (successCallBack) {
 
-        $ct.ajax.ajaxPost($ct.cn.getShelterUrl() + 'GetSheltersWithSecurity', "", function (result) {
+    //    $ct.ajax.ajaxPost($ct.cn.getShelterUrl() + 'GetSheltersWithSecurity', "", function (result) {
 
-            if (successCallBack != null)
-                successCallBack(result);
+    //        if (successCallBack != null)
+    //            successCallBack(result);
 
-        }, null, true)
-
-
-        return "";
+    //    }, null, true)
 
 
-    };
+    //    return "";
+
+
+    //};
 
     var getEmployeeAttendence = function (ViewModel, successCallBack) {
 
@@ -5595,14 +5769,50 @@ $ct.ds.emp.empattendance = function () {
 
         return "";
     };
+
+
+    var getEmployeeAttendanceCommentHistory = function (commentsViewModel, successCallBack) {
+        var Data = {};
+        Data.EmployeeId = commentsViewModel.datafromParent.griddata.EmployeeId;
+        Data.ShiftDate = commentsViewModel.datafromParent.date;
+        Data.ShiftId = commentsViewModel.datafromParent.griddata.ShiftId;
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeAttendanceUrl() + 'GetEmployeeAttendanceComments', Data, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+
+
+    };
+
+    var saveEmployeeAttendenceComment = function (saveEmployeeAttendenceData, successCallBack) {
+
+        $ct.ajax.ajaxPost($ct.cn.getEmployeeAttendanceUrl() + 'SaveEmployeeAttendanceComment', saveEmployeeAttendenceData, function (result) {
+
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
     return {
-        getEmployeeAttendenceEvent: getEmployeeAttendenceEvent,
+       // getEmployeeAttendenceEvent: getEmployeeAttendenceEvent,
         getEmployeeAttendenceInitialLoad: getEmployeeAttendenceInitialLoad,
-        getEmployeeAttendenceFacilities: getEmployeeAttendenceFacilities,
+        //getEmployeeAttendenceFacilities: getEmployeeAttendenceFacilities,
         getEmployeeAttendence: getEmployeeAttendence,
         saveEmployeeAttendence: saveEmployeeAttendence,
         bulkUpdateEmployeeAttendence: bulkUpdateEmployeeAttendence,
-        exportEmployeeAttendenceToExcel: exportEmployeeAttendenceToExcel
+        exportEmployeeAttendenceToExcel: exportEmployeeAttendenceToExcel,
+        getEmployeeAttendanceCommentHistory: getEmployeeAttendanceCommentHistory,
+        saveEmployeeAttendenceComment: saveEmployeeAttendenceComment
 
     };
 
@@ -5800,7 +6010,7 @@ $ct.ds.sheltree.sheltree = function () {
         }
 
         if (reqObj.valArrivalTime == null) {
-            requestParam.SelectedArrivalTime = reqObj.valDischargeTime;
+            requestParam.SelectedArrivalTime = reqObj.valArrivalTime;
         }
         else {
 
@@ -5821,23 +6031,23 @@ $ct.ds.sheltree.sheltree = function () {
         return "";
     };
 
-    var getActiveEvents = function (ViewModel, successCallBack) {
+    //var getActiveEvents = function (ViewModel, successCallBack) {
 
-        var requestParam = {};
-
-
-        requestParam.ShelterId = ViewModel.sheltereeHeaderData.shelter.Id;
-
-        $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'GetActiveEvent', requestParam, function (result) {
-
-            if (successCallBack != null)
-                successCallBack(result);
-
-        }, null, true)
+    //    var requestParam = {};
 
 
-        return "";
-    };
+    //    requestParam.ShelterId = ViewModel.sheltereeHeaderData.shelter.Id;
+
+    //    $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'GetActiveEvent', requestParam, function (result) {
+
+    //        if (successCallBack != null)
+    //            successCallBack(result);
+
+    //    }, null, true)
+
+
+    //    return "";
+    //};
 
     var getImportActionOptions = function (successCallBack) {
 
@@ -6177,7 +6387,38 @@ $ct.ds.sheltree.sheltree = function () {
 
         return "";
     };
+    var downloadSheltereeTemplate = function (successCallBack) {
 
+        var Data = "";
+
+        $ct.ajax.ajaxPost($ct.cn.getSheltereeFacilityUrl() + 'DownloadSheltereeTemplate', Data, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+        return "";
+
+    };
+
+    var generateSheltereeReportClick = function (ReportData, successCallBack) {
+
+        var requestParam = {};
+        requestParam.SheltereeId = ReportData.sheltereeId;
+        requestParam.EventId = ReportData.eventId;
+
+        $ct.ajax.ajaxPost($ct.cn.getSheltereeFacilityUrl() + 'GetSheltereePDFReport', requestParam, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+    
 
     return {
 
@@ -6186,7 +6427,7 @@ $ct.ds.sheltree.sheltree = function () {
         exportSheltereesListToExcel: exportSheltereesListToExcel,
         getSheltereeBulkUpdateLookup: getSheltereeBulkUpdateLookup,
         bulkUpdateSheltereeData: bulkUpdateSheltereeData,
-        getActiveEvents: getActiveEvents,
+       // getActiveEvents: getActiveEvents,
         getImportActionOptions: getImportActionOptions,
         getExportFailedImportedSheltereeDataToExcel: getExportFailedImportedSheltereeDataToExcel,
         downloadSheltereeToExcel: downloadSheltereeToExcel,
@@ -6197,7 +6438,9 @@ $ct.ds.sheltree.sheltree = function () {
         generatereportsforMedicalUpdateesList:generatereportsforMedicalUpdateesList,
         generatereportsforDischargeesList:generatereportsforDischargeesList,
         commentMedicalUpdateList: commentMedicalUpdateList,
-        commentSaveMedicalUpdateList: commentSaveMedicalUpdateList
+        commentSaveMedicalUpdateList: commentSaveMedicalUpdateList,
+        downloadSheltereeTemplate: downloadSheltereeTemplate,
+        generateSheltereeReportClick: generateSheltereeReportClick
 
     };
 
@@ -6603,6 +6846,141 @@ $ct.ds.sheltree.sheltreeinput = function () {
 }();
 
 
+$ct.ds.reports= function () {
+
+    var getLookupsForStaffRawDataReport = function (successCallBack) {
+
+        var Data = "";
+
+        $ct.ajax.ajaxPost($ct.cn.getReportsUrl() + 'GetLookupsForStaffRawDataReport', Data, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
+
+    var getLookupsForSheltereeRawDataReport = function (successCallBack) {
+
+        var Data = "";
+
+        $ct.ajax.ajaxPost($ct.cn.getReportsUrl() + 'GetLookupsForSheltereeRawDataReport', Data, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
+    var getLookupsForStaffAttendanceRawDataReport = function (successCallBack) {
+
+        var Data = "";
+
+        $ct.ajax.ajaxPost($ct.cn.getReportsUrl() + 'GetLookupsForStaffAttendanceRawDataReport', Data, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
+    var genarateStaffRawDataReport = function (params, successCallBack) {
+
+
+        $ct.ajax.ajaxPost($ct.cn.getReportsUrl() + 'GetReportForStaffRawData', params, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
+    var genarateStaffAttendanceRawDataReport = function (params, successCallBack) {
+
+
+        $ct.ajax.ajaxPost($ct.cn.getReportsUrl() + 'GetReportForStaffAttendanceRawData', params, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
+
+    var genarateSheltereeRawDataReport = function (params, successCallBack) {
+
+
+        $ct.ajax.ajaxPost($ct.cn.getReportsUrl() + 'GetReportForSheltereeRawData', params, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+    };
+
+   
+    return {
+
+        getLookupsForStaffRawDataReport: getLookupsForStaffRawDataReport,
+        getLookupsForSheltereeRawDataReport: getLookupsForSheltereeRawDataReport,
+        getLookupsForStaffAttendanceRawDataReport: getLookupsForStaffAttendanceRawDataReport,
+        genarateStaffRawDataReport: genarateStaffRawDataReport,
+        genarateStaffAttendanceRawDataReport: genarateStaffAttendanceRawDataReport,
+        genarateSheltereeRawDataReport: genarateSheltereeRawDataReport
+    }
+}();
+$ct.ds.event= function () {
+
+
+    var getActiveEvent = function (successCallBack) {
+        var Data = {};
+
+        $ct.ajax.ajaxPost($ct.cn.getEventUrl() + 'GetActiveEvent', Data, function (result) {
+
+            if (successCallBack != null)
+                successCallBack(result);
+
+        }, null, true)
+
+
+        return "";
+
+
+    };
+
+   
+    return {
+
+
+        getActiveEvent: getActiveEvent
+    }
+
+}();
+/**
+* root HTML element
+* @type {object}
+*/
+var rootEle = document.documentElement;
+
 $(document).ready(function (e) {
     var $appHeader  = $('#hd');
     var $appContent = $('#bd');
@@ -6614,17 +6992,18 @@ $(document).ready(function (e) {
     $appHeader.on({
         'mouseenter': showNavPanel,
         'mouseleave': hideNavPanel
-    });
+    },'.main-menu');
 
     // hide nav when close button clicked
-    $appHeader.on('click', '.app-logo__menu-collapse', hideNavPanel);
+    $appHeader.on('click', '.app-logo__menu-collapse', toggleNavPanel);
+
+    // expand/collapse navigation
+    $appHeader.on('click', '.app-nav__main__li.has-subnav', toggleMainNavActive);
+
+    // active class for selected subnav
+    $appHeader.on('click', '.app-nav__sub__li', toggleSubNavActive);
 });
 
-/**
- * root HTML element
- * @type {object}
- */
-var rootEle = document.documentElement;
 
 /**
  * Toggle alerts view on the page
@@ -6642,8 +7021,13 @@ function showNavPanel(e) {
     var focusedElement = document.activeElement;
     $(rootEle).addClass('has-nav-expanded');
 
+    // if focused element not found, exit from here, because no further execution is needed.
+    if(!focusedElement){
+        return;
+    }
+
     // hack to avoid cursor overlap in IE
-    if(focusedElement.nodeName === 'INPUT') {
+    if (focusedElement.nodeName === 'TEXTAREA' || focusedElement.nodeName === 'INPUT') {
         focusedElement.blur();
     }
 }
@@ -6653,6 +7037,64 @@ function showNavPanel(e) {
  */
 function hideNavPanel() {
     $(rootEle).removeClass('has-nav-expanded');
+}
+
+/**
+ * Toggle navigation section
+ */
+function toggleNavPanel() {
+    $(rootEle).toggleClass('has-nav-expanded');
+}
+
+/**
+ * Main nav active state toggle
+ * @param  {Object} event
+ */
+function toggleMainNavActive(event) {
+    var $ele               = $(event.currentTarget);
+    var mainNavActiveClass = 'is-mainnav-active';
+    var isActive           = $ele.hasClass(mainNavActiveClass);
+
+    // if the main menu already has active class remove
+    if (isActive) {
+        resetMainSubNavState(mainNavActiveClass);
+    } else {
+        resetMainSubNavState(mainNavActiveClass);
+
+        // add active class to current element
+        $ele.addClass(mainNavActiveClass);
+    }
+}
+
+/**
+ * remove active class from main nav and subnav
+ * @param {string} mainNavActiveClass
+ */
+function resetMainSubNavState(mainNavActiveClass) {
+    var subNavActiveClass  = 'is-subnav-active';
+    var $mainNav           = $('.app-nav__main__li');
+    var $subNav            = $('.app-nav__sub__li');
+
+    $mainNav.removeClass(mainNavActiveClass);
+    $subNav.removeClass(subNavActiveClass);
+}
+
+/**
+ * Subnav active state update based on clicked element
+ * @param  {Object} event
+ */
+function toggleSubNavActive(event) {
+    var $ele               = $(event.currentTarget);
+    var subNavActiveClass  = 'is-subnav-active';
+    var $subNavSiblings    = $ele.siblings('.'+subNavActiveClass);
+
+    event.stopPropagation();
+
+    // remove active class from siblings
+    $subNavSiblings.removeClass(subNavActiveClass);
+
+    // add active class to current element
+    $ele.addClass(subNavActiveClass);
 }
 
 //# sourceMappingURL=app-libs.js.map
