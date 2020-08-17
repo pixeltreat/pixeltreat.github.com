@@ -6,8 +6,8 @@ pre { overflow:auto; font-size:1.2em; border: rgb(102,102,102) 1px solid; paddin
 img { border:0; }
 /*-------------------------- from blog page ------------*/
 #navbar-iframe { display: none !important; }
-body { margin:0; padding:0; background:#181818 url(http://pixeltreat.com/blog/images/bg.gif) repeat-x top left; text-align: center; color: #cccccc; }
-blockquote { margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 30px; padding-top: 10px; padding-right: 0; padding-bottom: 0; padding-left: 20px; font-size: 88%; line-height: 1.5em; color: #666; background: url(http://www.blogblog.com/tictac/quotes.gif) no-repeat top left; }
+body { margin:0; padding:0; background:#181818 url(https://pixeltreat.com/blog/images/bg.gif) repeat-x top left; text-align: center; color: #cccccc; }
+blockquote { margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 30px; padding-top: 10px; padding-right: 0; padding-bottom: 0; padding-left: 20px; font-size: 88%; line-height: 1.5em; color: #666; background: url(https://www.blogblog.com/tictac/quotes.gif) no-repeat top left; }
 blockquote p { margin-top: 0; }
 abbr, acronym { cursor: help; font-style: normal; border-bottom: 1px dotted; }
 code { color: #f63; }
@@ -26,9 +26,9 @@ a:active { color: #FFF; text-decoration: underline; }
 #outer-wrapper { text-align: left; font: normal normal 86% Verdana, sans-serif; }
 #content-wrapper { margin-left: 0px; /* to avoid the border image */ width: 958px; border-left:1px #333 solid; border-right:1px #333 solid; background:#262626; }
 #main { float: left; width: 680px; margin-top: 20px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 1em; line-height: 1.5em; word-wrap: break-word; /* fix for long text breaking sidebar float in IE */ overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */ }
-#sidebar { float: right; width: 200px; padding-left: 15px; padding-right: 15px; padding-top: 40px; padding-bottom: 0; padding-left: 0; font-size: 90%; line-height: 1.4em; color: #cccccc; border-left:1px #666 solid; background:#333 url(http://pixeltreat.com/blog/images/sidenav_tp_bg.gif) no-repeat left top; word-wrap: break-word; /* fix for long text breaking sidebar float in IE */ overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */ }
+#sidebar { float: right; width: 200px; padding-left: 15px; padding-right: 15px; padding-top: 40px; padding-bottom: 0; padding-left: 0; font-size: 90%; line-height: 1.4em; color: #cccccc; border-left:1px #666 solid; background:#333 url(https://pixeltreat.com/blog/images/sidenav_tp_bg.gif) no-repeat left top; word-wrap: break-word; /* fix for long text breaking sidebar float in IE */ overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */ }
 /* ---( main column )--- */
-h2.date-header { margin-top: 0; padding-left: 14px; font-size: 80%; color: #808080; font-weight: normal; background: url(http://www.blogblog.com/tictac/date_icon.gif) no-repeat left 50%; }
+h2.date-header { margin-top: 0; padding-left: 14px; font-size: 80%; color: #808080; font-weight: normal; background: url(https://www.blogblog.com/tictac/date_icon.gif) no-repeat left 50%; }
 .post h3 { margin-top: 0; font: normal normal 152% 'Lucida Grande', 'Trebuchet MS'; letter-spacing: -1px; color: #ffbb55; }
 .post { margin-top: 0; margin-right: 0; margin-bottom: 1.5em; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 1.5em; padding-left: 14px; border-bottom: 1px solid #404040; font-size:95%; }
 .post h3 a, .post h3 a:visited { color: #ffbb55; text-decoration: none; }
@@ -58,7 +58,7 @@ h2.date-header { margin-top: 0; padding-left: 14px; font-size: 80%; color: #8080
 .profile-img { float: left; margin-top: 0; margin-right: 5px; margin-bottom: 5px; margin-left: 0; border: 1px solid #ddd; padding: 4px; }
 /* ---( footer )--- */
 .clear { /* to fix IE6 padding-top issue */ clear: both; }
-#footer-wrapper { background:url(http://pixeltreat.com/blog/images/footer.jpg) repeat-x; width:960px; height:24px; font-size:70%; padding-top:35px; text-align:center; color:#666; }
+#footer-wrapper { background:url(https://pixeltreat.com/blog/images/footer.jpg) repeat-x; width:960px; height:24px; font-size:70%; padding-top:35px; text-align:center; color:#666; }
 /** Page structure tweaks for layout editor wireframe */
 body#layout #outer-wrapper, body#layout #main, body#layout #sidebar { padding-top: 0; margin-top: 0; }
 body#layout #outer-wrapper, body#layout #content-wrapper { width: 958px; }
@@ -67,29 +67,29 @@ body#layout #header, body#layout #footer, body#layout #main { padding: 0; }
 body#layout #content-wrapper { margin: 0px; }
 /*---------- Customized css --------------------------*/
 .subHeading { font-weight: bold; color: rgb(195, 222, 229); margin:5px 0px; display:block; font-size:1.1em; }
-#outer-wrapper { width:960px; padding:0px 10px 0px 10px; height:auto; margin:0 auto; background:url(http://pixeltreat.com/blog/images/bg_shadow.png) repeat-y left top; }
-#top_con { width:960px; background:#333333 url(http://pixeltreat.com/blog/images/top_bg_above_banner.jpg) repeat-x top left; height:68px; }
+#outer-wrapper { width:960px; padding:0px 10px 0px 10px; height:auto; margin:0 auto; background:url(https://pixeltreat.com/blog/images/bg_shadow.png) repeat-y left top; }
+#top_con { width:960px; background:#333333 url(https://pixeltreat.com/blog/images/top_bg_above_banner.jpg) repeat-x top left; height:68px; }
 #lf_logo { float:left; padding:17px 0px 0px 16px; }
 #rt_nav { float:right; padding:5px 15px 5px 0px; font-size:80%; color:#666; }
 #rt_nav a, #rt_nav a:visited { color:#666; text-decoration:none; }
 #rt_nav a:hover, #rt_nav a:active, rt_nav a.active { color:#fff; text-decoration:underline; }
 #flashBanner { clear:both; border-left:1px #333 solid; border-right:1px #333 solid; width:958px; height:185px; display:block; background:#333333; }
-#cont_container { border-left:1px #333 solid; border-right:1px #333 solid; width:928px; padding:15px 15px 15px 15px; height:auto; background:#323232 url(http://pixeltreat.com/blog/images/cont_bg.jpg) repeat-x left top; }
+#cont_container { border-left:1px #333 solid; border-right:1px #333 solid; width:928px; padding:15px 15px 15px 15px; height:auto; background:#323232 url(https://pixeltreat.com/blog/images/cont_bg.jpg) repeat-x left top; }
 #ins_con_wrap { background:#131313; height:auto; border-bottom:1px #585858 solid; border-right:1px #3d3d3d solid; }
 .rtLinks { text-align:right; margin-bottom:8px; }
 #searchBox { height:15px; width:100px; border:1px #333 solid; background-color:#CCC; }
 #searchButton { border:0; background:none; font-size:8pt; line-height:13px; font-weight:bold; color:#666; cursor:pointer; }
 #LinkList1 ul, #LinkList2 ul { padding-left: 15px; }
 div#blog-pager { font-size:80%; font-weight:bold; }
-div#blog-pager .home-link { background:url(http://pixeltreat.com/blog/images/home_ico.gif) top left no-repeat; height:16px; line-height:14px; padding:20px; }
+div#blog-pager .home-link { background:url(https://pixeltreat.com/blog/images/home_ico.gif) top left no-repeat; height:16px; line-height:14px; padding:20px; }
 
 /*----  navigation selectors  -----*/
 .main-nav { width:auto; float:none; background:#000; padding-bottom:10px; border-bottom:1px #333 solid;}
 .main-nav ul{margin:0px auto; width:540px;}
 .main-nav li { display:inline; float:left; margin:0px; padding:0px; }
-.main-nav li a { display:block; background:url(http://pixeltreat.com/images/nav.jpg) no-repeat; overflow:hidden; width:131px; height:44px; margin-right:3px; }
+.main-nav li a { display:block; background:url(https://pixeltreat.com/images/nav.jpg) no-repeat; overflow:hidden; width:131px; height:44px; margin-right:3px; }
 .ie6 .main-nav li a span { visibility:hidden;}
-.main-nav li a span { display:block; background:url(http://pixeltreat.com/images/nav.jpg) no-repeat; text-indent:-9999px; height:44px; opacity: 0;filter:alpha(opacity=0); -moz-opacity:0;-khtml-opacity: 0;-webkit-opacity:0; cursor: pointer;}
+.main-nav li a span { display:block; background:url(https://pixeltreat.com/images/nav.jpg) no-repeat; text-indent:-9999px; height:44px; opacity: 0;filter:alpha(opacity=0); -moz-opacity:0;-khtml-opacity: 0;-webkit-opacity:0; cursor: pointer;}
 
 .main-nav li a.home { background-position:left top; }
 .main-nav li a.home span, .main-nav li a.home-active span, .main-nav li a:hover.home, .main-nav li a:focus.home, .main-nav li a:hover.home-active{ background-position:left center; }
@@ -128,5 +128,5 @@ div#blog-pager .home-link { background:url(http://pixeltreat.com/blog/images/hom
 .ie6 .main-nav li a:hover.about { background-position:-399px -90px; }
 .ie6 .main-nav li a:hover.contact { background-position:-532px -45px; }
 /* scroll top button */
-a#scroll-top {position:fixed; bottom:30px; right:30px; display:block; width:24px; height:24px; overflow:hidden; background:url(http://pixeltreat.com/images/scrolltop-btn.png) top left no-repeat; text-indent:-99999px; text-decoration:none; outline:none; border:none;}
-a:hover#scroll-top {background-position:0px -25px;} 
+a#scroll-top {position:fixed; bottom:30px; right:30px; display:block; width:24px; height:24px; overflow:hidden; background:url(https://pixeltreat.com/images/scrolltop-btn.png) top left no-repeat; text-indent:-99999px; text-decoration:none; outline:none; border:none;}
+a:hover#scroll-top {background-position:0px -25px;}
