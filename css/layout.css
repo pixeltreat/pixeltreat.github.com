@@ -158,9 +158,10 @@ footer { background:url(../images/footer-bg-btm.gif) bottom left no-repeat; padd
 .about-me { padding:15px 25px 15px 35px; }
 .lf-text-cont { float:left; width:555px; background:url(../images/divider-line-big-bg.gif) center right no-repeat; padding-right:35px; text-align:justify; }
 .lf-text-cont p { margin:20px 0px; }
-.tech-skills li { width:24.5%; float:left; display:inline; background:url(../images/li-right-icon.gif) no-repeat 5% 50%; line-height:1.4; border:1px solid #333; color:#b2e5ff; padding:5px 10px 5px 35px; margin:0px 50px 15px 0px; }
-.tech-skills li.right { margin-right:0 !important; }
-.tech-skills li.lastbtm { margin-bottom:0px !important; }
+.tech-skills { display: grid; grid-template-columns: 30% 30% 30%; grid-gap: 5%; }
+.tech-skills li { background:url(../images/li-right-icon.gif) no-repeat 5% 50%; line-height:1.4; border:1px solid #333; color:#b2e5ff; padding:5px 10px 5px 35px; margin:0 0 15px; }
+/* .tech-skills li.right { margin-right:0 !important; }
+.tech-skills li.lastbtm { margin-bottom:0px !important; } */
 .rt-img-cont { padding-left:30px; float:right; }
 .about-me a:hover { text-decoration:underline; }
 .tech-thank { margin-top:-20px; }
